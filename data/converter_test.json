@@ -1,0 +1,1983 @@
+{
+ "date": "2026-11-19T15:46:44",
+ "node": "v26.5.0",
+ "python": "3.15.0",
+ "operatorVersion": "layout_keys/v5+xkeyboard-config-2.49",
+ "seconds": 5.3,
+ "pythonSeconds": 3.3,
+ "jsMs": 1676,
+ "allPass": true,
+ "pairs": {
+  "ru>us": {
+   "pass": true,
+   "strings": 1072,
+   "chars": 19876,
+   "forwardMatch": 1072,
+   "traceMatch": 1072,
+   "lossMatch": 1072,
+   "decodeStrings": 1256,
+   "decodeMatch": 1256,
+   "roundTripExact": 899,
+   "roundTripStrings": 1072,
+   "roundTripNatural": [
+    24,
+    24
+   ],
+   "naturalSources": {
+    "examples": 4,
+    "passages": 20,
+    "flores": [
+     "rus_Cyrl"
+    ]
+   },
+   "probes": [
+    "а",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ua>us": {
+   "pass": true,
+   "strings": 1072,
+   "chars": 19058,
+   "forwardMatch": 1072,
+   "traceMatch": 1072,
+   "lossMatch": 1072,
+   "decodeStrings": 1254,
+   "decodeMatch": 1254,
+   "roundTripExact": 886,
+   "roundTripStrings": 1072,
+   "roundTripNatural": [
+    22,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "ukr_Cyrl"
+    ]
+   },
+   "probes": [
+    "а",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "bg>us": {
+   "pass": true,
+   "strings": 1080,
+   "chars": 19453,
+   "forwardMatch": 1080,
+   "traceMatch": 1080,
+   "lossMatch": 1080,
+   "decodeStrings": 1245,
+   "decodeMatch": 1245,
+   "roundTripExact": 817,
+   "roundTripStrings": 1080,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "bul_Cyrl"
+    ]
+   },
+   "probes": [
+    "о",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "il>us": {
+   "pass": true,
+   "strings": 912,
+   "chars": 16315,
+   "forwardMatch": 912,
+   "traceMatch": 912,
+   "lossMatch": 912,
+   "decodeStrings": 1105,
+   "decodeMatch": 1105,
+   "roundTripExact": 802,
+   "roundTripStrings": 912,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "heb_Hebr"
+    ]
+   },
+   "probes": [
+    "כ",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ara>us": {
+   "pass": true,
+   "strings": 1112,
+   "chars": 56921,
+   "forwardMatch": 1112,
+   "traceMatch": 1112,
+   "lossMatch": 1112,
+   "decodeStrings": 1285,
+   "decodeMatch": 1285,
+   "roundTripExact": 912,
+   "roundTripStrings": 1112,
+   "roundTripNatural": [
+    106,
+    116
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 113,
+    "flores": [
+     "acm_Arab",
+     "apc_Arab",
+     "arb_Arab",
+     "ars_Arab",
+     "ary_Arab",
+     "arz_Arab"
+    ]
+   },
+   "probes": [
+    "ب",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "am>us": {
+   "pass": true,
+   "strings": 1160,
+   "chars": 19933,
+   "forwardMatch": 1160,
+   "traceMatch": 1160,
+   "lossMatch": 1160,
+   "decodeStrings": 1350,
+   "decodeMatch": 1350,
+   "roundTripExact": 1047,
+   "roundTripStrings": 1160,
+   "roundTripNatural": [
+    21,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "hye_Armn"
+    ]
+   },
+   "probes": [
+    "ե",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "gr>us": {
+   "pass": true,
+   "strings": 1088,
+   "chars": 21149,
+   "forwardMatch": 1088,
+   "traceMatch": 1088,
+   "lossMatch": 1088,
+   "decodeStrings": 1289,
+   "decodeMatch": 1289,
+   "roundTripExact": 835,
+   "roundTripStrings": 1088,
+   "roundTripNatural": [
+    20,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "ell_Grek"
+    ]
+   },
+   "probes": [
+    "φ",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ko>us": {
+   "pass": true,
+   "strings": 2747,
+   "chars": 20904,
+   "forwardMatch": 2747,
+   "traceMatch": 2747,
+   "lossMatch": 2747,
+   "decodeStrings": 2877,
+   "decodeMatch": 2877,
+   "roundTripExact": 2433,
+   "roundTripStrings": 2747,
+   "roundTripNatural": [
+    17,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "kor_Hang"
+    ]
+   },
+   "probes": [
+    "한",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us>ru": {
+   "pass": true,
+   "strings": 1071,
+   "chars": 18919,
+   "forwardMatch": 1071,
+   "traceMatch": 1071,
+   "lossMatch": 1071,
+   "decodeStrings": 1255,
+   "decodeMatch": 1255,
+   "roundTripExact": 925,
+   "roundTripStrings": 1071,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "f",
+    "а"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us>il": {
+   "pass": true,
+   "strings": 912,
+   "chars": 18234,
+   "forwardMatch": 912,
+   "traceMatch": 912,
+   "lossMatch": 912,
+   "decodeStrings": 1106,
+   "decodeMatch": 1106,
+   "roundTripExact": 811,
+   "roundTripStrings": 912,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "f",
+    "כ"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us>ko": {
+   "pass": true,
+   "strings": 2747,
+   "chars": 25901,
+   "forwardMatch": 2747,
+   "traceMatch": 2747,
+   "lossMatch": 2747,
+   "decodeStrings": 2877,
+   "decodeMatch": 2877,
+   "roundTripExact": 2412,
+   "roundTripStrings": 2747,
+   "roundTripNatural": [
+    0,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "f",
+    "한"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us>ara": {
+   "pass": true,
+   "strings": 1018,
+   "chars": 18747,
+   "forwardMatch": 1018,
+   "traceMatch": 1018,
+   "lossMatch": 1018,
+   "decodeStrings": 1191,
+   "decodeMatch": 1191,
+   "roundTripExact": 840,
+   "roundTripStrings": 1018,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "f",
+    "ب"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ru~s1>us": {
+   "pass": true,
+   "strings": 1073,
+   "chars": 19970,
+   "forwardMatch": 1073,
+   "traceMatch": 1073,
+   "lossMatch": 1073,
+   "decodeStrings": 1259,
+   "decodeMatch": 1259,
+   "roundTripExact": 887,
+   "roundTripStrings": 1073,
+   "roundTripNatural": [
+    24,
+    24
+   ],
+   "naturalSources": {
+    "examples": 4,
+    "passages": 20,
+    "flores": [
+     "rus_Cyrl"
+    ]
+   },
+   "probes": [
+    "в",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ru~s2>us": {
+   "pass": true,
+   "strings": 1073,
+   "chars": 19778,
+   "forwardMatch": 1073,
+   "traceMatch": 1073,
+   "lossMatch": 1073,
+   "decodeStrings": 1257,
+   "decodeMatch": 1257,
+   "roundTripExact": 906,
+   "roundTripStrings": 1073,
+   "roundTripNatural": [
+    24,
+    24
+   ],
+   "naturalSources": {
+    "examples": 4,
+    "passages": 20,
+    "flores": [
+     "rus_Cyrl"
+    ]
+   },
+   "probes": [
+    "т",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ru~s3>us": {
+   "pass": true,
+   "strings": 1073,
+   "chars": 19859,
+   "forwardMatch": 1073,
+   "traceMatch": 1073,
+   "lossMatch": 1073,
+   "decodeStrings": 1259,
+   "decodeMatch": 1259,
+   "roundTripExact": 911,
+   "roundTripStrings": 1073,
+   "roundTripNatural": [
+    24,
+    24
+   ],
+   "naturalSources": {
+    "examples": 4,
+    "passages": 20,
+    "flores": [
+     "rus_Cyrl"
+    ]
+   },
+   "probes": [
+    "р",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "kz>us": {
+   "pass": true,
+   "strings": 1136,
+   "chars": 19759,
+   "forwardMatch": 1136,
+   "traceMatch": 1136,
+   "lossMatch": 1136,
+   "decodeStrings": 1310,
+   "decodeMatch": 1310,
+   "roundTripExact": 910,
+   "roundTripStrings": 1136,
+   "roundTripNatural": [
+    14,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "kaz_Cyrl"
+    ]
+   },
+   "probes": [
+    "а",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "rs>us": {
+   "pass": true,
+   "strings": 1043,
+   "chars": 18802,
+   "forwardMatch": 1043,
+   "traceMatch": 1043,
+   "lossMatch": 1043,
+   "decodeStrings": 1225,
+   "decodeMatch": 1225,
+   "roundTripExact": 836,
+   "roundTripStrings": 1043,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "srp_Cyrl"
+    ]
+   },
+   "probes": [
+    "ф",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "mk>us": {
+   "pass": true,
+   "strings": 1076,
+   "chars": 19684,
+   "forwardMatch": 1076,
+   "traceMatch": 1076,
+   "lossMatch": 1076,
+   "decodeStrings": 1273,
+   "decodeMatch": 1273,
+   "roundTripExact": 944,
+   "roundTripStrings": 1076,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "mkd_Cyrl"
+    ]
+   },
+   "probes": [
+    "ф",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ir>us": {
+   "pass": true,
+   "strings": 1107,
+   "chars": 18345,
+   "forwardMatch": 1107,
+   "traceMatch": 1107,
+   "lossMatch": 1107,
+   "decodeStrings": 1304,
+   "decodeMatch": 1304,
+   "roundTripExact": 1064,
+   "roundTripStrings": 1107,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "pes_Arab"
+    ]
+   },
+   "probes": [
+    "ب",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "th>us": {
+   "pass": true,
+   "strings": 1136,
+   "chars": 18942,
+   "forwardMatch": 1136,
+   "traceMatch": 1136,
+   "lossMatch": 1136,
+   "decodeStrings": 1299,
+   "decodeMatch": 1299,
+   "roundTripExact": 878,
+   "roundTripStrings": 1136,
+   "roundTripNatural": [
+    11,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "tha_Thai"
+    ]
+   },
+   "probes": [
+    "ด",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ge>us": {
+   "pass": true,
+   "strings": 944,
+   "chars": 19496,
+   "forwardMatch": 944,
+   "traceMatch": 944,
+   "lossMatch": 944,
+   "decodeStrings": 1145,
+   "decodeMatch": 1145,
+   "roundTripExact": 944,
+   "roundTripStrings": 944,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "kat_Geor"
+    ]
+   },
+   "probes": [
+    "ფ",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "de>us": {
+   "pass": true,
+   "strings": 1212,
+   "chars": 21282,
+   "forwardMatch": 1212,
+   "traceMatch": 1212,
+   "lossMatch": 1212,
+   "decodeStrings": 1393,
+   "decodeMatch": 1393,
+   "roundTripExact": 666,
+   "roundTripStrings": 1212,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "deu_Latn"
+    ]
+   },
+   "probes": [
+    "°",
+    "["
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "fr>us": {
+   "pass": true,
+   "strings": 1028,
+   "chars": 20947,
+   "forwardMatch": 1028,
+   "traceMatch": 1028,
+   "lossMatch": 1028,
+   "decodeStrings": 1204,
+   "decodeMatch": 1204,
+   "roundTripExact": 794,
+   "roundTripStrings": 1028,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "fra_Latn"
+    ]
+   },
+   "probes": [
+    "£",
+    "`"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "in_deva>us": {
+   "pass": true,
+   "strings": 1183,
+   "chars": 29419,
+   "forwardMatch": 1183,
+   "traceMatch": 1183,
+   "lossMatch": 1183,
+   "decodeStrings": 1389,
+   "decodeMatch": 1389,
+   "roundTripExact": 991,
+   "roundTripStrings": 1183,
+   "roundTripNatural": [
+    36,
+    43
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 40,
+    "flores": [
+     "hin_Deva",
+     "mar_Deva"
+    ]
+   },
+   "probes": [
+    "ि",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "in_ben>us": {
+   "pass": true,
+   "strings": 1102,
+   "chars": 18907,
+   "forwardMatch": 1102,
+   "traceMatch": 1102,
+   "lossMatch": 1102,
+   "decodeStrings": 1253,
+   "decodeMatch": 1253,
+   "roundTripExact": 754,
+   "roundTripStrings": 1102,
+   "roundTripNatural": [
+    13,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "ben_Beng"
+    ]
+   },
+   "probes": [
+    "ি",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "in_tam>us": {
+   "pass": true,
+   "strings": 1007,
+   "chars": 20414,
+   "forwardMatch": 1007,
+   "traceMatch": 1007,
+   "lossMatch": 1007,
+   "decodeStrings": 1122,
+   "decodeMatch": 1122,
+   "roundTripExact": 564,
+   "roundTripStrings": 1007,
+   "roundTripNatural": [
+    12,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "tam_Taml"
+    ]
+   },
+   "probes": [
+    "ி",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "in_guj>us": {
+   "pass": true,
+   "strings": 1104,
+   "chars": 19113,
+   "forwardMatch": 1104,
+   "traceMatch": 1104,
+   "lossMatch": 1104,
+   "decodeStrings": 1268,
+   "decodeMatch": 1268,
+   "roundTripExact": 780,
+   "roundTripStrings": 1104,
+   "roundTripNatural": [
+    21,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "guj_Gujr"
+    ]
+   },
+   "probes": [
+    "િ",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "in_guru>us": {
+   "pass": true,
+   "strings": 1110,
+   "chars": 19154,
+   "forwardMatch": 1110,
+   "traceMatch": 1110,
+   "lossMatch": 1110,
+   "decodeStrings": 1272,
+   "decodeMatch": 1272,
+   "roundTripExact": 757,
+   "roundTripStrings": 1110,
+   "roundTripNatural": [
+    7,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "pan_Guru"
+    ]
+   },
+   "probes": [
+    "ਿ",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "in_mal>us": {
+   "pass": true,
+   "strings": 1111,
+   "chars": 20438,
+   "forwardMatch": 1111,
+   "traceMatch": 1111,
+   "lossMatch": 1111,
+   "decodeStrings": 1305,
+   "decodeMatch": 1305,
+   "roundTripExact": 994,
+   "roundTripStrings": 1111,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "mal_Mlym"
+    ]
+   },
+   "probes": [
+    "ി",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us_shr>us": {
+   "pass": true,
+   "strings": 803,
+   "chars": 17751,
+   "forwardMatch": 803,
+   "traceMatch": 803,
+   "lossMatch": 803,
+   "decodeStrings": 1005,
+   "decodeMatch": 1005,
+   "roundTripExact": 803,
+   "roundTripStrings": 803,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "a",
+    "b"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ru_phonetic>us": {
+   "pass": true,
+   "strings": 1069,
+   "chars": 20029,
+   "forwardMatch": 1069,
+   "traceMatch": 1069,
+   "lossMatch": 1069,
+   "decodeStrings": 1275,
+   "decodeMatch": 1275,
+   "roundTripExact": 1069,
+   "roundTripStrings": 1069,
+   "roundTripNatural": [
+    24,
+    24
+   ],
+   "naturalSources": {
+    "examples": 4,
+    "passages": 20,
+    "flores": [
+     "rus_Cyrl"
+    ]
+   },
+   "probes": [
+    "ф",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ua_phonetic>us": {
+   "pass": true,
+   "strings": 1068,
+   "chars": 19352,
+   "forwardMatch": 1068,
+   "traceMatch": 1068,
+   "lossMatch": 1068,
+   "decodeStrings": 1249,
+   "decodeMatch": 1249,
+   "roundTripExact": 865,
+   "roundTripStrings": 1068,
+   "roundTripNatural": [
+    22,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "ukr_Cyrl"
+    ]
+   },
+   "probes": [
+    "ф",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "bg_phonetic>us": {
+   "pass": true,
+   "strings": 1067,
+   "chars": 19414,
+   "forwardMatch": 1067,
+   "traceMatch": 1067,
+   "lossMatch": 1067,
+   "decodeStrings": 1272,
+   "decodeMatch": 1272,
+   "roundTripExact": 1067,
+   "roundTripStrings": 1067,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "bul_Cyrl"
+    ]
+   },
+   "probes": [
+    "ф",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "bg_bas_phonetic>us": {
+   "pass": true,
+   "strings": 1066,
+   "chars": 19593,
+   "forwardMatch": 1066,
+   "traceMatch": 1066,
+   "lossMatch": 1066,
+   "decodeStrings": 1271,
+   "decodeMatch": 1271,
+   "roundTripExact": 1066,
+   "roundTripStrings": 1066,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "bul_Cyrl"
+    ]
+   },
+   "probes": [
+    "ф",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "am_phonetic>us": {
+   "pass": true,
+   "strings": 1156,
+   "chars": 20066,
+   "forwardMatch": 1156,
+   "traceMatch": 1156,
+   "lossMatch": 1156,
+   "decodeStrings": 1348,
+   "decodeMatch": 1348,
+   "roundTripExact": 1044,
+   "roundTripStrings": 1156,
+   "roundTripNatural": [
+    19,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "hye_Armn"
+    ]
+   },
+   "probes": [
+    "ֆ",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "il_phonetic>us": {
+   "pass": true,
+   "strings": 911,
+   "chars": 16055,
+   "forwardMatch": 911,
+   "traceMatch": 911,
+   "lossMatch": 911,
+   "decodeStrings": 1016,
+   "decodeMatch": 1016,
+   "roundTripExact": 491,
+   "roundTripStrings": 911,
+   "roundTripNatural": [
+    18,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "heb_Hebr"
+    ]
+   },
+   "probes": [
+    "פ",
+    "d"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ara_azerty>fr": {
+   "pass": true,
+   "strings": 1236,
+   "chars": 17953,
+   "forwardMatch": 1236,
+   "traceMatch": 1236,
+   "lossMatch": 1236,
+   "decodeStrings": 1421,
+   "decodeMatch": 1421,
+   "roundTripExact": 1083,
+   "roundTripStrings": 1236,
+   "roundTripNatural": [
+    17,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "ary_Arab"
+    ]
+   },
+   "probes": [
+    "ب",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "in_ben_probhat>us": {
+   "pass": true,
+   "strings": 1108,
+   "chars": 18988,
+   "forwardMatch": 1108,
+   "traceMatch": 1108,
+   "lossMatch": 1108,
+   "decodeStrings": 1313,
+   "decodeMatch": 1313,
+   "roundTripExact": 1108,
+   "roundTripStrings": 1108,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "ben_Beng"
+    ]
+   },
+   "probes": [
+    "ত",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "in_tam99>us": {
+   "pass": true,
+   "strings": 998,
+   "chars": 20016,
+   "forwardMatch": 998,
+   "traceMatch": 998,
+   "lossMatch": 998,
+   "decodeStrings": 1128,
+   "decodeMatch": 1128,
+   "roundTripExact": 586,
+   "roundTripStrings": 998,
+   "roundTripNatural": [
+    0,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "tam_Taml"
+    ]
+   },
+   "probes": [
+    "க",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "in_kan>us": {
+   "pass": true,
+   "strings": 1104,
+   "chars": 19555,
+   "forwardMatch": 1104,
+   "traceMatch": 1104,
+   "lossMatch": 1104,
+   "decodeStrings": 1256,
+   "decodeMatch": 1256,
+   "roundTripExact": 734,
+   "roundTripStrings": 1104,
+   "roundTripNatural": [
+    15,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "kan_Knda"
+    ]
+   },
+   "probes": [
+    "ಿ",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "in_ori>us": {
+   "pass": true,
+   "strings": 1092,
+   "chars": 19411,
+   "forwardMatch": 1092,
+   "traceMatch": 1092,
+   "lossMatch": 1092,
+   "decodeStrings": 1222,
+   "decodeMatch": 1222,
+   "roundTripExact": 673,
+   "roundTripStrings": 1092,
+   "roundTripNatural": [
+    10,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "ory_Orya"
+    ]
+   },
+   "probes": [
+    "ି",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "in_tel>us": {
+   "pass": true,
+   "strings": 1100,
+   "chars": 19275,
+   "forwardMatch": 1100,
+   "traceMatch": 1100,
+   "lossMatch": 1100,
+   "decodeStrings": 1282,
+   "decodeMatch": 1282,
+   "roundTripExact": 891,
+   "roundTripStrings": 1100,
+   "roundTripNatural": [
+    21,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "tel_Telu"
+    ]
+   },
+   "probes": [
+    "ి",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ua~s1>us": {
+   "pass": true,
+   "strings": 1070,
+   "chars": 19125,
+   "forwardMatch": 1070,
+   "traceMatch": 1070,
+   "lossMatch": 1070,
+   "decodeStrings": 1252,
+   "decodeMatch": 1252,
+   "roundTripExact": 869,
+   "roundTripStrings": 1070,
+   "roundTripNatural": [
+    22,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "ukr_Cyrl"
+    ]
+   },
+   "probes": [
+    "в",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ua~s2>us": {
+   "pass": true,
+   "strings": 1071,
+   "chars": 19100,
+   "forwardMatch": 1071,
+   "traceMatch": 1071,
+   "lossMatch": 1071,
+   "decodeStrings": 1252,
+   "decodeMatch": 1252,
+   "roundTripExact": 879,
+   "roundTripStrings": 1071,
+   "roundTripNatural": [
+    22,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "ukr_Cyrl"
+    ]
+   },
+   "probes": [
+    "т",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ua~s3>us": {
+   "pass": true,
+   "strings": 1072,
+   "chars": 19176,
+   "forwardMatch": 1072,
+   "traceMatch": 1072,
+   "lossMatch": 1072,
+   "decodeStrings": 1253,
+   "decodeMatch": 1253,
+   "roundTripExact": 884,
+   "roundTripStrings": 1072,
+   "roundTripNatural": [
+    22,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "ukr_Cyrl"
+    ]
+   },
+   "probes": [
+    "р",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "bg~s1>us": {
+   "pass": true,
+   "strings": 1080,
+   "chars": 19486,
+   "forwardMatch": 1080,
+   "traceMatch": 1080,
+   "lossMatch": 1080,
+   "decodeStrings": 1245,
+   "decodeMatch": 1245,
+   "roundTripExact": 827,
+   "roundTripStrings": 1080,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "bul_Cyrl"
+    ]
+   },
+   "probes": [
+    "д",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "bg~s2>us": {
+   "pass": true,
+   "strings": 1080,
+   "chars": 19127,
+   "forwardMatch": 1080,
+   "traceMatch": 1080,
+   "lossMatch": 1080,
+   "decodeStrings": 1245,
+   "decodeMatch": 1245,
+   "roundTripExact": 825,
+   "roundTripStrings": 1080,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "bul_Cyrl"
+    ]
+   },
+   "probes": [
+    "г",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "bg~s3>us": {
+   "pass": true,
+   "strings": 1079,
+   "chars": 19496,
+   "forwardMatch": 1079,
+   "traceMatch": 1079,
+   "lossMatch": 1079,
+   "decodeStrings": 1245,
+   "decodeMatch": 1245,
+   "roundTripExact": 800,
+   "roundTripStrings": 1079,
+   "roundTripNatural": [
+    21,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "bul_Cyrl"
+    ]
+   },
+   "probes": [
+    "ю",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "am~s1>us": {
+   "pass": true,
+   "strings": 1160,
+   "chars": 20186,
+   "forwardMatch": 1160,
+   "traceMatch": 1160,
+   "lossMatch": 1160,
+   "decodeStrings": 1350,
+   "decodeMatch": 1350,
+   "roundTripExact": 1043,
+   "roundTripStrings": 1160,
+   "roundTripNatural": [
+    22,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "hye_Armn"
+    ]
+   },
+   "probes": [
+    "ն",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "am~s2>us": {
+   "pass": true,
+   "strings": 1160,
+   "chars": 20320,
+   "forwardMatch": 1160,
+   "traceMatch": 1160,
+   "lossMatch": 1160,
+   "decodeStrings": 1350,
+   "decodeMatch": 1350,
+   "roundTripExact": 1036,
+   "roundTripStrings": 1160,
+   "roundTripNatural": [
+    21,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "hye_Armn"
+    ]
+   },
+   "probes": [
+    "ն",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "am~s3>us": {
+   "pass": true,
+   "strings": 1159,
+   "chars": 20107,
+   "forwardMatch": 1159,
+   "traceMatch": 1159,
+   "lossMatch": 1159,
+   "decodeStrings": 1349,
+   "decodeMatch": 1349,
+   "roundTripExact": 1052,
+   "roundTripStrings": 1159,
+   "roundTripNatural": [
+    22,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "hye_Armn"
+    ]
+   },
+   "probes": [
+    "զ",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "il~s1>us": {
+   "pass": true,
+   "strings": 912,
+   "chars": 16336,
+   "forwardMatch": 912,
+   "traceMatch": 912,
+   "lossMatch": 912,
+   "decodeStrings": 1106,
+   "decodeMatch": 1106,
+   "roundTripExact": 803,
+   "roundTripStrings": 912,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "heb_Hebr"
+    ]
+   },
+   "probes": [
+    "ם",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "il~s2>us": {
+   "pass": true,
+   "strings": 912,
+   "chars": 16253,
+   "forwardMatch": 912,
+   "traceMatch": 912,
+   "lossMatch": 912,
+   "decodeStrings": 1106,
+   "decodeMatch": 1106,
+   "roundTripExact": 806,
+   "roundTripStrings": 912,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "heb_Hebr"
+    ]
+   },
+   "probes": [
+    "ט",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "il~s3>us": {
+   "pass": true,
+   "strings": 912,
+   "chars": 16305,
+   "forwardMatch": 912,
+   "traceMatch": 912,
+   "lossMatch": 912,
+   "decodeStrings": 1106,
+   "decodeMatch": 1106,
+   "roundTripExact": 822,
+   "roundTripStrings": 912,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "heb_Hebr"
+    ]
+   },
+   "probes": [
+    "צ",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ara~s1>us": {
+   "pass": true,
+   "strings": 1020,
+   "chars": 17721,
+   "forwardMatch": 1020,
+   "traceMatch": 1020,
+   "lossMatch": 1020,
+   "decodeStrings": 1193,
+   "decodeMatch": 1193,
+   "roundTripExact": 822,
+   "roundTripStrings": 1020,
+   "roundTripNatural": [
+    22,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "arb_Arab"
+    ]
+   },
+   "probes": [
+    "ي",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ara~s2>us": {
+   "pass": true,
+   "strings": 1019,
+   "chars": 17549,
+   "forwardMatch": 1019,
+   "traceMatch": 1019,
+   "lossMatch": 1019,
+   "decodeStrings": 1188,
+   "decodeMatch": 1188,
+   "roundTripExact": 808,
+   "roundTripStrings": 1019,
+   "roundTripNatural": [
+    21,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "arb_Arab"
+    ]
+   },
+   "probes": [
+    "ء",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "ara~s3>us": {
+   "pass": true,
+   "strings": 1019,
+   "chars": 17909,
+   "forwardMatch": 1019,
+   "traceMatch": 1019,
+   "lossMatch": 1019,
+   "decodeStrings": 1193,
+   "decodeMatch": 1193,
+   "roundTripExact": 812,
+   "roundTripStrings": 1019,
+   "roundTripNatural": [
+    21,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "arb_Arab"
+    ]
+   },
+   "probes": [
+    "ﻻ",
+    "f"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us~s1>us": {
+   "pass": true,
+   "strings": 802,
+   "chars": 17890,
+   "forwardMatch": 802,
+   "traceMatch": 802,
+   "lossMatch": 802,
+   "decodeStrings": 1003,
+   "decodeMatch": 1003,
+   "roundTripExact": 802,
+   "roundTripStrings": 802,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "a",
+    "b"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us~s2>us": {
+   "pass": true,
+   "strings": 803,
+   "chars": 17548,
+   "forwardMatch": 803,
+   "traceMatch": 803,
+   "lossMatch": 803,
+   "decodeStrings": 1001,
+   "decodeMatch": 1001,
+   "roundTripExact": 803,
+   "roundTripStrings": 803,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "a",
+    "b"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us~s3>us": {
+   "pass": true,
+   "strings": 802,
+   "chars": 18081,
+   "forwardMatch": 802,
+   "traceMatch": 802,
+   "lossMatch": 802,
+   "decodeStrings": 1004,
+   "decodeMatch": 1004,
+   "roundTripExact": 802,
+   "roundTripStrings": 802,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "a",
+    "b"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us>ua": {
+   "pass": true,
+   "strings": 1071,
+   "chars": 18915,
+   "forwardMatch": 1071,
+   "traceMatch": 1071,
+   "lossMatch": 1071,
+   "decodeStrings": 1251,
+   "decodeMatch": 1251,
+   "roundTripExact": 877,
+   "roundTripStrings": 1071,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "f",
+    "а"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us>bg": {
+   "pass": true,
+   "strings": 1080,
+   "chars": 18948,
+   "forwardMatch": 1080,
+   "traceMatch": 1080,
+   "lossMatch": 1080,
+   "decodeStrings": 1245,
+   "decodeMatch": 1245,
+   "roundTripExact": 829,
+   "roundTripStrings": 1080,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "f",
+    "о"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us>am": {
+   "pass": true,
+   "strings": 1159,
+   "chars": 19105,
+   "forwardMatch": 1159,
+   "traceMatch": 1159,
+   "lossMatch": 1159,
+   "decodeStrings": 1350,
+   "decodeMatch": 1350,
+   "roundTripExact": 1046,
+   "roundTripStrings": 1159,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "f",
+    "ե"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us>gr": {
+   "pass": true,
+   "strings": 1088,
+   "chars": 19052,
+   "forwardMatch": 1088,
+   "traceMatch": 1088,
+   "lossMatch": 1088,
+   "decodeStrings": 1289,
+   "decodeMatch": 1289,
+   "roundTripExact": 828,
+   "roundTripStrings": 1088,
+   "roundTripNatural": [
+    15,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "f",
+    "φ"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us>kz": {
+   "pass": true,
+   "strings": 1136,
+   "chars": 19634,
+   "forwardMatch": 1136,
+   "traceMatch": 1136,
+   "lossMatch": 1136,
+   "decodeStrings": 1309,
+   "decodeMatch": 1309,
+   "roundTripExact": 901,
+   "roundTripStrings": 1136,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "f",
+    "а"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us>rs": {
+   "pass": true,
+   "strings": 1044,
+   "chars": 18727,
+   "forwardMatch": 1044,
+   "traceMatch": 1044,
+   "lossMatch": 1044,
+   "decodeStrings": 1224,
+   "decodeMatch": 1224,
+   "roundTripExact": 852,
+   "roundTripStrings": 1044,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "f",
+    "ф"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us>mk": {
+   "pass": true,
+   "strings": 1076,
+   "chars": 19198,
+   "forwardMatch": 1076,
+   "traceMatch": 1076,
+   "lossMatch": 1076,
+   "decodeStrings": 1274,
+   "decodeMatch": 1274,
+   "roundTripExact": 933,
+   "roundTripStrings": 1076,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "f",
+    "ф"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us>ir": {
+   "pass": true,
+   "strings": 1108,
+   "chars": 19393,
+   "forwardMatch": 1108,
+   "traceMatch": 1108,
+   "lossMatch": 1108,
+   "decodeStrings": 1305,
+   "decodeMatch": 1305,
+   "roundTripExact": 1059,
+   "roundTripStrings": 1108,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "f",
+    "ب"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us>th": {
+   "pass": true,
+   "strings": 1136,
+   "chars": 18635,
+   "forwardMatch": 1136,
+   "traceMatch": 1136,
+   "lossMatch": 1136,
+   "decodeStrings": 1302,
+   "decodeMatch": 1302,
+   "roundTripExact": 894,
+   "roundTripStrings": 1136,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "f",
+    "ด"
+   ],
+   "date": "2026-11-19T15:46:44"
+  },
+  "us>ge": {
+   "pass": true,
+   "strings": 944,
+   "chars": 18600,
+   "forwardMatch": 944,
+   "traceMatch": 944,
+   "lossMatch": 944,
+   "decodeStrings": 1148,
+   "decodeMatch": 1148,
+   "roundTripExact": 944,
+   "roundTripStrings": 944,
+   "roundTripNatural": [
+    23,
+    23
+   ],
+   "naturalSources": {
+    "examples": 3,
+    "passages": 20,
+    "flores": [
+     "eng_Latn"
+    ]
+   },
+   "probes": [
+    "f",
+    "ფ"
+   ],
+   "date": "2026-11-19T15:46:44"
+  }
+ },
+ "dropped": [],
+ "about": {
+  "what": "JS converter (site/assets/js/keyconv.js) vs Python operator (src/utils/layout_keys.py), byte for byte; see site/tools/test_converter.py",
+  "fields": "strings/chars: forward test strings and their code points; forwardMatch: JS type() == Python (text, passthrough, other_layout_segments); traceMatch: the JS trace concatenates to the output; lossMatch: JS typeInfo() gives the same text and the same characters that gave nothing as test_converter.python_lost; decodeStrings/decodeMatch: decode inputs (forward outputs + arbitrary strings) and JS == Python; roundTripExact: Python inverse(op(x)) == reference(x) (reference: x after the pair's folds) over all forward strings, roundTripNatural [exact, n] over the natural ones, naturalSources: how many of those are the pair's example sentences (presets.json) and how many Belebele passages (the first distinct passages of each FLORES code listed): properties of the operator, not of the port"
+ }
+}

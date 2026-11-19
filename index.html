@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Garbled text can be decoded, at a cost. Ambiguous text cannot. · Keyboard-state input</title>
+<meta name="description" content="How language models read text as typed: on the wrong keyboard layout, and as pinyin without tones. A results explorer and an in-browser converter.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/theme.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top" aria-label="Keyboard-state input: top of the page"><span class="brand-key" aria-hidden="true"><span class="bk-t">g</span><span class="bk-m" lang="ru">п</span></span><span class="brand-txt">Keyboard-state input</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#try">Try</a><a href="#findings">Findings</a><a href="#explore">Explore</a><a href="#method">Method</a><a href="#about">About</a>
+    </nav>
+    <button type="button" class="theme-btn js-only" id="theme-btn" aria-label="Colour theme: follows the system">
+      <span class="theme-ico" aria-hidden="true"></span><span class="theme-txt">Auto</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================ hero: the finding, two examples -->
+<section id="top" class="hero" aria-labelledby="headline">
+  <div class="wrap">
+    <p class="kicker"><span data-copy="kicker">UKAIRS 2026 · Emerging Research · Poster UKAIRS26-89</span></p>
+
+    <div class="flip js-only" role="group" aria-labelledby="flip-lbl">
+      <span class="flip-lbl" id="flip-lbl">Headline</span>
+      <button type="button" class="seg" data-state="meant" aria-pressed="true">as meant</button>
+      <button type="button" class="seg" data-state="typed" aria-pressed="false">as typed, Russian layout on</button>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hcol hcol-g">
+        <h1 id="headline" class="headline"><span class="hl" data-copy="headline" data-part="0">Garbled text can be decoded, at a cost.</span><span class="sr-only"> <span data-copy="headline" data-part="1">Ambiguous text cannot.</span></span></h1>
+        <figure class="ex ex-garbled" aria-labelledby="ex1-cap">
+          <div class="ex-row">
+            <div class="ex-side">
+              <div class="ex-keys" data-render="keys-garbled" aria-hidden="true"><span class="cap"><span class="cap-t">g</span><span class="cap-m" lang="ru">п</span></span><span class="cap"><span class="cap-t">h</span><span class="cap-m" lang="ru">р</span></span><span class="cap"><span class="cap-t">b</span><span class="cap-m" lang="ru">и</span></span><span class="cap"><span class="cap-t">d</span><span class="cap-m" lang="ru">в</span></span><span class="cap"><span class="cap-t">t</span><span class="cap-m" lang="ru">е</span></span><span class="cap"><span class="cap-t">n</span><span class="cap-m" lang="ru">т</span></span></div>
+              <p class="ex-lab"><span class="lab-typed" data-copy="lab_typed">typed</span> <span data-ex="wrong_layout.active_layout">US English (QWERTY)</span></p>
+            </div>
+            <span class="ex-arrow" aria-hidden="true"></span>
+            <div class="ex-side">
+              <p class="ex-word-row"><span class="ex-word" lang="ru" data-ex="wrong_layout.intended">привет</span> <span class="gloss" data-ex="wrong_layout.gloss">hello</span></p>
+              <p class="ex-lab"><span class="lab-meant" data-copy="lab_meant">meant</span> <span data-ex="wrong_layout.intended_layout">Russian ЙЦУКЕН</span></p>
+            </div>
+          </div>
+          <p class="sr-only" data-render="sr-garbled">Typed with the computer set to US English (QWERTY): ghbdtn. Meant, on Russian ЙЦУКЕН: <span lang="ru">привет</span> (hello).</p>
+          <figcaption id="ex1-cap" class="ex-cap" data-copy="explain_wrong"><strong>Garbled.</strong> Russian typed on the wrong keyboard layout (English). Every keystroke survives, so undoing the key map gives the text back.</figcaption>
+        </figure>
+      </div>
+      <div class="hcol hcol-a">
+        <p class="headline hl-2" aria-hidden="true"><span class="hl" data-copy="headline" data-part="1">Ambiguous text cannot.</span></p>
+        <figure class="ex ex-ambiguous" aria-labelledby="ex2-cap">
+          <div class="ex-row">
+            <div class="ex-side">
+              <div class="ex-keys" data-render="keys-ambiguous" aria-hidden="true"><span class="cap"><span class="cap-t">b</span></span><span class="cap"><span class="cap-t">e</span></span><span class="cap"><span class="cap-t">i</span></span><span class="cap"><span class="cap-t">z</span></span><span class="cap"><span class="cap-t">i</span></span></div>
+              <p class="ex-lab"><span class="lab-typed" data-copy="lab_typed">typed</span> pinyin without tones</p>
+            </div>
+            <span class="ex-arrow ex-arrow-fork" aria-hidden="true"></span>
+            <div class="ex-side">
+              <div class="ex-words" data-render="words-ambiguous"><span class="ex-w"><span class="ex-word" lang="zh-Hans">杯子</span><span class="ex-sub"><span class="toned" lang="zh-Latn">bēizi</span> <span class="gloss">cup</span></span></span><span class="ex-or">or</span><span class="ex-w"><span class="ex-word" lang="zh-Hans">被子</span><span class="ex-sub"><span class="toned" lang="zh-Latn">bèizi</span> <span class="gloss">quilt</span></span></span></div>
+            </div>
+          </div>
+          <p class="sr-only" data-render="sr-ambiguous">Typed: beizi. Meant: <span lang="zh-Hans">杯子</span> (cup) or <span lang="zh-Hans">被子</span> (quilt); the text does not say which.</p>
+          <figcaption id="ex2-cap" class="ex-cap" data-copy="explain_pinyin"><strong>Ambiguous.</strong> A Chinese word typed alone as pinyin without tones, before the IME picks the characters. Here one spelling stands for more than one word, and nothing in the text says which.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="hl-note" id="hl-note" hidden>The headline as typed: the same keys, pressed while the computer is set to the Russian layout. Nothing is lost; the converter below undoes it.</p>
+
+    <div class="hero-result">
+      <p class="hero-tag"><span class="st st-pilot">pilot</span> exploratory results of <span data-n="date.layout">15 Nov 2026</span> and <span data-n="date.zh">16 Nov 2026</span></p>
+      <p class="deck" data-copy="deck">Keyboard-state input is text as typed, before or without conversion by an input method editor (IME). We tested <span class="num">13</span> models in <span class="num">21</span> settings (reasoning off or on) on four-option questions typed this way.</p>
+      <ul class="hero-nums" aria-label="Results of the wrong-layout pilot">
+        <li><span class="hn-big" data-copy="callout_off" data-field="big"><span class="num">7</span> of <span class="num">8</span></span> <span class="hn-txt" data-copy="callout_off">settings with reasoning off score within ten points of the floor.</span></li>
+        <li><span class="hn-big" data-copy="callout_tokens" data-field="big"><span class="num">21</span> to <span class="num">67</span> times</span> <span class="hn-txt" data-copy="callout_tokens">the reasoning tokens of native text: what the <span class="num">8</span> settings that recover spend on the same items typed on the wrong layout.</span></li>
+        <li><span class="hn-big" data-copy="callout_gap" data-field="big"><span class="num">4</span> to <span class="num">9</span> points</span> <span class="hn-txt" data-copy="callout_gap">below native text: where the best <span class="num">4</span> settings still end, with reasoning on.</span></li>
+      </ul>
+      <p class="hero-floor small"><strong><span data-copy="lab_floor">floor without reading</span></strong> <span class="num" data-n="layout.floor">34.8%</span> (<span class="num" data-n="layout.floor.lo">29%</span> to <span class="num" data-n="layout.floor.hi">41%</span> by language): what letter overlap alone scores on the wrong-layout text. <span data-copy="lab_chance">chance</span>: <span class="num" data-n="layout.chance">25%</span>.</p>
+      <p class="status-line"><span class="num" data-n="layout.models">13</span> models · <span class="num" data-n="layout.settings">21</span> settings · exploratory. Every result in the findings and the explorer comes from exploratory pilots: wrong layouts, <span data-n="date.layout">15 Nov 2026</span> (<span data-n="layout.items">50</span> Belebele items per language, <span data-n="layout.calls_per_cell">one</span> call per item) and Chinese, <span data-n="date.zh">16 Nov 2026</span> (<span data-n="site.zh.items">96</span> constructed items; <span data-n="zh.pilot.calls_per_cell">one</span> call per item, <span data-n="zh.fc3.per_cell">three</span> in the follow-up). The main run has not started; its plan will be frozen and time-stamped before its first call.</p>
+      <p class="jump"><a href="#try">Try the converter</a> <a href="#findings">Read the findings</a> <a href="#explore">Explore models</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ hero, second half: the converter -->
+<section id="try" class="try" aria-labelledby="try-h">
+  <div class="wrap">
+    <h2 id="try-h">Try it: the same keys on two layouts</h2>
+    <p class="lede">Type or paste text in the box. The page finds the keys that type it on the layout you meant and shows what the same keys give on the layout the computer is set to. Everything runs in this page; nothing you type is sent anywhere.</p>
+    <noscript><p class="nojs">The converter needs JavaScript. The findings, method and credits below are plain text.</p></noscript>
+
+    <div class="conv js-only" id="conv">
+      <div class="conv-row">
+        <label class="field">
+          <span class="field-lbl">Layouts</span>
+          <select id="pair" aria-describedby="conv-pairnote"></select>
+        </label>
+        <div class="seggroup" role="group" aria-label="Direction">
+          <button type="button" class="seg" id="dir-type" aria-pressed="true">Type as meant</button>
+          <button type="button" class="seg" id="dir-decode" aria-pressed="false">Decode typed text</button>
+        </div>
+      </div>
+      <p class="small conv-note" id="conv-pairnote"></p>
+      <div class="io">
+        <div class="io-in">
+          <label for="conv-in" class="io-lbl" id="in-lbl">As meant</label>
+          <textarea id="conv-in" rows="3" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off"></textarea>
+        </div>
+        <div class="io-out">
+          <span class="io-lbl" id="out-lbl">As typed</span>
+          <output id="conv-out" for="conv-in" aria-labelledby="out-lbl"></output>
+          <p class="io-meta" id="conv-meta"></p>
+        </div>
+      </div>
+      <p class="sr-only" id="conv-status" role="status"></p>
+      <div class="presets" id="presets" role="group" aria-label="Example sentences"></div>
+      <div class="kbd-wrap">
+        <div class="kbd-head">
+          <p class="kbd-key" id="kbd-legend"></p>
+          <button type="button" class="seg" id="kbd-shift" aria-pressed="false">Shift</button>
+        </div>
+        <div class="kbd" id="kbd" role="group" aria-label="Keyboard"></div>
+      </div>
+      <p class="small" id="conv-source"></p>
+    </div>
+
+    <div class="lossy">
+      <h3>When the typed form loses information</h3>
+      <p>No converter can undo this one. Typed alone as pinyin without tones, these spellings each stand for more than one word, and the text does not say which; the last one is a control with a single word above the frequency threshold.</p>
+      <div class="lossy-grid" data-render="lossy"><div class="lc"><p class="lc-typed"><span class="typed-txt">beizi</span><span class="lc-n">3 words</span></p><ul><li><span class="lw" lang="zh-Hans">杯子</span> <span class="toned" lang="zh-Latn">bēizi</span> <span class="gloss">cup</span></li><li><span class="lw" lang="zh-Hans">被子</span> <span class="toned" lang="zh-Latn">bèizi</span> <span class="gloss">quilt</span></li><li><span class="lw" lang="zh-Hans">辈子</span> <span class="toned" lang="zh-Latn">bèizi</span> <span class="gloss">lifetime</span></li></ul></div><div class="lc"><p class="lc-typed"><span class="typed-txt">daikuan</span><span class="lc-n">2 words</span></p><ul><li><span class="lw" lang="zh-Hans">贷款</span> <span class="toned" lang="zh-Latn">dàikuǎn</span> <span class="gloss">loan (borrowed money)</span></li><li><span class="lw" lang="zh-Hans">带宽</span> <span class="toned" lang="zh-Latn">dàikuān</span> <span class="gloss">bandwidth</span></li></ul></div><div class="lc"><p class="lc-typed"><span class="typed-txt">shuimian</span><span class="lc-n">2 words</span></p><ul><li><span class="lw" lang="zh-Hans">睡眠</span> <span class="toned" lang="zh-Latn">shuìmián</span> <span class="gloss">sleep</span></li><li><span class="lw" lang="zh-Hans">水面</span> <span class="toned" lang="zh-Latn">shuǐmiàn</span> <span class="gloss">water surface</span></li></ul></div><div class="lc"><p class="lc-typed"><span class="typed-txt">guomin</span><span class="lc-n">2 words</span></p><ul><li><span class="lw" lang="zh-Hans">国民</span> <span class="toned" lang="zh-Latn">guómín</span> <span class="gloss">citizens of a nation</span></li><li><span class="lw" lang="zh-Hans">过敏</span> <span class="toned" lang="zh-Latn">guòmǐn</span> <span class="gloss">allergy</span></li></ul></div><div class="lc"><p class="lc-typed"><span class="typed-txt">zifu</span><span class="lc-n">2 words</span></p><ul><li><span class="lw" lang="zh-Hans">自负</span> <span class="toned" lang="zh-Latn">zìfù</span> <span class="gloss">conceited</span></li><li><span class="lw" lang="zh-Hans">字符</span> <span class="toned" lang="zh-Latn">zìfú</span> <span class="gloss">character (text symbol)</span></li></ul></div><div class="lc"><p class="lc-typed"><span class="typed-txt">jianpan</span><span class="lc-n">1 word</span></p><ul><li><span class="lw" lang="zh-Hans">键盘</span> <span class="toned" lang="zh-Latn">jiànpán</span> <span class="gloss">keyboard</span></li></ul></div></div>
+      <p class="small" data-render="lossy-source">The first spelling and its words are the poster's example. From the Chinese pilot&#x27;s item file; the items have not yet been checked by an independent native speaker. Toned forms are as the item file gives them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ findings in the poster's words -->
+<section id="findings" class="findings" aria-label="Findings">
+  <div class="wrap">
+    <article class="finding" id="garbled" aria-labelledby="garbled-h">
+      <header class="fhead">
+        <p class="key-chip" aria-hidden="true"><span class="kc-t">g</span><span class="kc-m" lang="ru">п</span></p>
+        <h2 id="garbled-h" data-copy="layout_head">Garbled text: nothing is lost</h2>
+        <p class="tag" data-copy="layout_tag">pilot, <span class="num">15 Nov 2026</span> · exploratory · <span class="num">6</span> cross-script layouts, <span class="num">50</span> items each, <span class="num">one</span> call per item</p>
+      </header>
+      <p class="lead" data-copy="layout_lead">In every setting plotted, decoding has a cost: with reasoning on, reasoning tokens and, in part, accuracy; with it off, accuracy.</p>
+      <div class="callouts">
+        <div class="callout"><p class="big num" data-copy="callout_off" data-field="big"><span class="num">7</span> of <span class="num">8</span></p><p data-copy="callout_off">settings with reasoning off score within ten points of the floor.</p></div>
+        <div class="callout"><p class="big num" data-copy="callout_tokens" data-field="big"><span class="num">21</span> to <span class="num">67</span> times</p><p data-copy="callout_tokens">the reasoning tokens of native text: what the <span class="num">8</span> settings that recover spend on the same items typed on the wrong layout.</p></div>
+        <div class="callout"><p class="big num" data-copy="callout_gap" data-field="big"><span class="num">4</span> to <span class="num">9</span> points</p><p data-copy="callout_gap">below native text: where the best <span class="num">4</span> settings still end, with reasoning on.</p></div>
+      </div>
+      <figure class="chart" id="figA" data-chart="figA">
+        <figcaption><span class="fig-n">Figure A.</span> <span data-copy="cap_figA">Each row: one setting (model, reasoning level), on native text and on the same items typed on the wrong layout.</span></figcaption>
+        <div class="chart-tools js-only"><button type="button" class="seg tbl-btn" aria-pressed="false">Table</button></div>
+        <div class="chart-body"><div class="static-table" data-render="table-figA"><table class="dtable stack"><caption>Figure A as a table: six cross-script layouts pooled, 300 items and calls per cell; intervals 95%; reasoning tokens are means.</caption><thead><tr><th scope="col">setting</th><th scope="col" class="n">as written</th><th scope="col" class="n">wrong layout</th><th scope="col" class="n">change, points</th><th scope="col" class="n">no valid answer</th><th scope="col" class="n">reasoning tokens per call, wrong layout (mean)</th></tr></thead><tbody><tr><td data-label="setting"><code class="mid">gpt-6-astra</code> effort low</td><td data-label="as written" class="n">96.7% [94.0, 98.2]</td><td data-label="wrong layout" class="n">92.3% [88.8, 94.8]</td><td data-label="change, points" class="n">−4.3 [−7.7, −1.7]</td><td data-label="no valid answer" class="n">0 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">105</td></tr><tr><td data-label="setting"><code class="mid">gpt-6.1-sol</code> effort high</td><td data-label="as written" class="n">96.0% [93.1, 97.7]</td><td data-label="wrong layout" class="n">92.0% [88.4, 94.6]</td><td data-label="change, points" class="n">−4.0 [−6.3, −2.0]</td><td data-label="no valid answer" class="n">0 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">632</td></tr><tr><td data-label="setting"><code class="mid">gpt-6.1-sol</code> effort low</td><td data-label="as written" class="n">95.3% [92.3, 97.2]</td><td data-label="wrong layout" class="n">90.7% [86.8, 93.5]</td><td data-label="change, points" class="n">−4.7 [−7.3, −2.0]</td><td data-label="no valid answer" class="n">0 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">163</td></tr><tr><td data-label="setting"><code class="mid">claude-opus-5-5</code> effort low</td><td data-label="as written" class="n">97.0% [94.4, 98.4]</td><td data-label="wrong layout" class="n">88.0% [83.8, 91.2]</td><td data-label="change, points" class="n">−9.0 [−13.7, −5.0]</td><td data-label="no valid answer" class="n">0 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">420</td></tr><tr><td data-label="setting"><code class="mid">kimi-k3-1-pro-261024</code> thinking on †</td><td data-label="as written" class="n">95.0% [91.9, 96.9]</td><td data-label="wrong layout" class="n">78.0% [73.0, 82.3]</td><td data-label="change, points" class="n">−17.0 [−20.3, −14.0]</td><td data-label="no valid answer" class="n">45 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">10,894</td></tr><tr><td data-label="setting"><code class="mid">gpt-6.1-terra</code> effort high</td><td data-label="as written" class="n">94.7% [91.5, 96.7]</td><td data-label="wrong layout" class="n">76.0% [70.9, 80.5]</td><td data-label="change, points" class="n">−18.7 [−25.0, −12.3]</td><td data-label="no valid answer" class="n">0 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">972</td></tr><tr><td data-label="setting"><code class="mid">claude-sonnet-5-5</code> effort high</td><td data-label="as written" class="n">96.0% [93.1, 97.7]</td><td data-label="wrong layout" class="n">70.7% [65.3, 75.5]</td><td data-label="change, points" class="n">−25.3 [−31.0, −19.7]</td><td data-label="no valid answer" class="n">7 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">1,174</td></tr><tr><td data-label="setting"><code class="mid">gpt-6-luna</code> effort high</td><td data-label="as written" class="n">93.7% [90.3, 95.9]</td><td data-label="wrong layout" class="n">65.3% [59.8, 70.5]</td><td data-label="change, points" class="n">−28.3 [−34.3, −22.7]</td><td data-label="no valid answer" class="n">0 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">5,156</td></tr><tr><td data-label="setting"><code class="mid">gpt-6.1-terra</code> effort none</td><td data-label="as written" class="n">94.7% [91.5, 96.7]</td><td data-label="wrong layout" class="n">57.0% [51.3, 62.5]</td><td data-label="change, points" class="n">−37.7 [−44.7, −30.7]</td><td data-label="no valid answer" class="n">0 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">0</td></tr><tr><td data-label="setting"><code class="mid">doubao-seed-2-1-lite-260915</code> thinking on</td><td data-label="as written" class="n">94.7% [91.5, 96.7]</td><td data-label="wrong layout" class="n">48.7% [43.1, 54.3]</td><td data-label="change, points" class="n">−46.0 [−54.7, −37.0]</td><td data-label="no valid answer" class="n">0 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">9,587</td></tr><tr><td data-label="setting"><code class="mid">claude-sonnet-5-5</code> thinking off</td><td data-label="as written" class="n">95.0% [91.9, 96.9]</td><td data-label="wrong layout" class="n">44.3% [38.8, 50.0]</td><td data-label="change, points" class="n">−50.7 [−58.3, −43.0]</td><td data-label="no valid answer" class="n">6 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">0</td></tr><tr><td data-label="setting"><code class="mid">kimi-k3-1-pro-261024</code> thinking off</td><td data-label="as written" class="n">94.3% [91.1, 96.4]</td><td data-label="wrong layout" class="n">42.0% [36.6, 47.7]</td><td data-label="change, points" class="n">−52.3 [−60.3, −44.7]</td><td data-label="no valid answer" class="n">0 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">0</td></tr><tr><td data-label="setting"><code class="mid">doubao-seed-2-1-lite-260915</code> thinking off</td><td data-label="as written" class="n">93.3% [89.9, 95.6]</td><td data-label="wrong layout" class="n">40.0% [34.6, 45.6]</td><td data-label="change, points" class="n">−53.3 [−61.3, −45.3]</td><td data-label="no valid answer" class="n">0 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">0</td></tr><tr><td data-label="setting"><code class="mid">doubao-seed-2-1-pro-260915</code> thinking off</td><td data-label="as written" class="n">93.7% [90.3, 95.9]</td><td data-label="wrong layout" class="n">40.0% [34.6, 45.6]</td><td data-label="change, points" class="n">−53.7 [−62.7, −44.3]</td><td data-label="no valid answer" class="n">0 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">0</td></tr><tr><td data-label="setting"><code class="mid">deepseek-v4-1-flash-261017</code> thinking off</td><td data-label="as written" class="n">93.0% [89.5, 95.4]</td><td data-label="wrong layout" class="n">37.7% [32.4, 43.3]</td><td data-label="change, points" class="n">−55.3 [−61.7, −48.3]</td><td data-label="no valid answer" class="n">0 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">0</td></tr><tr><td data-label="setting"><code class="mid">gpt-6-luna</code> effort none</td><td data-label="as written" class="n">92.3% [88.8, 94.8]</td><td data-label="wrong layout" class="n">36.7% [31.4, 42.3]</td><td data-label="change, points" class="n">−55.7 [−63.0, −48.0]</td><td data-label="no valid answer" class="n">0 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">0</td></tr><tr><td data-label="setting"><code class="mid">deepseek-v4-1-flash-261017</code> thinking on †</td><td data-label="as written" class="n">94.7% [91.5, 96.7]</td><td data-label="wrong layout" class="n">36.0% [30.8, 41.6]</td><td data-label="change, points" class="n">−58.7 [−63.7, −53.3]</td><td data-label="no valid answer" class="n">164 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">23,229</td></tr><tr><td data-label="setting"><code class="mid">deepseek-v4-pro-ga-260813</code> thinking off</td><td data-label="as written" class="n">94.0% [90.7, 96.2]</td><td data-label="wrong layout" class="n">33.7% [28.6, 39.2]</td><td data-label="change, points" class="n">−60.3 [−68.7, −52.3]</td><td data-label="no valid answer" class="n">0 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">0</td></tr><tr><td data-label="setting"><code class="mid">glm-5-3-flash-260828</code> thinking off requested †</td><td data-label="as written" class="n">90.3% [86.5, 93.2]</td><td data-label="wrong layout" class="n">32.0% [27.0, 37.5]</td><td data-label="change, points" class="n">−58.3 [−65.0, −51.7]</td><td data-label="no valid answer" class="n">43 of 300</td><td data-label="reasoning tokens per call, wrong layout (mean)" class="n">1,582</td></tr></tbody></table></div></div>
+      </figure>
+      <div class="notes">
+        <p data-copy="fn_floor">Floor without reading: expected accuracy of always picking the option with the largest share of its letter triples found in the passage, ties sharing credit, computed on the wrong-layout text: <span class="num">34.8%</span> on average, <span class="num">29%</span> to <span class="num">41%</span> by language. Chance: <span class="num">25%</span>.</p>
+        <p data-copy="fn_layouts">Layouts: Russian, Korean, Hebrew, Thai, Arabic and Egyptian Arabic (the last two share one keyboard). Every reply counts; one cut off at the token limit counts as wrong. Reasoning tokens as each API reports them.</p>
+        <p data-copy="fn_dagger">† Many wrong-layout replies reached the output-token limit and count as wrong: <span class="num">164</span> of <span class="num">300</span> (<code class="mid">deepseek-v4-1-flash-261017</code>, thinking on), <span class="num">45</span> of <span class="num">300</span> (<code class="mid">kimi-k3-1-pro-261024</code>, thinking on), <span class="num">43</span> of <span class="num">300</span> (<code class="mid">glm-5-3-flash-260828</code>, thinking off requested).</p>
+        <p data-copy="fn_offreq">Listed under reasoning on: <code class="mid">glm-5-3-flash-260828</code>, which reports reasoning tokens although thinking off was requested.</p>
+        <p data-copy="fn_notshown">Not shown: <code class="mid">claude-haiku-5-5</code>, whose wrong-layout cells were not run in full.</p>
+        <p data-copy="fn_roundtrip">Round trip: undoing the pilot’s wrong-layout converter restores <span class="num">280</span> of <span class="num">300</span> Russian texts (passages, questions, options) exactly; Latin letters already inside Russian text become ambiguous.</p>
+      </div>
+
+      <h3 class="steps-lead" data-copy="steps_lead">Hypothesis: reading wrong-layout text takes up to four steps. Models fail at different steps (a description, not a tested hypothesis).</h3>
+      <ol class="steps">
+        <li class="step">
+          <div class="step-fig"><span class="sf typed num" data-n="layout.named.terra_none.plain">57.0%</span><span class="sf-arrow" aria-hidden="true">→</span><span class="sf told num" data-n="layout.named.terra_none.named">86.7%</span>
+            <p class="sf-lab"><span>no sentence</span><span>layout named</span></p></div>
+          <p class="step-txt" data-copy="step_recognise"><strong>Recognise that a key map applies, and which.</strong> One sentence naming the layout lifts <code class="mid">gpt-6.1-terra</code>, reasoning off, from <span class="num">57.0%</span> to <span class="num">86.7%</span>; <span class="num">6</span> other reasoning-off settings show no clear gain (one wording, no control sentence).</p>
+        </li>
+        <li class="step">
+          <div class="step-fig"><span class="sf typed num" data-n="layout.recall.terra_none.real">94.0%</span><span class="sf typed num" data-n="layout.recall.terra_none.random">40.7%</span><span class="sf told num" data-n="layout.given.terra_none.table">88.0%</span>
+            <p class="sf-lab"><span>real Russian layout</span><span>random maps, mean of 3</span><span>first map + note + letter table</span></p></div>
+          <p class="step-txt" data-copy="step_recall"><strong>Recall the map, or be given it.</strong> Same setting, Russian: <span class="num">94.0%</span> on the real layout, as on native text; <span class="num">40.7%</span> on equally reversible random maps; <span class="num">88.0%</span> on the first of them, given with a note and its letter table.</p>
+        </li>
+        <li class="step">
+          <div class="step-fig"><span class="sf told num"><span data-n="layout.apply.terra_none.gap">6</span> points</span>
+            <p class="sf-lab"><span>below native text, with the table</span></p></div>
+          <p class="step-txt" data-copy="step_apply"><strong>Apply it.</strong> Even given the table, the same setting stays <span class="num">6</span> points below native text on the same <span class="num">50</span> items.</p>
+        </li>
+        <li class="step">
+          <div class="step-fig"><span class="sf typed num" data-copy="step_decipher" data-field="big"><span class="num">76%</span> to <span class="num">87%</span></span>
+            <p class="sf-lab"><span>random maps, with reasoning</span></p></div>
+          <p class="step-txt" data-copy="step_decipher"><strong>Decipher it, where no map is known.</strong> With reasoning, <span class="num">4</span> settings read Russian typed through random maps at <span class="num">76%</span> to <span class="num">87%</span>, for about <span class="num">10</span> to <span class="num">24</span> times their real-layout reasoning tokens.</p>
+        </li>
+      </ol>
+      <p class="small" data-copy="fn_decipher">Decipher step: <code class="mid">gpt-6.1-terra</code> (effort high), <code class="mid">gpt-6.1-sol</code> (effort low and high) and <code class="mid">gpt-6-astra</code> (effort low).</p>
+    </article>
+
+    <article class="finding" id="ambiguous" aria-labelledby="ambiguous-h">
+      <header class="fhead">
+        <p class="key-chip" aria-hidden="true"><span class="kc-t">b</span></p>
+        <h2 id="ambiguous-h" data-copy="pinyin_head">Ambiguous text: something is lost</h2>
+        <p class="tag" data-copy="pinyin_tag">pilot and follow-up, <span class="num">16 Nov 2026</span> · exploratory · <span class="num">18</span> same-spelling classes · <span class="num">one</span> call per item, <span class="num">three</span> in the follow-up · items not yet native-checked · follow-up plan fixed in advance</p>
+      </header>
+      <p class="lead" data-copy="pinyin_lead">In each of <span class="num">18</span> classes of same-spelling words, <span class="num">two</span> questions send the model the same text, byte for byte, and need different answers. No reader can expect more than <span class="num">50%</span>.</p>
+      <figure class="chart" id="figD" data-chart="figD">
+        <figcaption><span class="fig-n">Figure D.</span> <span data-copy="cap_zhBound">Forced choice on the <span class="num">36</span> word-alone items, against the <span class="num">50%</span> bound. The sentence items use other words.</span> <span data-copy="lab_ci">Brackets: <span class="num">95%</span> interval over the classes, with these <span class="num">21</span> settings held fixed.</span></figcaption>
+        <div class="chart-tools js-only"><button type="button" class="seg tbl-btn" aria-pressed="false">Table</button></div>
+        <div class="chart-body"><div class="static-table" data-render="table-figD"><table class="dtable stack"><caption>Figure D as a table (forced choice, % correct; the bound for any reader is 50%).</caption><thead><tr><th scope="col">items</th><th scope="col" class="n">correct of calls</th><th scope="col" class="n">95% interval over classes</th></tr></thead><tbody><tr><td data-label="items">word alone, one call per item</td><td data-label="correct of calls" class="n">366 of 756 (48.4%)</td><td data-label="95% interval over classes" class="n">[46.6, 50.1]</td></tr><tr><td data-label="items">word alone, three calls per item</td><td data-label="correct of calls" class="n">1,108 of 2,268 (48.9%)</td><td data-label="95% interval over classes" class="n">[46.7, 50.6]</td></tr><tr><td data-label="items">other words, in a sentence</td><td data-label="correct of calls" class="n">749 of 756 (99.1%)</td><td data-label="95% interval over classes" class="n">[98.1, 99.9]</td></tr><tr><td data-label="items">in a sentence, the rarer word is the answer</td><td data-label="correct of calls" class="n">371 of 378 (98.1%)</td><td data-label="95% interval over classes" class="n">[96.3, 99.5]</td></tr></tbody></table></div></div>
+      </figure>
+      <p data-copy="pinyin_bound">Forced to pick an option, the <span class="num">21</span> settings together score <span class="num">48.9%</span> <span class="num">[46.7, 50.6]</span>: at the bound. Other same-spelling words, in sentences written to allow one reading, score <span class="num">99.1%</span> in the pilot, and <span class="num">98.1%</span> where the rarer word is the answer.</p>
+      <p data-copy="pinyin_flag">Where the text cannot settle the answer, the only better behaviour is to say so. In free text, <span class="num">52.6%</span> of calls do. When a closing line also asks for the option number, <span class="num">21.6%</span> do, and <span class="num">60.6%</span> of replies are a bare number.</p>
+      <figure class="chart" id="figE" data-chart="figE">
+        <figcaption><span class="fig-n">Figure E.</span> <span data-copy="cap_zhFlag">Calls that answer <span class="num">0</span> (the text does not decide) or say so, by reply format and by the sentence placed before the question. <span class="num">2,268</span> calls per bar.</span></figcaption>
+        <div class="chart-tools js-only"><button type="button" class="seg tbl-btn" aria-pressed="false">Table</button></div>
+        <div class="chart-body"><div class="static-table" data-render="table-figE"><table class="dtable stack"><caption>Figure E as a table: calls that say the text does not settle the answer, or answer 0.</caption><thead><tr><th scope="col">reply format</th><th scope="col">sentence before the item</th><th scope="col" class="n">calls that say so or answer 0</th><th scope="col" class="n">95% interval over classes</th><th scope="col" class="n">same, on items the text settles</th></tr></thead><tbody><tr><td data-label="reply format">free text, no closing line</td><td data-label="sentence before the item">no sentence</td><td data-label="calls that say so or answer 0" class="n">1,194 of 2,268 (52.6%)</td><td data-label="95% interval over classes" class="n">[44.8, 59.6]</td><td data-label="same, on items the text settles" class="n">1 of 1,260 (0.1%)</td></tr><tr><td data-label="reply format">free text, no closing line</td><td data-label="sentence before the item">control sentence</td><td data-label="calls that say so or answer 0" class="n">1,268 of 2,268 (55.9%)</td><td data-label="95% interval over classes" class="n">[47.8, 63.5]</td><td data-label="same, on items the text settles" class="n">0 of 1,260 (0.0%)</td></tr><tr><td data-label="reply format">free text, no closing line</td><td data-label="sentence before the item">note</td><td data-label="calls that say so or answer 0" class="n">1,561 of 2,268 (68.8%)</td><td data-label="95% interval over classes" class="n">[60.7, 75.6]</td><td data-label="same, on items the text settles" class="n">6 of 1,260 (0.5%)</td></tr><tr><td data-label="reply format">free text, closing line asks for the option number</td><td data-label="sentence before the item">no sentence</td><td data-label="calls that say so or answer 0" class="n">491 of 2,268 (21.6%)</td><td data-label="95% interval over classes" class="n">[18.2, 25.0]</td><td data-label="same, on items the text settles" class="n">3 of 1,260 (0.2%)</td></tr><tr><td data-label="reply format">free text, closing line asks for the option number</td><td data-label="sentence before the item">control sentence</td><td data-label="calls that say so or answer 0" class="n">648 of 2,268 (28.6%)</td><td data-label="95% interval over classes" class="n">[23.9, 33.2]</td><td data-label="same, on items the text settles" class="n">0 of 1,260 (0.0%)</td></tr><tr><td data-label="reply format">free text, closing line asks for the option number</td><td data-label="sentence before the item">note</td><td data-label="calls that say so or answer 0" class="n">758 of 2,268 (33.4%)</td><td data-label="95% interval over classes" class="n">[29.0, 37.9]</td><td data-label="same, on items the text settles" class="n">3 of 1,260 (0.2%)</td></tr><tr><td data-label="reply format">answer 0 offered</td><td data-label="sentence before the item">no sentence</td><td data-label="calls that say so or answer 0" class="n">1,353 of 2,268 (59.7%)</td><td data-label="95% interval over classes" class="n">[53.1, 65.7]</td><td data-label="same, on items the text settles" class="n">10 of 1,260 (0.8%)</td></tr><tr><td data-label="reply format">answer 0 offered</td><td data-label="sentence before the item">control sentence</td><td data-label="calls that say so or answer 0" class="n">1,464 of 2,268 (64.6%)</td><td data-label="95% interval over classes" class="n">[57.8, 70.8]</td><td data-label="same, on items the text settles" class="n">33 of 1,260 (2.6%)</td></tr><tr><td data-label="reply format">answer 0 offered</td><td data-label="sentence before the item">note</td><td data-label="calls that say so or answer 0" class="n">1,619 of 2,268 (71.4%)</td><td data-label="95% interval over classes" class="n">[64.9, 77.3]</td><td data-label="same, on items the text settles" class="n">36 of 1,260 (2.9%)</td></tr></tbody></table></div></div>
+      </figure>
+      <p data-copy="pinyin_note">A note saying that the text is pinyin without tones matters less than the closing line: <span class="num">4.9</span> to <span class="num">12.9</span> points over a control sentence that names neither, unevenly across these settings.</p>
+      <div class="notes">
+        <p data-copy="fn_judges">Free-text replies were labelled by model judges that are also models under test (<code class="mid">claude-sonnet-5-5</code> and <code class="mid">gpt-6.1-sol</code>, with <code class="mid">kimi-k3-1-pro-261024</code> on their splits); no person has checked a label.</p>
+        <p data-copy="fn_sentences">Note: “Note: the Chinese text below was typed as Hanyu Pinyin without tone marks.” Control sentence: “Note: the Chinese text below was typed in lower-case letters with spaces between words.”</p>
+      </div>
+    </article>
+
+    <article class="finding rules" id="suggestions" aria-labelledby="rules-h">
+      <h2 id="rules-h" data-copy="rules_head">For input pipelines: three suggestions, not yet tested</h2>
+      <div class="rule-cols">
+        <p data-copy="rule_state"><strong>Send the keyboard state (layout, input mode) with the text, where the client knows it.</strong> Naming the layout gave <code class="mid">gpt-6.1-terra</code> <span class="num">28</span> to <span class="num">30</span> points in two runs, and <span class="num">6</span> other reasoning-off settings no clear gain.</p>
+        <p data-copy="rule_collide"><strong>Keep only same-spelling words in native script.</strong> In the earlier study this scored <span class="num">1.00</span>, but the kept words were the answers themselves.</p>
+        <p data-copy="rule_room"><strong>Leave room to flag ambiguity.</strong> A reply that is a bare option number cannot flag it.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================ explorer -->
+<section id="explore" class="explore" aria-labelledby="explore-h">
+  <div class="wrap">
+    <h2 id="explore-h">Explore models</h2>
+    <p class="lede">Pick a model, a reasoning level, a language and a typed form. Every number shows its status, its items and calls, and its interval. Where there is no result the explorer says why, and nothing is filled in. Refused, cut-off and unparseable replies count as wrong and are shown together as <em>no valid answer</em>.</p>
+    <noscript><p class="nojs">The explorer needs JavaScript. The figures above have their tables in the page, and every number is in <a href="data/bundle.json">data/bundle.json</a>.</p></noscript>
+
+    <div class="tabs js-only" role="tablist" aria-label="Views">
+      <button type="button" role="tab" id="tab-model" aria-controls="view-model" aria-selected="true">Model</button>
+      <button type="button" role="tab" id="tab-compare" aria-controls="view-compare" aria-selected="false" tabindex="-1">Compare</button>
+      <button type="button" role="tab" id="tab-languages" aria-controls="view-languages" aria-selected="false" tabindex="-1">Languages</button>
+      <button type="button" role="tab" id="tab-chinese" aria-controls="view-chinese" aria-selected="false" tabindex="-1">Chinese</button>
+    </div>
+
+    <div class="ctl js-only" id="ctl">
+      <label class="field" data-for="model"><span class="field-lbl">Model</span><select id="sel-model"></select></label>
+      <div class="field" data-for="level"><span class="field-lbl" id="lvl-lbl">Reasoning level</span><div class="seggroup wrapline" id="sel-level" role="radiogroup" aria-labelledby="lvl-lbl"></div></div>
+      <label class="field" data-for="lang"><span class="field-lbl">Language</span><select id="sel-lang"></select></label>
+      <div class="field" data-for="arm"><span class="field-lbl" id="arm-lbl">Typed form</span><div class="seggroup wrapline" id="sel-arm" role="radiogroup" aria-labelledby="arm-lbl"></div></div>
+      <p class="ctl-legend small" id="ctl-legend"></p>
+    </div>
+    <p class="explore-notice" id="explore-notice" role="status" hidden></p>
+
+    <div class="view" role="tabpanel" id="view-model" aria-labelledby="tab-model"></div>
+    <div class="view" role="tabpanel" id="view-compare" aria-labelledby="tab-compare" hidden></div>
+    <div class="view" role="tabpanel" id="view-languages" aria-labelledby="tab-languages" hidden></div>
+    <div class="view" role="tabpanel" id="view-chinese" aria-labelledby="tab-chinese" hidden></div>
+    <p class="small js-only" id="permalink-note">The address bar keeps the view, model, level, language and typed form, so a view can be linked.</p>
+  </div>
+</section>
+
+<!-- ============================================================ method -->
+<section id="method" class="method" aria-labelledby="method-h">
+  <div class="wrap">
+    <h2 id="method-h">Method</h2>
+    <div class="mcols">
+      <div>
+        <h3>Task</h3>
+        <p>Each item is a reading-comprehension question from Belebele: a passage, a question and four options, in one of <span data-n="site.variants">122</span> language variants. The model answers with the number of one option. In a typed arm the passage, the question and the options all reach the model in the typed form (in the main run's question-only arm, only the question and options do).</p>
+        <h3>Scoring</h3>
+        <p>Answers are parsed strictly: only an answer that is exactly one of the four option labels counts. Every reply counts. A refused reply, a reply cut off at the output budget and a reply that does not parse count as wrong; this site shows them together as <em>no valid answer</em> and splits them in the detail view. Reasoning tokens are as each API reports them; cost per call is at list price.</p>
+        <h3>Floor without reading</h3>
+        <p data-copy="fn_floor">Floor without reading: expected accuracy of always picking the option with the largest share of its letter triples found in the passage, ties sharing credit, computed on the wrong-layout text: <span class="num">34.8%</span> on average, <span class="num">29%</span> to <span class="num">41%</span> by language. Chance: <span class="num">25%</span>.</p>
+        <p>It is the score of a rule that never reads the question, not a model's score without the passage; the main run will measure that separately (arm <em>no passage</em>).</p>
+        <h3>Typed forms</h3>
+        <p>Vermilion marks text as typed, blue a form in which the model was told the keyboard state, ink the text as meant.</p>
+        <div data-render="arms"><details class="arms-box" open><summary>Forms of the main run&#x27;s tests and the pilots (10)</summary><dl class="arms"><div class="arm-row"><dt><span class="sw sw-meant" aria-hidden="true"></span>As written</dt><dd>The passage, question and options as they are in Belebele: the text as meant. <span class="arm-kind">as written</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>Wrong layout</dt><dd>The whole item typed on the language&#x27;s standard keyboard layout while the computer is set to US English: every character is what the same key gives on a US keyboard. Every keystroke is kept, and for most text the key map can be undone: in the main run&#x27;s build the round trip is exact for 196 of 200 Russian, 198 of 200 Hebrew, 178 of 200 Armenian and 186 of 200 Arabic items (draw ranks 50 to 249), and the contrasts use the exact items. Characters on keys that print nothing on the active layout are lost, and text that mixes two scripts can have more than one reading. The 15 Nov pilot used earlier letter tables (operator version 2): undoing them restores 280 of 300 Russian texts exactly. For English the typed form is a cipher, not another layout: every key shifted one position to the right on the US keyboard. Main run arm (a). <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>Control sentence</dt><dd>Wrong-layout text after a sentence that says only that the text was typed on a keyboard and is shown as typed. It names no layout. Main run arm (b&#x27;). <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-told" aria-hidden="true"></span>Another layout, not named</dt><dd>Wrong-layout text after a sentence that says a layout other than US English was intended, without naming it. Main run arm (b&#x27;&#x27;). <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-told" aria-hidden="true"></span>Layout named</dt><dd>Wrong-layout text after a sentence that names the intended layout. Main run arm (b); in the pilot, one wording and no control sentence. <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>Phonetic layout</dt><dd>The language typed on its phonetic layout (letters on the Latin keys that sound alike) while the computer is on US English. Main run arm (c); Arabic has none. <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>Random key map</dt><dd>The same text typed through a seeded random key map that carries the same information as the real layout: letters move among the letter keys (those on Latin-letter keys among those keys, those on punctuation keys among those); digits, punctuation and space stay put (on the English maps the digit keys move too). No sentence. Main run arm (d): one of ten seeds per item; the pilot used three seeds. <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-told" aria-hidden="true"></span>Random map, rearrangement stated</dt><dd>Random key map with a note that states the language and that the keys were rearranged; no table. Main run arm (e); in the pilot, the first map only. <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-told" aria-hidden="true"></span>Key table given</dt><dd>Random key map with the note and the map&#x27;s full letter table. Main run arm (f); in the pilot, the first map only. <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-told" aria-hidden="true"></span>Sham table</dt><dd>Random key map with the note and a table of the same form, number of entries and about the same length as the real table, which says nothing about the map (for each typed character, where its key sits on the US keyboard). Every sentence of it is true. Main run arm (f0), the comparison for C3. <span class="arm-kind">every keystroke kept</span></dd></div></dl></details><details class="arms-box"><summary>Secondary forms (controls and the mechanism family) (10)</summary><dl class="arms"><div class="arm-row"><dt><span class="sw sw-meant" aria-hidden="true"></span>As written, with the control sentence</dt><dd>The native text after the control sentence (which is true of native text as well). <span class="arm-kind">as written</span></dd></div><div class="arm-row"><dt><span class="sw sw-meant" aria-hidden="true"></span>No passage</dt><dd>Question and options only, without the passage: what a model answers without reading the passage. <span class="arm-kind">as written</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>Wrong layout, spaced</dt><dd>Wrong-layout text with one space between the characters (three for a typed space). <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-meant" aria-hidden="true"></span>As written, spaced</dt><dd>The native text with one space between the characters: the control for the spaced arm. <span class="arm-kind">as written</span></dd></div><div class="arm-row"><dt><span class="sw sw-told" aria-hidden="true"></span>Wrong layout, generic hint</dt><dd>Wrong-layout text after a note that is true of any text: it may have been typed with another layout active, and if so should be read as meant. <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-meant" aria-hidden="true"></span>As written, generic hint</dt><dd>The native text after the same generic hint: what the hint costs on native text. <span class="arm-kind">as written</span></dd></div><div class="arm-row"><dt><span class="sw sw-told" aria-hidden="true"></span>Wrong layout, three examples</dt><dd>Wrong-layout text after three pairs of typed and meant sentences of the same layout pair; no other note. <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-told" aria-hidden="true"></span>Random map, three examples</dt><dd>Random-map text after three pairs of typed and meant sentences of the same map; no other note. <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-meant" aria-hidden="true"></span>As written, options reversed</dt><dd>The native item with its four options in reverse order. <span class="arm-kind">as written</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>Wrong layout, options reversed</dt><dd>The wrong-layout item with its four options in reverse order. <span class="arm-kind">every keystroke kept</span></dd></div></dl></details><details class="arms-box"><summary>Exploratory forms (breadth, lossy forms, other input methods) (10)</summary><dl class="arms"><div class="arm-row"><dt><span class="sw sw-told" aria-hidden="true"></span>Another map&#x27;s table</dt><dd>Random key map with the note and the table of another seed of the same layout. Main run arm (f x): exploratory, run on some settings only. <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>Romanised or without diacritics</dt><dd>Lossy typed form: non-Latin scripts romanised (operator D1), Latin scripts with their diacritics removed (operator D2). Several words can share one typed form. Items whose typed form is identical to the text as written are left out of a cell. <span class="arm-kind">lossy: several words can share one typed form</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>Pinyin with tone numbers</dt><dd>Chinese typed as pinyin with tone numbers (reduced loss). <span class="arm-kind">lossy: several words can share one typed form</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>Pinyin without tones, spaced</dt><dd>Chinese typed as pinyin without tones, words separated by spaces. <span class="arm-kind">lossy: several words can share one typed form</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>Pinyin without tones, unspaced</dt><dd>Toneless pinyin with no spaces between words. <span class="arm-kind">lossy: several words can share one typed form</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>Pinyin initials</dt><dd>The first letter of each pinyin syllable. <span class="arm-kind">lossy: several words can share one typed form</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>Vietnamese Telex keystrokes</dt><dd>Vietnamese as raw Telex keystrokes, before the input method composes the letters. <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>Vietnamese VNI keystrokes</dt><dd>Vietnamese as raw VNI keystrokes (tone and vowel marks as digits). <span class="arm-kind">every keystroke kept</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>Japanese romaji</dt><dd>Japanese as the romaji typed into an input method, before kana-kanji conversion. <span class="arm-kind">lossy: several words can share one typed form</span></dd></div><div class="arm-row"><dt><span class="sw sw-typed" aria-hidden="true"></span>English typed on another layout</dt><dd>English text typed while the computer is set to the Russian, Hebrew, Korean or Arabic layout. <span class="arm-kind">every keystroke kept</span></dd></div></dl></details></div>
+      </div>
+      <div>
+        <h3>Four steps</h3>
+        <p data-copy="steps_lead">Hypothesis: reading wrong-layout text takes up to four steps. Models fail at different steps (a description, not a tested hypothesis).</p>
+        <ol class="plain-steps">
+          <li><strong>Recognise</strong> that a key map applies, and which: tested by naming the layout against a control sentence.</li>
+          <li><strong>Recall</strong> the map, or be given it: the real layout against random key maps that carry the same information, and a random map with and without its table.</li>
+          <li><strong>Apply</strong> it: a map given in the prompt against the text as written.</li>
+          <li><strong>Decipher</strong> it, where no map is known: random maps with no table, with reasoning on.</li>
+        </ol>
+        <h3>What the main run tests</h3>
+        <div data-render="plan"><p>Confirmatory: C1 to C5, tested together with a Holm correction (alpha 0.05). Four cross-script layouts under an English instruction for C1 to C4 (Russian, Hebrew, Armenian, Arabic); Mandarin for C5. Everything else is descriptive. The unit that is resampled is the Belebele passage for C1 to C4, the same-spelling class for C5. The plan, the items and the analysis code are frozen and time-stamped before the first main-run call. A public registration follows later.</p><details class="fold fold-narrow" open><summary>The five tests and the items</summary><ul class="hyp"><li><strong>C1 Full disclosure of the keyboard state.</strong> Accuracy with the layout named (b) minus accuracy with the control sentence (b&#x27;). Counted as supported only if it passes the Holm correction and (b) minus no sentence (a) is positive. Its two parts are secondary: recognition (b&#x27;&#x27;) minus (b&#x27;), identification (b) minus (b&#x27;&#x27;).</li><li><strong>C2 The standard layout against random permutations of the same keys.</strong> Accuracy on the real wrong layout (a) minus accuracy on class-preserving random key maps of the same keys (d). A real layout may differ from a random one in more than exposure; the phonetic arm (c) is reported beside it.</li><li><strong>C3 The information in the table.</strong> Random key map with its key table (f) minus the same map with a sham table of the same form and length (f0).</li><li><strong>C4 The cost moves to tokens.</strong> Pairs of one model with reasoning off and on; the list of pairs is fixed at the freeze, after a protocol check on pilot items. In every pair the accuracy loss on wrong-layout text is smaller with reasoning on, and with reasoning on the model spends more reasoning tokens than on the text as written.</li><li><strong>C5 Prompted abstention under the explicit format.</strong> Mandarin items whose typed text does not settle the answer, with a &#x27;cannot tell&#x27; answer offered: share of replies that choose it after the disclosure sentence minus after the control sentence.</li></ul><p>C1 to C4: Belebele items of draw ranks 50 to 149, the same for every setting (items whose passage also occurs among ranks 0 to 49 are left out); ranks 150 to 249 where the budget allows, as a secondary extended-set estimate. C5: the Mandarin items built at the bound. The pilots used ranks 0 to 49.</p></details><details class="fold fold-narrow" open><summary>Exploratory, never part of a test</summary><ul class="hyp"><li>The roster: every registered setting that passed the 5-call smoke check, on fewer items and arms, for this explorer.</li><li>The map: all 122 Belebele variants as written and romanised or without diacritics, on five settings (gpt-6-luna effort none and high, deepseek-v4-1-flash thinking off, doubao-seed-2-1-lite thinking off, claude-haiku-5-5 thinking off).</li><li>Breadth: every language with a wrong-layout condition (29), and English typed on four other layouts.</li><li>The arm with another map&#x27;s table (f x), on some settings only.</li><li>Japanese romaji and Vietnamese VNI keystrokes beside the Chinese and Vietnamese arms.</li><li>A secondary family on mechanism (spaced text, a generic hint, three examples, reversed options), never part of the five tests.</li></ul></details><p class="small">From the run plan of 19 Nov 2026.</p></div>
+        <h3>Status of a number</h3>
+        <dl class="status-dl" data-render="status"><div class="st-row"><dt><span class="st st-pilot">pilot</span></dt><dd>Pilot, exploratory. Each number shows the items and calls behind it.</dd></div><div class="st-row"><dt><span class="st st-interim">interim</span></dt><dd>Main run, interim: taken while the main run was still going; numbers can change.</dd></div><div class="st-row"><dt><span class="st st-final">final</span></dt><dd>Main run, final: the frozen analysis on complete data.</dd></div></dl>
+        <h3 data-copy="limits_head">Limits</h3>
+        <p data-copy="limits">Exploratory: <span class="num">50</span> items per layout, <span class="num">one</span> call per item; Chinese items not yet checked by an independent native speaker; model judges, no human labels; <span class="num">21</span> settings chosen for convenience; one wording per sentence and reply format. Abstract: <span class="num">48</span> valid calls, Chinese only.</p>
+        <h3 data-copy="next_head">Next</h3>
+        <p data-copy="next">The planned main run: conditions that separate the four steps, items built at the bound in several languages, and notes tested against control sentences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ about -->
+<section id="about" class="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <h2 id="about-h">About</h2>
+    <div class="mcols">
+      <div>
+        <p>This site is maintained by Xiaoxiao Zhouyi, <span data-copy="affiliation">School of Engineering Mathematics and Technology, University of Bristol</span>.</p>
+        <p>It accompanies the poster <em data-copy="title">Skipping the IME? Keyboard-Friendly Multilingual Prompting for LLM Agents</em> by <span data-copy="authors">Xiaoxiao Zhouyi and Yanzhen Li</span> (<span data-copy="kicker">UKAIRS 2026 · Emerging Research · Poster UKAIRS26-89</span>). The accepted abstract is the earlier study below; the November pilots were run after it and are exploratory.</p>
+        <p>Site and updates: <a href="https://zhouyixiaoxiao.com" rel="noopener">zhouyixiaoxiao.com</a></p>
+        <h3 data-copy="abs_head" data-field="short">Earlier study: coding agents</h3>
+        <p class="tag" data-copy="abs_tag">The accepted abstract · <span class="num">48</span> valid calls · Codex CLI and Claude Code · <span class="num">May–June 2026</span></p>
+        <p data-copy="abs_body">Codex CLI kept its score on <span class="num">two</span> routine prompts typed as pinyin without tones. On <span class="num">three</span> tasks whose answer is an exact term, both agents fell to <span class="num">0.333</span>, and scored <span class="num">1.00</span> with those terms kept in characters (one call per task).</p>
+      </div>
+      <div>
+        <h3>Credits and licences</h3>
+        <ul class="credits">
+          <li>Questions: <strong>Belebele</strong> (Bandarkar et al., 2024), a multilingual reading-comprehension dataset, licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener">CC BY-SA 4.0</a>: <a href="https://github.com/facebookresearch/belebele" rel="noopener">github.com/facebookresearch/belebele</a>. The converter's example sentences are first sentences of Belebele passages.</li>
+          <li>Key maps: exported from the project's operator D3x, whose tables are generated from <strong>xkeyboard-config</strong> (<a href="data/LICENSE-xkeyboard-config.txt">licence</a>).</li>
+          <li>Typeface for typed text: <strong>IBM Plex Mono</strong>, SIL Open Font License 1.1 (<a href="assets/fonts/IBMPlexMono-LICENSE.txt">licence</a>), served from this site.</li>
+          <li>Language names: Unicode CLDR, as shipped with macOS.</li>
+          <li>Data: <a href="data/bundle.json">bundle.json</a>, its <a href="data/SCHEMA.md">schema</a> and the <a href="data/trace.tsv">trace</a> of every value to its source file and key.</li>
+        </ul>
+        <p class="small" data-copy="statement">Use of AI tools: LLM coding and writing assistants were used to build the evaluation framework, to run and check the analyses, and to prepare the poster, including its text and layout. Free-text replies in the November pilots were labelled by model judges. Numbers are generated by scripts from the run records. The authors designed the study and take responsibility for all content.</p>
+        <p class="small">This site was built with an LLM coding assistant from the project's summary files; its numbers are written by scripts, not by hand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><p class="small">No cookies, no analytics, no requests to other sites. <a href="#top">Back to top</a></p></div>
+</footer>
+
+<div class="tip" id="tip" role="status" hidden></div>
+<script src="assets/js/keyconv.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/converter.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
