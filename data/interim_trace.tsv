@@ -1,0 +1,216 @@
+key	printed	value	claim	source	rule
+status.cut	22 Nov 2026, 18:33 UTC	'2026-11-22T18:33:22Z'	Section 0	registered/SUMMARY_FOR_WORKERS.md line 1	the cut as written
+status.running	6	6	Section 0	registered/SUMMARY_FOR_WORKERS.md section 0: **running** (N)	count
+status.not_started	49	49	Section 0	registered/SUMMARY_FOR_WORKERS.md section 0: **not_started** (N)	count
+status.ended	73	73	Correction 2	registered/SUMMARY_FOR_WORKERS.md section 0: rows of the table of rows used + **complete** (N)	count
+status.planned	129	129	Correction 2	registered/SUMMARY_FOR_WORKERS.md section 0: rows used + running + terminal_at_cap + not_started + complete	count
+c1.est	+8.1	0.08076932010642562	Claim 1	registered/mainrun_run1/results.json	confirmatory.C1.estimate, x100, 1 decimal
+c1.ci	[+6.5, +9.7]	[0.06464076087696079, 0.0968047727498818]	Claim 1	registered/mainrun_run1/results.json	confirmatory.C1.ci_cluster
+c1.cx	[+2.4, +14.4]	[0.023647937670691614, 0.14393046870657278]	Claim 1	registered/mainrun_run1/results.json	confirmatory.C1.ci_crossed
+c1.n	13	13	Claim 1	registered/mainrun_run1/results.json	confirmatory.C1.n_groups
+c1.off.est	+3.0	0.02964688907935579	Claim 1	registered/mainrun_run1/results.json	sensitivity_ruling4.R4f_reasoning_off_only.C1.estimate
+c1.off.ci	[+1.0, +4.9]	[0.010367133167398377, 0.04851933849706501]	Claim 1	registered/mainrun_run1/results.json	R4f.C1.ci_cluster
+c1.off.cx	[−3.2, +12.0]	[-0.03172745924242983, 0.11962826923420623]	Claim 1	registered/mainrun_run1/results.json	R4f.C1.ci_crossed
+c1.off.n	6	6	Claim 1	registered/mainrun_run1/results.json	confirmatory.C1.groups minus R4f.C1.settings_filtered_by_sensitivity
+c1.per.dblite_off		-0.02323057411833571	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C1 setting dblite_off: estimate, ci_lo, ci_hi
+c1.per.dblite_on		0.1131397771537277	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C1 setting dblite_on: estimate, ci_lo, ci_hi
+c1.per.dsflash_off		-0.01796799691536534	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C1 setting dsflash_off: estimate, ci_lo, ci_hi
+c1.per.dsflash_on		0.30401513515020173	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C1 setting dsflash_on: estimate, ci_lo, ci_hi
+c1.per.kimi_off		-0.010636298810046437	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C1 setting kimi_off: estimate, ci_lo, ci_hi
+c1.per.luna_high		0.00999672489843701	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C1 setting luna_high: estimate, ci_lo, ci_hi
+c1.per.luna_none		-0.019589869019165148	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C1 setting luna_none: estimate, ci_lo, ci_hi
+c1.per.opus_low		0.03877615726062144	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C1 setting opus_low: estimate, ci_lo, ci_hi
+c1.per.sol62_low		0.07257276648525857	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C1 setting sol62_low: estimate, ci_lo, ci_hi
+c1.per.sol_low		0.11351780749371111	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C1 setting sol_low: estimate, ci_lo, ci_hi
+c1.per.sonnet_off		0.007810768812671164	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C1 setting sonnet_off: estimate, ci_lo, ci_hi
+c1.per.terra_high		0.22010145846544069	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C1 setting terra_high: estimate, ci_lo, ci_hi
+c1.per.terra_none		0.24149530452637621	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C1 setting terra_none: estimate, ci_lo, ci_hi
+c1.exc	+24.1	0.24149530452637621	Claim 1	registered/mainrun_run1/results.json	setting_step.rows step C1 terra_none
+c2.est	+16.2	0.16194817550466814	Claim 2	registered/mainrun_run1/results.json	confirmatory.C2.estimate, x100, 1 decimal
+c2.ci	[+14.0, +18.2]	[0.14049042501117104, 0.18235284181671518]	Claim 2	registered/mainrun_run1/results.json	confirmatory.C2.ci_cluster
+c2.cx	[+7.8, +25.3]	[0.07769053958249653, 0.2525701558369981]	Claim 2	registered/mainrun_run1/results.json	confirmatory.C2.ci_crossed
+c2.n	11	11	Claim 2	registered/mainrun_run1/results.json	confirmatory.C2.n_groups
+c2.off.est	+3.7	0.03735307774614903	Claim 2	registered/mainrun_run1/results.json	sensitivity_ruling4.R4f_reasoning_off_only.C2.estimate
+c2.off.ci	[+2.0, +5.5]	[0.019530203383984715, 0.055254424275583316]	Claim 2	registered/mainrun_run1/results.json	R4f.C2.ci_cluster
+c2.off.cx	[−1.0, +9.5]	[-0.009509467653853678, 0.09481744137276747]	Claim 2	registered/mainrun_run1/results.json	R4f.C2.ci_crossed
+c2.off.n	5	5	Claim 2	registered/mainrun_run1/results.json	confirmatory.C2.groups minus R4f.C2.settings_filtered_by_sensitivity
+c2.per.dblite_off		-0.009078038883168799	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C2 setting dblite_off: estimate, ci_lo, ci_hi
+c2.per.dblite_on		0.09003997335109924	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C2 setting dblite_on: estimate, ci_lo, ci_hi
+c2.per.dsflash_off		0.014376274402923309	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C2 setting dsflash_off: estimate, ci_lo, ci_hi
+c2.per.dsflash_on		0.3336423444976076	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C2 setting dsflash_on: estimate, ci_lo, ci_hi
+c2.per.kimi_off		0.03246560373892153	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C2 setting kimi_off: estimate, ci_lo, ci_hi
+c2.per.luna_high		0.3530767367209739	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C2 setting luna_high: estimate, ci_lo, ci_hi
+c2.per.luna_none		0.006341605596269154	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C2 setting luna_none: estimate, ci_lo, ci_hi
+c2.per.sol62_low		0.31159946399370114	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C2 setting sol62_low: estimate, ci_lo, ci_hi
+c2.per.sol_low		0.348022530434256	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C2 setting sol_low: estimate, ci_lo, ci_hi
+c2.per.terra_high		0.1582834928229665	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C2 setting terra_high: estimate, ci_lo, ci_hi
+c2.per.terra_none		0.14265994387579997	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C2 setting terra_none: estimate, ci_lo, ci_hi
+c2.exc	+14.3	0.14265994387579997	Claim 2	registered/mainrun_run1/results.json	setting_step.rows step C2 terra_none
+c3.est	+19.9	0.19885751654376776	Claim 3	registered/mainrun_run1/results.json	confirmatory.C3.estimate, x100, 1 decimal
+c3.ci	[+18.0, +21.7]	[0.179825429372089, 0.21739848432089298]	Claim 3	registered/mainrun_run1/results.json	confirmatory.C3.ci_cluster
+c3.cx	[+6.7, +34.7]	[0.06729029168309046, 0.34707374218633785]	Claim 3	registered/mainrun_run1/results.json	confirmatory.C3.ci_crossed
+c3.n	12	12	Claim 3	registered/mainrun_run1/results.json	confirmatory.C3.n_groups
+c3.off.est	+2.8	0.0281888748186872	Claim 3	registered/mainrun_run1/results.json	sensitivity_ruling4.R4f_reasoning_off_only.C3.estimate
+c3.off.ci	[+1.0, +4.6]	[0.010278500673386823, 0.04635102862891148]	Claim 3	registered/mainrun_run1/results.json	R4f.C3.ci_cluster
+c3.off.cx	[−3.4, +12.4]	[-0.03439658220519559, 0.12403914904697633]	Claim 3	registered/mainrun_run1/results.json	R4f.C3.ci_crossed
+c3.off.n	6	6	Claim 3	registered/mainrun_run1/results.json	confirmatory.C3.groups minus R4f.C3.settings_filtered_by_sensitivity
+c3.per.dblite_off		-0.02299468860141375	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C3 setting dblite_off: estimate, ci_lo, ci_hi
+c3.per.dblite_on		0.49105584352294873	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C3 setting dblite_on: estimate, ci_lo, ci_hi
+c3.per.dsflash_off		-0.007155589767066372	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C3 setting dsflash_off: estimate, ci_lo, ci_hi
+c3.per.dsflash_on		0.7661728764250693	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C3 setting dsflash_on: estimate, ci_lo, ci_hi
+c3.per.kimi_off		-0.0025771235749305925	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C3 setting kimi_off: estimate, ci_lo, ci_hi
+c3.per.luna_high		0.48468456494772283	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C3 setting luna_high: estimate, ci_lo, ci_hi
+c3.per.luna_none		-0.012426039143875401	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C3 setting luna_none: estimate, ci_lo, ci_hi
+c3.per.sol62_low		0.2490939179809794	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C3 setting sol62_low: estimate, ci_lo, ci_hi
+c3.per.sol_low		0.16692020718884754	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C3 setting sol_low: estimate, ci_lo, ci_hi
+c3.per.sonnet_off		-0.036448457528501385	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C3 setting sonnet_off: estimate, ci_lo, ci_hi
+c3.per.terra_high		0.059229539547522	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C3 setting terra_high: estimate, ci_lo, ci_hi
+c3.per.terra_none		0.2507351475279107	figure position (not printed)	registered/mainrun_run1/results.json	setting_step.rows step C3 setting terra_none: estimate, ci_lo, ci_hi
+c3.exc	+25.1	0.2507351475279107	Claim 3	registered/mainrun_run1/results.json	setting_step.rows step C3 terra_none
+c1.comp	+2.8	0.0277970358990797	Correction 1	registered/mainrun_run1/results.json	confirmatory.C1.completion_difference.estimate, x100, 1 decimal
+c1.valid	+5.8	0.058314951653928956	Correction 1	registered/mainrun_run1/results.json	confirmatory.C1.valid_reply_accuracy_difference.estimate, x100, 1 decimal
+c2.comp	+3.1	0.031478841929072084	Correction 1	registered/mainrun_run1/results.json	confirmatory.C2.completion_difference.estimate, x100, 1 decimal
+c2.valid	+15.8	0.1581322047927644	Correction 1	registered/mainrun_run1/results.json	confirmatory.C2.valid_reply_accuracy_difference.estimate, x100, 1 decimal
+c3.comp	+7.5	0.07514225312333865	Correction 1	registered/mainrun_run1/results.json	confirmatory.C3.completion_difference.estimate, x100, 1 decimal
+c3.valid	+13.3	0.13329936904856138	Correction 1	registered/mainrun_run1/results.json	confirmatory.C3.valid_reply_accuracy_difference.estimate, x100, 1 decimal
+c4.est	+15.8	0.158046947767937	Claim 4	registered/mainrun_run1/results.json	confirmatory.C4.part_i.estimate
+c4.ci	[+12.8, +18.8]	[0.1279772572111282, 0.18758337458338684]	Claim 4	registered/mainrun_run1/results.json	confirmatory.C4.part_i.ci_cluster
+c4.cx	[+7.0, +25.5]	[0.06991526502828735, 0.25505285038426484]	Claim 4	registered/mainrun_run1/results.json	confirmatory.C4.part_i.ci_crossed
+c4.pairs	5	5	Claim 4	registered/mainrun_run1/results.json	confirmatory.C4.part_i.n_groups
+c4.F1	67.1	67.08085653744831	Claim 4	registered/mainrun_run1/results.json	exp(confirmatory.C4.part_ii.estimate)
+c4.F	67	67.08085653744831	Claim 4	registered/mainrun_run1/results.json	exp(confirmatory.C4.part_ii.estimate), rounded
+c4.Fci	58 to 78	[57.98606859347512, 77.5466439502727]	Claim 4	registered/mainrun_run1/results.json	exp(part_ii.ci_cluster), rounded
+c4.Fcx	27 to 135	[26.834032767664453, 135.04245283279275]	Claim 4	registered/mainrun_run1/results.json	exp(part_ii.ci_crossed), rounded
+c4.ci.u	12.8 to 18.8	[0.1279772572111282, 0.18758337458338684]	Claim 4	registered/mainrun_run1/results.json	part_i.ci_cluster, unsigned
+c4.cx.u	7.0 to 25.5	[0.06991526502828735, 0.25505285038426484]	Claim 4	registered/mainrun_run1/results.json	part_i.ci_crossed, unsigned
+c4.pair.luna	+32.3 [+25.6, +38.8]	0.3226461659245426	Claim 4	registered/mainrun_run1/results.json	secondary['within_model_reasoning|luna_none/luna_high'].estimate, .ci_cluster
+figA.luna.a_off		0.363325	figure position (not printed)	registered/cells.csv	source_run run1, arm a, equal-weight mean of the four languages
+figA.luna.a_on		0.7125	figure position (not printed)	registered/cells.csv	source_run run1, arm a, equal-weight mean of the four languages
+figA.luna.nat_off		0.9358500000000001	figure position (not printed)	registered/cells.csv	source_run run1, arm native, equal-weight mean of the four languages
+figA.luna.nat_on		0.955	figure position (not printed)	registered/cells.csv	source_run run1, arm native, equal-weight mean of the four languages
+c4.pair.terra	+13.5 [+10.0, +17.0]	0.13478343681260616	Claim 4	registered/mainrun_run1/results.json	secondary['within_model_reasoning|terra_none/terra_high'].estimate, .ci_cluster
+figA.terra.a_off		0.5675	figure position (not printed)	registered/cells.csv	source_run run1, arm a, equal-weight mean of the four languages
+figA.terra.a_on		0.7025	figure position (not printed)	registered/cells.csv	source_run run1, arm a, equal-weight mean of the four languages
+figA.terra.nat_off		0.9517	figure position (not printed)	registered/cells.csv	source_run run1, arm native, equal-weight mean of the four languages
+figA.terra.nat_on		0.95	figure position (not printed)	registered/cells.csv	source_run run1, arm native, equal-weight mean of the four languages
+c4.pair.kimi	+14.6 [+9.0, +20.1]	0.14587290747721948	Claim 4	registered/mainrun_run1/results.json	secondary['within_model_reasoning|kimi_off/kimi_on'].estimate, .ci_cluster
+figA.kimi.a_off		0.39335	figure position (not printed)	registered/cells.csv	source_run run1, arm a, equal-weight mean of the four languages
+figA.kimi.a_on		0.53	figure position (not printed)	registered/cells.csv	source_run run1, arm a, equal-weight mean of the four languages
+figA.kimi.nat_off		0.9458	figure position (not printed)	registered/cells.csv	source_run run1, arm native, equal-weight mean of the four languages
+figA.kimi.nat_on		0.9375	figure position (not printed)	registered/cells.csv	source_run run1, arm native, equal-weight mean of the four languages
+c4.pair.dsflash	+1.6 [−4.3, +7.2]	0.015893649787118425	Claim 4	registered/mainrun_run1/results.json	secondary['within_model_reasoning|dsflash_off/dsflash_on'].estimate, .ci_cluster
+figA.dsflash.a_off		0.328325	figure position (not printed)	registered/cells.csv	source_run run1, arm a, equal-weight mean of the four languages
+figA.dsflash.a_on		0.375	figure position (not printed)	registered/cells.csv	source_run run1, arm a, equal-weight mean of the four languages
+figA.dsflash.nat_off		0.91335	figure position (not printed)	registered/cells.csv	source_run run1, arm native, equal-weight mean of the four languages
+figA.dsflash.nat_on		0.9375	figure position (not printed)	registered/cells.csv	source_run run1, arm native, equal-weight mean of the four languages
+c4.pair.dblite	+17.1 [+12.7, +21.6]	0.17103857883819834	Claim 4	registered/mainrun_run1/results.json	secondary['within_model_reasoning|dblite_off/dblite_on'].estimate, .ci_cluster
+figA.dblite.a_off		0.36834999999999996	figure position (not printed)	registered/cells.csv	source_run run1, arm a, equal-weight mean of the four languages
+figA.dblite.a_on		0.535	figure position (not printed)	registered/cells.csv	source_run run1, arm a, equal-weight mean of the four languages
+figA.dblite.nat_off		0.9425	figure position (not printed)	registered/cells.csv	source_run run1, arm native, equal-weight mean of the four languages
+figA.dblite.nat_on		0.9325	figure position (not printed)	registered/cells.csv	source_run run1, arm native, equal-weight mean of the four languages
+c4.comp.u	20.1	-0.2014189551729184	Correction 1	registered/mainrun_run1/results.json	confirmatory.C4.part_i.completion_difference.estimate, sign as 'lower'
+c4.valid.u	31.5	0.31484532054415304	Correction 1	registered/mainrun_run1/results.json	confirmatory.C4.part_i.valid_reply_accuracy_difference.estimate
+c4.incl0	one	1	Claim 4	registered/mainrun_run1/results.json	count of pairs whose ci_cluster includes 0
+claim5.a.range	28.0% to 38.3%	[0.28, 0.3833]	Claim 5	registered/cells.csv	run1, arm a, Hebrew/Armenian/Arabic, the 5 reasoning-off settings other than terra_none: min, max
+claim5.a.lo	28	0.28	Claim 5	registered/cells.csv	the same, rounded
+claim5.a.hi	38	0.3833	Claim 5	registered/cells.csv	the same, rounded
+claim5.nat.lo	90	0.8967	Claim 5	registered/cells.csv	run1, arm native, same settings and languages: min, rounded
+claim5.nat.hi	96	0.96	Claim 5	registered/cells.csv	run1, arm native, same settings and languages: max, rounded
+claim5.five	five	5	Claim 5	registered/mainrun_run1/results.json	reasoning-off settings of C1 (R4f) other than terra_none
+claim5.six	six	6	Claim 5	registered/mainrun_run1/results.json	reasoning-off settings of C1 (R4f)
+chance	25	0.25	Claim 5	by construction: four options	1/4
+claim5.about3	3	0.03172961388139734	Claim 5	registered/mainrun_run1/results.json	mean of the three reasoning-off pools, rounded
+s1.ORA_minus_DIR_b.est	+51.4	0.5137870161966547	Claim 6	registered/mechanism_mA1/results.json	routes.api.S1.end_to_end.ORA_minus_DIR_b.estimate
+s1.ORA_minus_DIR_b.ci	[+47.4, +55.2]	[0.4739550593214664, 0.5520341634683577]	Claim 6	registered/mechanism_mA1/results.json	...ORA_minus_DIR_b.ci_cluster
+s1.ORA_minus_DIR_b.cx	[+34.3, +63.4]	[0.3425434924682896, 0.6338102623054551]	Claim 6	registered/mechanism_mA1/results.json	...ORA_minus_DIR_b.ci_crossed
+s1.G_two_b.est	+6.7	0.06720499116187134	Claim 6	registered/mechanism_mA1/results.json	routes.api.S1.end_to_end.G_two_b.estimate
+s1.G_two_b.ci	[+4.1, +9.3]	[0.04102963650619806, 0.09256473836711061]	Claim 6	registered/mechanism_mA1/results.json	...G_two_b.ci_cluster
+s1.G_two_b.cx	[−0.3, +14.2]	[-0.0027947561674620753, 0.1423452731551701]	Claim 6	registered/mechanism_mA1/results.json	...G_two_b.ci_crossed
+s1.n	5	5	Claim 6	registered/mechanism_mA1/results.json	G_two_b.n_groups
+c4ext.luna		0.3226461659245426	figure position (not printed)	registered/mechanism_mA2/results.json	routes.api.C4ext.primary.part_i_forest[pair=luna_none/luna_high]: estimate, ci
+c4ext.luna.model	gpt-6-luna	'gpt-6-luna'	Claim 7	registered/mainrun_run1/explorer.json settings.<id>.model_name	model name of luna_none
+c4ext.terra		0.13478343681260616	figure position (not printed)	registered/mechanism_mA2/results.json	routes.api.C4ext.primary.part_i_forest[pair=terra_none/terra_high]: estimate, ci
+c4ext.terra.model	gpt-6.1-terra	'gpt-6.1-terra'	Claim 7	registered/mainrun_run1/explorer.json settings.<id>.model_name	model name of terra_none
+c4ext.kimi		0.14587290747721948	figure position (not printed)	registered/mechanism_mA2/results.json	routes.api.C4ext.primary.part_i_forest[pair=kimi_off/kimi_on]: estimate, ci
+c4ext.kimi.model	kimi-k3-1-pro-261024	'kimi-k3-1-pro-261024'	Claim 7	registered/mainrun_run1/explorer.json settings.<id>.model_name	model name of kimi_off
+c4ext.dsflash		0.01589364978711842	figure position (not printed)	registered/mechanism_mA2/results.json	routes.api.C4ext.primary.part_i_forest[pair=dsflash_off/dsflash_on]: estimate, ci
+c4ext.dsflash.model	deepseek-v4-1-flash-261017	'deepseek-v4-1-flash-261017'	Claim 7	registered/mainrun_run1/explorer.json settings.<id>.model_name	model name of dsflash_off
+c4ext.dblite		0.17103857883819837	figure position (not printed)	registered/mechanism_mA2/results.json	routes.api.C4ext.primary.part_i_forest[pair=dblite_off/dblite_on]: estimate, ci
+c4ext.dblite.model	doubao-seed-2-1-lite-260915	'doubao-seed-2-1-lite-260915'	Claim 7	registered/mainrun_run1/explorer.json settings.<id>.model_name	model name of dblite_off
+c4ext.dspro		0.22333173062405787	figure position (not printed)	registered/mechanism_mA2/results.json	routes.api.C4ext.primary.part_i_forest[pair=dspro_off/dspro_on]: estimate, ci
+c4ext.dspro.model	deepseek-v4-pro-ga-260813	'deepseek-v4-pro-ga-260813'	Claim 7	poster/v4/content/content.json settings.<id>.model	model name of dspro_off
+c4ext.qwen27b		-0.004378532057669647	figure position (not printed)	registered/mechanism_mA2/results.json	routes.api.C4ext.primary.part_i_forest[pair=qwen27b_off/qwen27b_on]: estimate, ci
+c4ext.qwen27b.model	qwen3.8-27b	'qwen3.8-27b'	Claim 7	poster/v4/content/content.json settings.<id>.model	model name of qwen27b_off
+c4ext.qwen397b		0.06096648014847128	figure position (not printed)	registered/mechanism_mA2/results.json	routes.api.C4ext.primary.part_i_forest[pair=qwen397b_off/qwen397b_on]: estimate, ci
+c4ext.qwen397b.model	qwen3.5-397b-a17b	'qwen3.5-397b-a17b'	Claim 7	poster/v4/content/content.json settings.<id>.model	model name of qwen397b_off
+c4ext.mean	+13.4	0.13376930219431807	Claim 7	registered/mechanism_mA2/results.json	part_i_pair_level.mean_of_pair_estimates
+c4ext.pos	7 of 8	7	Claim 7	registered/mechanism_mA2/results.json	part_i_pair_level.n_positive_pairs, .n_pairs
+c4ext.incl0	2 of 8	2	Claim 7	registered/mechanism_mA2/results.json	count of part_i_forest intervals that include 0
+c4ext.dspro	+22.3 [+16.7, +27.8]	0.22333173062405787	Claim 7	registered/mechanism_mA2/results.json	part_i_forest[dspro_off/dspro_on]
+c4ext.qwen397b	+6.1 [+1.6, +10.6]	0.06096648014847128	Claim 7	registered/mechanism_mA2/results.json	part_i_forest[qwen397b_off/qwen397b_on]
+c4ext.dsflash	+1.6 [−4.0, +7.4]	0.01589364978711842	Claim 7	registered/mechanism_mA2/results.json	part_i_forest[dsflash_off/dsflash_on]
+c4ext.qwen27b	−0.4 [−6.0, +5.1]	-0.004378532057669647	Claim 7	registered/mechanism_mA2/results.json	part_i_forest[qwen27b_off/qwen27b_on]
+cap.luna_high		[285, 115, 0, 400]	figure (stacked bar)	registered/mainrun_run1/results.json	outcomes[setting=luna_high, arm=a]: correct, wrong, truncated, n
+cap.dblite_on		[214, 186, 0, 400]	figure (stacked bar)	registered/mainrun_run1/results.json	outcomes[setting=dblite_on, arm=a]: correct, wrong, truncated, n
+cap.kimi_on		[212, 26, 162, 400]	figure (stacked bar)	registered/mainrun_run1/results.json	outcomes[setting=kimi_on, arm=a]: correct, wrong, truncated, n
+cap.terra_high		[281, 119, 0, 400]	figure (stacked bar)	registered/mainrun_run1/results.json	outcomes[setting=terra_high, arm=a]: correct, wrong, truncated, n
+cap.dsflash_on		[150, 10, 240, 400]	figure (stacked bar)	registered/mainrun_run1/results.json	outcomes[setting=dsflash_on, arm=a]: correct, wrong, truncated, n
+cap.dsflash_on	240 of 400	240	Claim 7	registered/mainrun_run1/results.json	outcomes[dsflash_on, a].truncated, .n
+cap.kimi_on	162 of 400	162	Claim 7	registered/mainrun_run1/results.json	outcomes[kimi_on, a].truncated, .n
+cap.share	40% to 60%	[0.405, 0.6]	Claim 7	registered/mainrun_run1/results.json	truncated / n of the two settings, to the 10% below and the nearest %
+cap.n	2	2	Claim 7	registered/mainrun_run1/results.json	on-settings with truncated > 0
+cap.budget	32,000	32000	Claim 7	the registry (as Claim 7 cites)	max_tokens
+s3.theta_fam.est	+13.3	0.13339919851412188	Claim 8	registered/mechanism_mB/results.json	S3.end_to_end['off|theta_fam'].estimate
+s3.theta_fam.ci	[+10.9, +15.8]	[0.10907149035541111, 0.15754010413478217]	Claim 8	registered/mechanism_mB/results.json	['off|theta_fam'].ci_cluster
+s3.theta_fam.cx	[−2.0, +36.3]	[-0.019911856258243765, 0.3633352632514668]	Claim 8	registered/mechanism_mB/results.json	['off|theta_fam'].ci_crossed
+s3.theta_fam.dsflash_off		-0.01631891870066421	figure position	registered/mechanism_mB/results.json	['off|theta_fam'].per_setting[group=dsflash_off]
+s3.theta_fam.kimi_off		0.04024122807017544	figure position	registered/mechanism_mB/results.json	['off|theta_fam'].per_setting[group=kimi_off]
+s3.theta_fam.terra_none		0.3762752861728545	figure position	registered/mechanism_mB/results.json	['off|theta_fam'].per_setting[group=terra_none]
+s3.theta_comp.est	−1.2	-0.011782676571920763	Claim 8	registered/mechanism_mB/results.json	S3.end_to_end['off|theta_comp'].estimate
+s3.theta_comp.ci	[−3.4, +1.0]	[-0.03393085939109298, 0.0104260571752785]	Claim 8	registered/mechanism_mB/results.json	['off|theta_comp'].ci_cluster
+s3.theta_comp.cx	[−4.6, +2.1]	[-0.04559783641118335, 0.0212250583131549]	Claim 8	registered/mechanism_mB/results.json	['off|theta_comp'].ci_crossed
+s3.theta_comp.dsflash_off		-0.03181524547803618	figure position	registered/mechanism_mB/results.json	['off|theta_comp'].per_setting[group=dsflash_off]
+s3.theta_comp.kimi_off		0.0026647286821705396	figure position	registered/mechanism_mB/results.json	['off|theta_comp'].per_setting[group=kimi_off]
+s3.theta_comp.terra_none		-0.006197512919896649	figure position	registered/mechanism_mB/results.json	['off|theta_comp'].per_setting[group=terra_none]
+s3.n	3	3	Claim 8	registered/mechanism_mB/results.json	theta_fam.n_groups
+s3.terra	+37.6	0.3762752861728545	Claim 8	registered/mechanism_mB/results.json	theta_fam per_setting terra_none
+s3.terra.u	37.6	0.3762752861728545	Claim 8	registered/mechanism_mB/results.json	the same, unsigned
+s3.fam.u	13.3	0.13339919851412188	Claim 8	registered/mechanism_mB/results.json	theta_fam, unsigned
+s3.kimi	+4.0	0.04024122807017544	Claim 8	registered/mechanism_mB/results.json	theta_fam per_setting kimi_off
+s3.dsflash	−1.6	-0.01631891870066421	Claim 8	registered/mechanism_mB/results.json	theta_fam per_setting dsflash_off
+s3.comp.per	−0.6, +0.3, −3.2	[-0.006197512919896649, 0.0026647286821705396, -0.03181524547803618]	Claim 8	registered/mechanism_mB/results.json	theta_comp per_setting, terra/kimi/dsflash
+p1.alone	48.9%	48.9	P1	poster v3 content pack (data.json)	numbers['zh.fc3.pct']
+p1.alone.ci	[46.7, 50.6]	'[46.7, 50.6]'	P1	poster v3 content pack (data.json)	numbers['zh.fc3.ci']
+p1.alone.ci.u	46.7 to 50.6	'[46.7, 50.6]'	P1	poster v3 content pack (data.json)	the same, as 'a to b'
+p1.alone.kn	1,108 of 2,268	'1,108/2,268'	P1	poster v3 content pack (data.json)	numbers['zh.fc3.kn']
+p1.bound	50%	50.0	P1	poster v3 content pack (data.json)	numbers['zh.bound']
+p1.bound.n	50	50.0	P1	poster v3 content pack (data.json)	numbers['zh.bound.bare']
+p1.sent	99.1%	99.1	P1	poster v3 content pack (data.json)	numbers['zh.rescue.pct']
+p1.sent.ci	[98.1, 99.9]	'[98.1, 99.9]'	P1	poster v3 content pack (data.json)	numbers['zh.rescue.ci']
+p1.sent.ci.u	98.1 to 99.9	'[98.1, 99.9]'	P1	poster v3 content pack (data.json)	the same, as 'a to b'
+p1.sent.kn	749 of 756	'749/756'	P1	poster v3 content pack (data.json)	numbers['zh.rescue.kn']
+p1.settings	21	21	P1	poster v3 content pack (data.json)	numbers['zh.settings']
+p1.items	36	36	P1	poster v3 content pack (data.json)	numbers['zh.u_items']
+p1.date	16 Nov 2026	'2026-11-16'	P1	the addendum	the pilot's date
+p4.calls	48	48	P4	poster v3 content pack (data.json)	numbers['abs.calls']
+p4.low	0.333	0.333	P4	poster v3 content pack (data.json)	numbers['abs.hom_codex.keyboard_clean'] = numbers['abs.hom_claude.keyboard_clean']
+p4.high	1.00	1.0	P4	poster v3 content pack (data.json)	numbers['abs.one']
+p4.tasks	three	3	P4	poster v3 content pack (data.json)	numbers['abs.hom.tasks']
+c1.ci.u	6.5 to 9.7	[0.06464076087696079, 0.0968047727498818]	Claim 1	registered/mainrun_run1/results.json	the same, as 'a to b'
+c1.cx.u	2.4 to 14.4	[0.023647937670691614, 0.14393046870657278]	Claim 1	registered/mainrun_run1/results.json	the same, as 'a to b'
+c1.est.u	8.1	0.08076932010642562	Claim 1	registered/mainrun_run1/results.json	the same, unsigned
+c1.off.est.u	3.0	0.02964688907935579	Claim 1	registered/mainrun_run1/results.json	the same, unsigned
+c2.ci.u	14.0 to 18.2	[0.14049042501117104, 0.18235284181671518]	Claim 2	registered/mainrun_run1/results.json	the same, as 'a to b'
+c2.cx.u	7.8 to 25.3	[0.07769053958249653, 0.2525701558369981]	Claim 2	registered/mainrun_run1/results.json	the same, as 'a to b'
+c2.est.u	16.2	0.16194817550466814	Claim 2	registered/mainrun_run1/results.json	the same, unsigned
+c2.off.est.u	3.7	0.03735307774614903	Claim 2	registered/mainrun_run1/results.json	the same, unsigned
+c3.ci.u	18.0 to 21.7	[0.179825429372089, 0.21739848432089298]	Claim 3	registered/mainrun_run1/results.json	the same, as 'a to b'
+c3.cx.u	6.7 to 34.7	[0.06729029168309046, 0.34707374218633785]	Claim 3	registered/mainrun_run1/results.json	the same, as 'a to b'
+c3.est.u	19.9	0.19885751654376776	Claim 3	registered/mainrun_run1/results.json	the same, unsigned
+c3.off.est.u	2.8	0.0281888748186872	Claim 3	registered/mainrun_run1/results.json	the same, unsigned
+s1.ORA_minus_DIR_b.ci.u	47.4 to 55.2	[0.4739550593214664, 0.5520341634683577]	Claim 6	registered/mechanism_mA1/results.json	the same, as 'a to b'
+s1.ORA_minus_DIR_b.est.u	51.4	0.5137870161966547	Claim 6	registered/mechanism_mA1/results.json	the same, unsigned
+s1.G_two_b.ci.u	4.1 to 9.3	[0.04102963650619806, 0.09256473836711061]	Claim 6	registered/mechanism_mA1/results.json	the same, as 'a to b'
+s1.G_two_b.cx.u	−0.3 to 14.2	[-0.0027947561674620753, 0.1423452731551701]	Claim 6	registered/mechanism_mA1/results.json	the same, as 'a to b'
+s1.G_two_b.est.u	6.7	0.06720499116187134	Claim 6	registered/mechanism_mA1/results.json	the same, unsigned
+c4.est.u	15.8	0.158046947767937	Claim 4	registered/mainrun_run1/results.json	unsigned

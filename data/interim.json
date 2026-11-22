@@ -1,0 +1,2238 @@
+{
+ "schema": "ime-site-interim/1",
+ "about": "Registered interim results of registration one, as the poster's claims print them. Built by the site's make_interim.py from the registered outputs (frozen analysis code, interim mode); every value is traced in interim_trace.tsv. Interim: no test has been decided; registered estimates carry no registered decision and no correction for multiple comparisons. Intervals: 95% percentile intervals over 10,000 draws; 'these settings' = passage-cluster bootstrap with the settings fixed; 'settings like these' = crossed passage x setting bootstrap, for orientation only.",
+ "cut": {
+  "iso": "2026-11-22T18:33:22Z",
+  "text": "22 Nov 2026, 18:33 UTC",
+  "ended": 73,
+  "planned": 129,
+  "running": 6,
+  "not_started": 49
+ },
+ "settings": {
+  "dblite_off": {
+   "model": "doubao-seed-2-1-lite-260915",
+   "level": "reasoning off",
+   "label": "doubao-seed-2-1-lite-260915, reasoning off",
+   "on": false
+  },
+  "dblite_on": {
+   "model": "doubao-seed-2-1-lite-260915",
+   "level": "reasoning on",
+   "label": "doubao-seed-2-1-lite-260915, reasoning on",
+   "on": true
+  },
+  "dsflash_off": {
+   "model": "deepseek-v4-1-flash-261017",
+   "level": "reasoning off",
+   "label": "deepseek-v4-1-flash-261017, reasoning off",
+   "on": false
+  },
+  "dsflash_on": {
+   "model": "deepseek-v4-1-flash-261017",
+   "level": "reasoning on",
+   "label": "deepseek-v4-1-flash-261017, reasoning on",
+   "on": true
+  },
+  "kimi_off": {
+   "model": "kimi-k3-1-pro-261024",
+   "level": "reasoning off",
+   "label": "kimi-k3-1-pro-261024, reasoning off",
+   "on": false
+  },
+  "kimi_on": {
+   "model": "kimi-k3-1-pro-261024",
+   "level": "reasoning on",
+   "label": "kimi-k3-1-pro-261024, reasoning on",
+   "on": true
+  },
+  "luna_high": {
+   "model": "gpt-6-luna",
+   "level": "reasoning high",
+   "label": "gpt-6-luna, reasoning high",
+   "on": true
+  },
+  "luna_none": {
+   "model": "gpt-6-luna",
+   "level": "reasoning none",
+   "label": "gpt-6-luna, reasoning none",
+   "on": false
+  },
+  "opus_low": {
+   "model": "claude-opus-5-5",
+   "level": "reasoning low",
+   "label": "claude-opus-5-5, reasoning low",
+   "on": true
+  },
+  "sol62_low": {
+   "model": "gpt-6.2-sol",
+   "level": "reasoning low",
+   "label": "gpt-6.2-sol, reasoning low",
+   "on": true
+  },
+  "sol_low": {
+   "model": "gpt-6.1-sol",
+   "level": "reasoning low",
+   "label": "gpt-6.1-sol, reasoning low",
+   "on": true
+  },
+  "sonnet_off": {
+   "model": "claude-sonnet-5-5",
+   "level": "reasoning off",
+   "label": "claude-sonnet-5-5, reasoning off",
+   "on": false
+  },
+  "terra_high": {
+   "model": "gpt-6.1-terra",
+   "level": "reasoning high",
+   "label": "gpt-6.1-terra, reasoning high",
+   "on": true
+  },
+  "terra_none": {
+   "model": "gpt-6.1-terra",
+   "level": "reasoning none",
+   "label": "gpt-6.1-terra, reasoning none",
+   "on": false
+  }
+ },
+ "numbers": {
+  "status.cut": {
+   "text": "22 Nov 2026, 18:33 UTC",
+   "value": "2026-11-22T18:33:22Z",
+   "claim": "Section 0",
+   "form": "2026-11-22T18:33:22Z",
+   "source": "registered/SUMMARY_FOR_WORKERS.md line 1",
+   "rule": "the cut as written"
+  },
+  "status.running": {
+   "text": "6",
+   "value": 6,
+   "claim": "Section 0",
+   "form": "Six rows were still running",
+   "source": "registered/SUMMARY_FOR_WORKERS.md section 0: **running** (N)",
+   "rule": "count"
+  },
+  "status.not_started": {
+   "text": "49",
+   "value": 49,
+   "claim": "Section 0",
+   "form": "49 had not started",
+   "source": "registered/SUMMARY_FOR_WORKERS.md section 0: **not_started** (N)",
+   "rule": "count"
+  },
+  "status.ended": {
+   "text": "73",
+   "value": 73,
+   "claim": "Correction 2",
+   "form": "73 of 129 planned runs complete",
+   "source": "registered/SUMMARY_FOR_WORKERS.md section 0: rows of the table of rows used + **complete** (N)",
+   "rule": "count"
+  },
+  "status.planned": {
+   "text": "129",
+   "value": 129,
+   "claim": "Correction 2",
+   "form": "73 of 129 planned runs complete",
+   "source": "registered/SUMMARY_FOR_WORKERS.md section 0: rows used + running + terminal_at_cap + not_started + complete",
+   "rule": "count"
+  },
+  "c1.est": {
+   "text": "+8.1",
+   "value": 0.08076932010642562,
+   "claim": "Claim 1",
+   "form": "+8.1",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C1.estimate, x100, 1 decimal"
+  },
+  "c1.ci": {
+   "text": "[+6.5, +9.7]",
+   "value": [
+    0.06464076087696079,
+    0.0968047727498818
+   ],
+   "claim": "Claim 1",
+   "form": "[+6.5, +9.7]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C1.ci_cluster"
+  },
+  "c1.cx": {
+   "text": "[+2.4, +14.4]",
+   "value": [
+    0.023647937670691614,
+    0.14393046870657278
+   ],
+   "claim": "Claim 1",
+   "form": "[+2.4, +14.4]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C1.ci_crossed"
+  },
+  "c1.n": {
+   "text": "13",
+   "value": 13,
+   "claim": "Claim 1",
+   "form": "13 settings",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C1.n_groups"
+  },
+  "c1.off.est": {
+   "text": "+3.0",
+   "value": 0.02964688907935579,
+   "claim": "Claim 1",
+   "form": "+3.0",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "sensitivity_ruling4.R4f_reasoning_off_only.C1.estimate"
+  },
+  "c1.off.ci": {
+   "text": "[+1.0, +4.9]",
+   "value": [
+    0.010367133167398377,
+    0.04851933849706501
+   ],
+   "claim": "Claim 1",
+   "form": "[+1.0, +4.9]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "R4f.C1.ci_cluster"
+  },
+  "c1.off.cx": {
+   "text": "[−3.2, +12.0]",
+   "value": [
+    -0.03172745924242983,
+    0.11962826923420623
+   ],
+   "claim": "Claim 1",
+   "form": "settings like these [-3.2, +12.0]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "R4f.C1.ci_crossed"
+  },
+  "c1.off.n": {
+   "text": "6",
+   "value": 6,
+   "claim": "Claim 1",
+   "form": "6 settings",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C1.groups minus R4f.C1.settings_filtered_by_sensitivity"
+  },
+  "c1.exc": {
+   "text": "+24.1",
+   "value": 0.24149530452637621,
+   "claim": "Claim 1",
+   "form": "+24.1 [+19.5, +28.7]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "setting_step.rows step C1 terra_none"
+  },
+  "c2.est": {
+   "text": "+16.2",
+   "value": 0.16194817550466814,
+   "claim": "Claim 2",
+   "form": "+16.2",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C2.estimate, x100, 1 decimal"
+  },
+  "c2.ci": {
+   "text": "[+14.0, +18.2]",
+   "value": [
+    0.14049042501117104,
+    0.18235284181671518
+   ],
+   "claim": "Claim 2",
+   "form": "[+14.0, +18.2]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C2.ci_cluster"
+  },
+  "c2.cx": {
+   "text": "[+7.8, +25.3]",
+   "value": [
+    0.07769053958249653,
+    0.2525701558369981
+   ],
+   "claim": "Claim 2",
+   "form": "[+7.8, +25.3]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C2.ci_crossed"
+  },
+  "c2.n": {
+   "text": "11",
+   "value": 11,
+   "claim": "Claim 2",
+   "form": "11 settings",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C2.n_groups"
+  },
+  "c2.off.est": {
+   "text": "+3.7",
+   "value": 0.03735307774614903,
+   "claim": "Claim 2",
+   "form": "+3.7",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "sensitivity_ruling4.R4f_reasoning_off_only.C2.estimate"
+  },
+  "c2.off.ci": {
+   "text": "[+2.0, +5.5]",
+   "value": [
+    0.019530203383984715,
+    0.055254424275583316
+   ],
+   "claim": "Claim 2",
+   "form": "[+2.0, +5.5]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "R4f.C2.ci_cluster"
+  },
+  "c2.off.cx": {
+   "text": "[−1.0, +9.5]",
+   "value": [
+    -0.009509467653853678,
+    0.09481744137276747
+   ],
+   "claim": "Claim 2",
+   "form": "settings like these [-1.0, +9.5]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "R4f.C2.ci_crossed"
+  },
+  "c2.off.n": {
+   "text": "5",
+   "value": 5,
+   "claim": "Claim 2",
+   "form": "5 settings",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C2.groups minus R4f.C2.settings_filtered_by_sensitivity"
+  },
+  "c2.exc": {
+   "text": "+14.3",
+   "value": 0.14265994387579997,
+   "claim": "Claim 2",
+   "form": "+14.3 [+10.5, +18.2]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "setting_step.rows step C2 terra_none"
+  },
+  "c3.est": {
+   "text": "+19.9",
+   "value": 0.19885751654376776,
+   "claim": "Claim 3",
+   "form": "+19.9",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C3.estimate, x100, 1 decimal"
+  },
+  "c3.ci": {
+   "text": "[+18.0, +21.7]",
+   "value": [
+    0.179825429372089,
+    0.21739848432089298
+   ],
+   "claim": "Claim 3",
+   "form": "[+18.0, +21.7]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C3.ci_cluster"
+  },
+  "c3.cx": {
+   "text": "[+6.7, +34.7]",
+   "value": [
+    0.06729029168309046,
+    0.34707374218633785
+   ],
+   "claim": "Claim 3",
+   "form": "[+6.7, +34.7]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C3.ci_crossed"
+  },
+  "c3.n": {
+   "text": "12",
+   "value": 12,
+   "claim": "Claim 3",
+   "form": "12 settings",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C3.n_groups"
+  },
+  "c3.off.est": {
+   "text": "+2.8",
+   "value": 0.0281888748186872,
+   "claim": "Claim 3",
+   "form": "+2.8",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "sensitivity_ruling4.R4f_reasoning_off_only.C3.estimate"
+  },
+  "c3.off.ci": {
+   "text": "[+1.0, +4.6]",
+   "value": [
+    0.010278500673386823,
+    0.04635102862891148
+   ],
+   "claim": "Claim 3",
+   "form": "[+1.0, +4.6]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "R4f.C3.ci_cluster"
+  },
+  "c3.off.cx": {
+   "text": "[−3.4, +12.4]",
+   "value": [
+    -0.03439658220519559,
+    0.12403914904697633
+   ],
+   "claim": "Claim 3",
+   "form": "settings like these [-3.4, +12.4]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "R4f.C3.ci_crossed"
+  },
+  "c3.off.n": {
+   "text": "6",
+   "value": 6,
+   "claim": "Claim 3",
+   "form": "6 settings",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C3.groups minus R4f.C3.settings_filtered_by_sensitivity"
+  },
+  "c3.exc": {
+   "text": "+25.1",
+   "value": 0.2507351475279107,
+   "claim": "Claim 3",
+   "form": "+25.1 [+20.4, +29.8]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "setting_step.rows step C3 terra_none"
+  },
+  "c1.comp": {
+   "text": "+2.8",
+   "value": 0.0277970358990797,
+   "claim": "Correction 1",
+   "form": "+2.8",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C1.completion_difference.estimate, x100, 1 decimal"
+  },
+  "c1.valid": {
+   "text": "+5.8",
+   "value": 0.058314951653928956,
+   "claim": "Correction 1",
+   "form": "+5.8",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C1.valid_reply_accuracy_difference.estimate, x100, 1 decimal"
+  },
+  "c2.comp": {
+   "text": "+3.1",
+   "value": 0.031478841929072084,
+   "claim": "Correction 1",
+   "form": "+3.1",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C2.completion_difference.estimate, x100, 1 decimal"
+  },
+  "c2.valid": {
+   "text": "+15.8",
+   "value": 0.1581322047927644,
+   "claim": "Correction 1",
+   "form": "+15.8",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C2.valid_reply_accuracy_difference.estimate, x100, 1 decimal"
+  },
+  "c3.comp": {
+   "text": "+7.5",
+   "value": 0.07514225312333865,
+   "claim": "Correction 1",
+   "form": "+7.5",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C3.completion_difference.estimate, x100, 1 decimal"
+  },
+  "c3.valid": {
+   "text": "+13.3",
+   "value": 0.13329936904856138,
+   "claim": "Correction 1",
+   "form": "+13.3",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C3.valid_reply_accuracy_difference.estimate, x100, 1 decimal"
+  },
+  "c4.est": {
+   "text": "+15.8",
+   "value": 0.158046947767937,
+   "claim": "Claim 4",
+   "form": "+15.8",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C4.part_i.estimate"
+  },
+  "c4.ci": {
+   "text": "[+12.8, +18.8]",
+   "value": [
+    0.1279772572111282,
+    0.18758337458338684
+   ],
+   "claim": "Claim 4",
+   "form": "[+12.8, +18.8]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C4.part_i.ci_cluster"
+  },
+  "c4.cx": {
+   "text": "[+7.0, +25.5]",
+   "value": [
+    0.06991526502828735,
+    0.25505285038426484
+   ],
+   "claim": "Claim 4",
+   "form": "[+7.0, +25.5]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C4.part_i.ci_crossed"
+  },
+  "c4.pairs": {
+   "text": "5",
+   "value": 5,
+   "claim": "Claim 4",
+   "form": "5 pairs",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C4.part_i.n_groups"
+  },
+  "c4.F1": {
+   "text": "67.1",
+   "value": 67.08085653744831,
+   "claim": "Claim 4",
+   "form": "F = exp(part ii) = 67.1 [58.0, 77.5]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "exp(confirmatory.C4.part_ii.estimate)"
+  },
+  "c4.F": {
+   "text": "67",
+   "value": 67.08085653744831,
+   "claim": "Claim 4",
+   "form": "about 67 times as many reasoning tokens",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "exp(confirmatory.C4.part_ii.estimate), rounded"
+  },
+  "c4.Fci": {
+   "text": "58 to 78",
+   "value": [
+    57.98606859347512,
+    77.5466439502727
+   ],
+   "claim": "Claim 4",
+   "form": "(58 to 78;",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "exp(part_ii.ci_cluster), rounded"
+  },
+  "c4.Fcx": {
+   "text": "27 to 135",
+   "value": [
+    26.834032767664453,
+    135.04245283279275
+   ],
+   "claim": "Claim 4",
+   "form": "27 to 135 for orientation",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "exp(part_ii.ci_crossed), rounded"
+  },
+  "c4.ci.u": {
+   "text": "12.8 to 18.8",
+   "value": [
+    0.1279772572111282,
+    0.18758337458338684
+   ],
+   "claim": "Claim 4",
+   "form": "(12.8 to 18.8 for these 5 model pairs",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "part_i.ci_cluster, unsigned"
+  },
+  "c4.cx.u": {
+   "text": "7.0 to 25.5",
+   "value": [
+    0.06991526502828735,
+    0.25505285038426484
+   ],
+   "claim": "Claim 4",
+   "form": "7.0 to 25.5 for pairs like them",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "part_i.ci_crossed, unsigned"
+  },
+  "c4.pair.luna": {
+   "text": "+32.3 [+25.6, +38.8]",
+   "value": 0.3226461659245426,
+   "claim": "Claim 4",
+   "form": "luna +32.3 [+25.6, +38.8]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "secondary['within_model_reasoning|luna_none/luna_high'].estimate, .ci_cluster"
+  },
+  "c4.pair.terra": {
+   "text": "+13.5 [+10.0, +17.0]",
+   "value": 0.13478343681260616,
+   "claim": "Claim 4",
+   "form": "terra +13.5 [+10.0, +17.0]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "secondary['within_model_reasoning|terra_none/terra_high'].estimate, .ci_cluster"
+  },
+  "c4.pair.kimi": {
+   "text": "+14.6 [+9.0, +20.1]",
+   "value": 0.14587290747721948,
+   "claim": "Claim 4",
+   "form": "kimi +14.6 [+9.0, +20.1]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "secondary['within_model_reasoning|kimi_off/kimi_on'].estimate, .ci_cluster"
+  },
+  "c4.pair.dsflash": {
+   "text": "+1.6 [−4.3, +7.2]",
+   "value": 0.015893649787118425,
+   "claim": "Claim 4",
+   "form": "dsflash +1.6 [-4.3, +7.2]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "secondary['within_model_reasoning|dsflash_off/dsflash_on'].estimate, .ci_cluster"
+  },
+  "c4.pair.dblite": {
+   "text": "+17.1 [+12.7, +21.6]",
+   "value": 0.17103857883819834,
+   "claim": "Claim 4",
+   "form": "dblite +17.1 [+12.7, +21.6]",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "secondary['within_model_reasoning|dblite_off/dblite_on'].estimate, .ci_cluster"
+  },
+  "c4.comp.u": {
+   "text": "20.1",
+   "value": -0.2014189551729184,
+   "claim": "Correction 1",
+   "form": "is 20.1 points lower",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C4.part_i.completion_difference.estimate, sign as 'lower'"
+  },
+  "c4.valid.u": {
+   "text": "31.5",
+   "value": 0.31484532054415304,
+   "claim": "Correction 1",
+   "form": "the same contrast is 31.5 points",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "confirmatory.C4.part_i.valid_reply_accuracy_difference.estimate"
+  },
+  "c4.incl0": {
+   "text": "one",
+   "value": 1,
+   "claim": "Claim 4",
+   "form": "For one of the 5 pairs the interval included zero",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "count of pairs whose ci_cluster includes 0"
+  },
+  "claim5.a.range": {
+   "text": "28.0% to 38.3%",
+   "value": [
+    0.28,
+    0.3833
+   ],
+   "claim": "Claim 5",
+   "form": "28.0% to 38.3%",
+   "source": "registered/cells.csv",
+   "rule": "run1, arm a, Hebrew/Armenian/Arabic, the 5 reasoning-off settings other than terra_none: min, max"
+  },
+  "claim5.a.lo": {
+   "text": "28",
+   "value": 0.28,
+   "claim": "Claim 5",
+   "form": "28% to 38%",
+   "source": "registered/cells.csv",
+   "rule": "the same, rounded"
+  },
+  "claim5.a.hi": {
+   "text": "38",
+   "value": 0.3833,
+   "claim": "Claim 5",
+   "form": "28% to 38%",
+   "source": "registered/cells.csv",
+   "rule": "the same, rounded"
+  },
+  "claim5.nat.lo": {
+   "text": "90",
+   "value": 0.8967,
+   "claim": "Claim 5",
+   "form": "90% to 96%",
+   "source": "registered/cells.csv",
+   "rule": "run1, arm native, same settings and languages: min, rounded"
+  },
+  "claim5.nat.hi": {
+   "text": "96",
+   "value": 0.96,
+   "claim": "Claim 5",
+   "form": "90% to 96%",
+   "source": "registered/cells.csv",
+   "rule": "run1, arm native, same settings and languages: max, rounded"
+  },
+  "claim5.five": {
+   "text": "five",
+   "value": 5,
+   "claim": "Claim 5",
+   "form": "five of the six settings",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "reasoning-off settings of C1 (R4f) other than terra_none"
+  },
+  "claim5.six": {
+   "text": "six",
+   "value": 6,
+   "claim": "Claim 5",
+   "form": "five of the six settings",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "reasoning-off settings of C1 (R4f)"
+  },
+  "chance": {
+   "text": "25",
+   "value": 0.25,
+   "claim": "Claim 5",
+   "form": "Chance is 25%",
+   "source": "by construction: four options",
+   "rule": "1/4"
+  },
+  "claim5.about3": {
+   "text": "3",
+   "value": 0.03172961388139734,
+   "claim": "Claim 5",
+   "form": "added about 3 points on average",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "mean of the three reasoning-off pools, rounded"
+  },
+  "s1.ORA_minus_DIR_b.est": {
+   "text": "+51.4",
+   "value": 0.5137870161966547,
+   "claim": "Claim 6",
+   "form": "+51.4",
+   "source": "registered/mechanism_mA1/results.json",
+   "rule": "routes.api.S1.end_to_end.ORA_minus_DIR_b.estimate"
+  },
+  "s1.ORA_minus_DIR_b.ci": {
+   "text": "[+47.4, +55.2]",
+   "value": [
+    0.4739550593214664,
+    0.5520341634683577
+   ],
+   "claim": "Claim 6",
+   "form": "[+47.4, +55.2]",
+   "source": "registered/mechanism_mA1/results.json",
+   "rule": "...ORA_minus_DIR_b.ci_cluster"
+  },
+  "s1.ORA_minus_DIR_b.cx": {
+   "text": "[+34.3, +63.4]",
+   "value": [
+    0.3425434924682896,
+    0.6338102623054551
+   ],
+   "claim": "Claim 6",
+   "form": "[+34.3, +63.4]",
+   "source": "registered/mechanism_mA1/results.json",
+   "rule": "...ORA_minus_DIR_b.ci_crossed"
+  },
+  "s1.G_two_b.est": {
+   "text": "+6.7",
+   "value": 0.06720499116187134,
+   "claim": "Claim 6",
+   "form": "+6.7",
+   "source": "registered/mechanism_mA1/results.json",
+   "rule": "routes.api.S1.end_to_end.G_two_b.estimate"
+  },
+  "s1.G_two_b.ci": {
+   "text": "[+4.1, +9.3]",
+   "value": [
+    0.04102963650619806,
+    0.09256473836711061
+   ],
+   "claim": "Claim 6",
+   "form": "[+4.1, +9.3]",
+   "source": "registered/mechanism_mA1/results.json",
+   "rule": "...G_two_b.ci_cluster"
+  },
+  "s1.G_two_b.cx": {
+   "text": "[−0.3, +14.2]",
+   "value": [
+    -0.0027947561674620753,
+    0.1423452731551701
+   ],
+   "claim": "Claim 6",
+   "form": "[-0.3, +14.2]",
+   "source": "registered/mechanism_mA1/results.json",
+   "rule": "...G_two_b.ci_crossed"
+  },
+  "s1.n": {
+   "text": "5",
+   "value": 5,
+   "claim": "Claim 6",
+   "form": "the same 5 settings",
+   "source": "registered/mechanism_mA1/results.json",
+   "rule": "G_two_b.n_groups"
+  },
+  "c4ext.mean": {
+   "text": "+13.4",
+   "value": 0.13376930219431807,
+   "claim": "Claim 7",
+   "form": "mean of the pair estimates +13.4",
+   "source": "registered/mechanism_mA2/results.json",
+   "rule": "part_i_pair_level.mean_of_pair_estimates"
+  },
+  "c4ext.pos": {
+   "text": "7 of 8",
+   "value": 7,
+   "claim": "Claim 7",
+   "form": "7 of 8 estimates are positive",
+   "source": "registered/mechanism_mA2/results.json",
+   "rule": "part_i_pair_level.n_positive_pairs, .n_pairs"
+  },
+  "c4ext.incl0": {
+   "text": "2 of 8",
+   "value": 2,
+   "claim": "Claim 7",
+   "form": "in 2 of 8 pairs the interval included zero",
+   "source": "registered/mechanism_mA2/results.json",
+   "rule": "count of part_i_forest intervals that include 0"
+  },
+  "c4ext.dspro": {
+   "text": "+22.3 [+16.7, +27.8]",
+   "value": 0.22333173062405787,
+   "claim": "Claim 7",
+   "form": "+22.3 [+16.7, +27.8]",
+   "source": "registered/mechanism_mA2/results.json",
+   "rule": "part_i_forest[dspro_off/dspro_on]"
+  },
+  "c4ext.qwen397b": {
+   "text": "+6.1 [+1.6, +10.6]",
+   "value": 0.06096648014847128,
+   "claim": "Claim 7",
+   "form": "+6.1 [+1.6, +10.6]",
+   "source": "registered/mechanism_mA2/results.json",
+   "rule": "part_i_forest[qwen397b_off/qwen397b_on]"
+  },
+  "c4ext.dsflash": {
+   "text": "+1.6 [−4.0, +7.4]",
+   "value": 0.01589364978711842,
+   "claim": "Claim 7",
+   "form": "+1.6 [-4.0, +7.4]",
+   "source": "registered/mechanism_mA2/results.json",
+   "rule": "part_i_forest[dsflash_off/dsflash_on]"
+  },
+  "c4ext.qwen27b": {
+   "text": "−0.4 [−6.0, +5.1]",
+   "value": -0.004378532057669647,
+   "claim": "Claim 7",
+   "form": "-0.4 [-6.0, +5.1]",
+   "source": "registered/mechanism_mA2/results.json",
+   "rule": "part_i_forest[qwen27b_off/qwen27b_on]"
+  },
+  "cap.dsflash_on": {
+   "text": "240 of 400",
+   "value": 240,
+   "claim": "Claim 7",
+   "form": "240 of 400 for dsflash_on",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "outcomes[dsflash_on, a].truncated, .n"
+  },
+  "cap.kimi_on": {
+   "text": "162 of 400",
+   "value": 162,
+   "claim": "Claim 7",
+   "form": "162 of 400 for kimi_on",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "outcomes[kimi_on, a].truncated, .n"
+  },
+  "cap.share": {
+   "text": "40% to 60%",
+   "value": [
+    0.405,
+    0.6
+   ],
+   "claim": "Claim 7",
+   "form": "on 40% to 60% of wrong-layout items",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "truncated / n of the two settings, to the 10% below and the nearest %"
+  },
+  "cap.n": {
+   "text": "2",
+   "value": 2,
+   "claim": "Claim 7",
+   "form": "2 of the 5 main settings",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "on-settings with truncated > 0"
+  },
+  "cap.budget": {
+   "text": "32,000",
+   "value": 32000,
+   "claim": "Claim 7",
+   "form": "32,000-token output cap",
+   "source": "the registry (as Claim 7 cites)",
+   "rule": "max_tokens"
+  },
+  "s3.theta_fam.est": {
+   "text": "+13.3",
+   "value": 0.13339919851412188,
+   "claim": "Claim 8",
+   "form": "+13.3",
+   "source": "registered/mechanism_mB/results.json",
+   "rule": "S3.end_to_end['off|theta_fam'].estimate"
+  },
+  "s3.theta_fam.ci": {
+   "text": "[+10.9, +15.8]",
+   "value": [
+    0.10907149035541111,
+    0.15754010413478217
+   ],
+   "claim": "Claim 8",
+   "form": "[+10.9, +15.8]",
+   "source": "registered/mechanism_mB/results.json",
+   "rule": "['off|theta_fam'].ci_cluster"
+  },
+  "s3.theta_fam.cx": {
+   "text": "[−2.0, +36.3]",
+   "value": [
+    -0.019911856258243765,
+    0.3633352632514668
+   ],
+   "claim": "Claim 8",
+   "form": "[-2.0, +36.3]",
+   "source": "registered/mechanism_mB/results.json",
+   "rule": "['off|theta_fam'].ci_crossed"
+  },
+  "s3.theta_comp.est": {
+   "text": "−1.2",
+   "value": -0.011782676571920763,
+   "claim": "Claim 8",
+   "form": "-1.2",
+   "source": "registered/mechanism_mB/results.json",
+   "rule": "S3.end_to_end['off|theta_comp'].estimate"
+  },
+  "s3.theta_comp.ci": {
+   "text": "[−3.4, +1.0]",
+   "value": [
+    -0.03393085939109298,
+    0.0104260571752785
+   ],
+   "claim": "Claim 8",
+   "form": "[-3.4, +1.0]",
+   "source": "registered/mechanism_mB/results.json",
+   "rule": "['off|theta_comp'].ci_cluster"
+  },
+  "s3.theta_comp.cx": {
+   "text": "[−4.6, +2.1]",
+   "value": [
+    -0.04559783641118335,
+    0.0212250583131549
+   ],
+   "claim": "Claim 8",
+   "form": "[-4.6, +2.1]",
+   "source": "registered/mechanism_mB/results.json",
+   "rule": "['off|theta_comp'].ci_crossed"
+  },
+  "s3.n": {
+   "text": "3",
+   "value": 3,
+   "claim": "Claim 8",
+   "form": "13.3 points over 3 settings",
+   "source": "registered/mechanism_mB/results.json",
+   "rule": "theta_fam.n_groups"
+  },
+  "s3.terra": {
+   "text": "+37.6",
+   "value": 0.3762752861728545,
+   "claim": "Claim 8",
+   "form": "+37.6 [+32.3, +42.8]",
+   "source": "registered/mechanism_mB/results.json",
+   "rule": "theta_fam per_setting terra_none"
+  },
+  "s3.terra.u": {
+   "text": "37.6",
+   "value": 0.3762752861728545,
+   "claim": "Claim 8",
+   "form": "reasoning none: 37.6 points",
+   "source": "registered/mechanism_mB/results.json",
+   "rule": "the same, unsigned"
+  },
+  "s3.fam.u": {
+   "text": "13.3",
+   "value": 0.13339919851412188,
+   "claim": "Claim 8",
+   "form": "(13.3 points over 3 settings)",
+   "source": "registered/mechanism_mB/results.json",
+   "rule": "theta_fam, unsigned"
+  },
+  "s3.kimi": {
+   "text": "+4.0",
+   "value": 0.04024122807017544,
+   "claim": "Claim 8",
+   "form": "kimi_off +4.0",
+   "source": "registered/mechanism_mB/results.json",
+   "rule": "theta_fam per_setting kimi_off"
+  },
+  "s3.dsflash": {
+   "text": "−1.6",
+   "value": -0.01631891870066421,
+   "claim": "Claim 8",
+   "form": "dsflash_off -1.6 [-5.1, +1.7]",
+   "source": "registered/mechanism_mB/results.json",
+   "rule": "theta_fam per_setting dsflash_off"
+  },
+  "s3.comp.per": {
+   "text": "−0.6, +0.3, −3.2",
+   "value": [
+    -0.006197512919896649,
+    0.0026647286821705396,
+    -0.03181524547803618
+   ],
+   "claim": "Claim 8",
+   "form": "(-0.6, +0.3, -3.2)",
+   "source": "registered/mechanism_mB/results.json",
+   "rule": "theta_comp per_setting, terra/kimi/dsflash"
+  },
+  "p1.alone": {
+   "text": "48.9%",
+   "value": 48.9,
+   "claim": "P1",
+   "form": "48.9%",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "numbers['zh.fc3.pct']"
+  },
+  "p1.alone.ci": {
+   "text": "[46.7, 50.6]",
+   "value": "[46.7, 50.6]",
+   "claim": "P1",
+   "form": "[46.7, 50.6]",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "numbers['zh.fc3.ci']"
+  },
+  "p1.alone.ci.u": {
+   "text": "46.7 to 50.6",
+   "value": "[46.7, 50.6]",
+   "claim": "P1",
+   "form": "(46.7 to 50.6)",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "the same, as 'a to b'"
+  },
+  "p1.alone.kn": {
+   "text": "1,108 of 2,268",
+   "value": "1,108/2,268",
+   "claim": "P1",
+   "form": "1,108 of 2,268 calls",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "numbers['zh.fc3.kn']"
+  },
+  "p1.bound": {
+   "text": "50%",
+   "value": 50.0,
+   "claim": "P1",
+   "form": "50%",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "numbers['zh.bound']"
+  },
+  "p1.bound.n": {
+   "text": "50",
+   "value": 50.0,
+   "claim": "P1",
+   "form": "50",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "numbers['zh.bound.bare']"
+  },
+  "p1.sent": {
+   "text": "99.1%",
+   "value": 99.1,
+   "claim": "P1",
+   "form": "99.1%",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "numbers['zh.rescue.pct']"
+  },
+  "p1.sent.ci": {
+   "text": "[98.1, 99.9]",
+   "value": "[98.1, 99.9]",
+   "claim": "P1",
+   "form": "[98.1, 99.9]",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "numbers['zh.rescue.ci']"
+  },
+  "p1.sent.ci.u": {
+   "text": "98.1 to 99.9",
+   "value": "[98.1, 99.9]",
+   "claim": "P1",
+   "form": "(98.1 to 99.9)",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "the same, as 'a to b'"
+  },
+  "p1.sent.kn": {
+   "text": "749 of 756",
+   "value": "749/756",
+   "claim": "P1",
+   "form": "749 of 756",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "numbers['zh.rescue.kn']"
+  },
+  "p1.settings": {
+   "text": "21",
+   "value": 21,
+   "claim": "P1",
+   "form": "21 settings",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "numbers['zh.settings']"
+  },
+  "p1.items": {
+   "text": "36",
+   "value": 36,
+   "claim": "P1",
+   "form": "36 same-spelling words",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "numbers['zh.u_items']"
+  },
+  "p1.date": {
+   "text": "16 Nov 2026",
+   "value": "2026-11-16",
+   "claim": "P1",
+   "form": "Pilot, 16 Nov 2026",
+   "source": "the addendum",
+   "rule": "the pilot's date"
+  },
+  "p4.calls": {
+   "text": "48",
+   "value": 48,
+   "claim": "P4",
+   "form": "48 valid calls",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "numbers['abs.calls']"
+  },
+  "p4.low": {
+   "text": "0.333",
+   "value": 0.333,
+   "claim": "P4",
+   "form": "both scored 0.333",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "numbers['abs.hom_codex.keyboard_clean'] = numbers['abs.hom_claude.keyboard_clean']"
+  },
+  "p4.high": {
+   "text": "1.00",
+   "value": 1.0,
+   "claim": "P4",
+   "form": "1.00 with the terms kept in characters",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "numbers['abs.one']"
+  },
+  "p4.tasks": {
+   "text": "three",
+   "value": 3,
+   "claim": "P4",
+   "form": "On three tasks",
+   "source": "poster v3 content pack (data.json)",
+   "rule": "numbers['abs.hom.tasks']"
+  },
+  "c1.ci.u": {
+   "text": "6.5 to 9.7",
+   "value": [
+    0.06464076087696079,
+    0.0968047727498818
+   ],
+   "claim": "Claim 1",
+   "form": "6.5 to 9.7",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "the same, as 'a to b'"
+  },
+  "c1.cx.u": {
+   "text": "2.4 to 14.4",
+   "value": [
+    0.023647937670691614,
+    0.14393046870657278
+   ],
+   "claim": "Claim 1",
+   "form": "2.4 to 14.4",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "the same, as 'a to b'"
+  },
+  "c1.est.u": {
+   "text": "8.1",
+   "value": 0.08076932010642562,
+   "claim": "Claim 1",
+   "form": "8.1 points",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "the same, unsigned"
+  },
+  "c1.off.est.u": {
+   "text": "3.0",
+   "value": 0.02964688907935579,
+   "claim": "Claim 1",
+   "form": "3.0 points",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "the same, unsigned"
+  },
+  "c2.ci.u": {
+   "text": "14.0 to 18.2",
+   "value": [
+    0.14049042501117104,
+    0.18235284181671518
+   ],
+   "claim": "Claim 2",
+   "form": "14.0 to 18.2",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "the same, as 'a to b'"
+  },
+  "c2.cx.u": {
+   "text": "7.8 to 25.3",
+   "value": [
+    0.07769053958249653,
+    0.2525701558369981
+   ],
+   "claim": "Claim 2",
+   "form": "7.8 to 25.3",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "the same, as 'a to b'"
+  },
+  "c2.est.u": {
+   "text": "16.2",
+   "value": 0.16194817550466814,
+   "claim": "Claim 2",
+   "form": "16.2 points",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "the same, unsigned"
+  },
+  "c2.off.est.u": {
+   "text": "3.7",
+   "value": 0.03735307774614903,
+   "claim": "Claim 2",
+   "form": "3.7 points",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "the same, unsigned"
+  },
+  "c3.ci.u": {
+   "text": "18.0 to 21.7",
+   "value": [
+    0.179825429372089,
+    0.21739848432089298
+   ],
+   "claim": "Claim 3",
+   "form": "18.0 to 21.7",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "the same, as 'a to b'"
+  },
+  "c3.cx.u": {
+   "text": "6.7 to 34.7",
+   "value": [
+    0.06729029168309046,
+    0.34707374218633785
+   ],
+   "claim": "Claim 3",
+   "form": "6.7 to 34.7",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "the same, as 'a to b'"
+  },
+  "c3.est.u": {
+   "text": "19.9",
+   "value": 0.19885751654376776,
+   "claim": "Claim 3",
+   "form": "19.9 points",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "the same, unsigned"
+  },
+  "c3.off.est.u": {
+   "text": "2.8",
+   "value": 0.0281888748186872,
+   "claim": "Claim 3",
+   "form": "2.8 points",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "the same, unsigned"
+  },
+  "s1.ORA_minus_DIR_b.ci.u": {
+   "text": "47.4 to 55.2",
+   "value": [
+    0.4739550593214664,
+    0.5520341634683577
+   ],
+   "claim": "Claim 6",
+   "form": "47.4 to 55.2",
+   "source": "registered/mechanism_mA1/results.json",
+   "rule": "the same, as 'a to b'"
+  },
+  "s1.ORA_minus_DIR_b.est.u": {
+   "text": "51.4",
+   "value": 0.5137870161966547,
+   "claim": "Claim 6",
+   "form": "51.4 points higher",
+   "source": "registered/mechanism_mA1/results.json",
+   "rule": "the same, unsigned"
+  },
+  "s1.G_two_b.ci.u": {
+   "text": "4.1 to 9.3",
+   "value": [
+    0.04102963650619806,
+    0.09256473836711061
+   ],
+   "claim": "Claim 6",
+   "form": "4.1 to 9.3",
+   "source": "registered/mechanism_mA1/results.json",
+   "rule": "the same, as 'a to b'"
+  },
+  "s1.G_two_b.cx.u": {
+   "text": "−0.3 to 14.2",
+   "value": [
+    -0.0027947561674620753,
+    0.1423452731551701
+   ],
+   "claim": "Claim 6",
+   "form": "-0.3 to 14.2",
+   "source": "registered/mechanism_mA1/results.json",
+   "rule": "the same, as 'a to b'"
+  },
+  "s1.G_two_b.est.u": {
+   "text": "6.7",
+   "value": 0.06720499116187134,
+   "claim": "Claim 6",
+   "form": "6.7 points higher",
+   "source": "registered/mechanism_mA1/results.json",
+   "rule": "the same, unsigned"
+  },
+  "c4.est.u": {
+   "text": "15.8",
+   "value": 0.158046947767937,
+   "claim": "Claim 4",
+   "form": "was 15.8 points smaller",
+   "source": "registered/mainrun_run1/results.json",
+   "rule": "unsigned"
+  }
+ },
+ "copy": {
+  "claim1": {
+   "text": "A note saying how the text was typed (the intended layout, with the computer set to the US layout) gave accuracy {{c1.est.u}} points higher than a control note of similar length (95% interval {{c1.ci.u}} for these {{c1.n}} settings; {{c1.cx.u}} for settings like them, for orientation). With reasoning off it was {{c1.off.est.u}} points over {{c1.off.n}} settings, and only one of those {{c1.off.n}} had an interval above zero.",
+   "claim": "Claim 1",
+   "of": "Poster sentence",
+   "whole": true,
+   "quote": "A note saying how the text was typed (the intended layout, with the computer set to the US layout) gave accuracy 8.1 points higher than a control note of similar length (95% interval 6.5 to 9.7 for these 13 settings; 2.4 to 14.4 for settings like them, for orientation). With reasoning off it was 3.0 points over 6 settings, and only one of those 6 had an interval above zero.",
+   "occurs": [
+    "A note saying how the text was typed (the intended layout, with the computer set to the US layout) gave accuracy 8.1 points higher than a control note of similar length (95% interval 6.5 to 9.7 for these 13 settings; 2.4 to 14.4 for settings like them, for orientation). With reasoning off it was 3.0 points over 6 settings, and only one of those 6 had an interval above zero."
+   ],
+   "review": false
+  },
+  "claim2": {
+   "text": "The same text typed on the standard layout was answered {{c2.est.u}} points higher than on random rearrangements of the same keys ({{c2.ci.u}} for these {{c2.n}} settings; {{c2.cx.u}} for settings like them, for orientation). With reasoning off the difference was {{c2.off.est.u}} points over {{c2.off.n}} settings, and only one of those {{c2.off.n}} had an interval above zero.",
+   "claim": "Claim 2",
+   "of": "Poster sentence",
+   "whole": true,
+   "quote": "The same text typed on the standard layout was answered 16.2 points higher than on random rearrangements of the same keys (14.0 to 18.2 for these 11 settings; 7.8 to 25.3 for settings like them, for orientation). With reasoning off the difference was 3.7 points over 5 settings, and only one of those 5 had an interval above zero.",
+   "occurs": [
+    "The same text typed on the standard layout was answered 16.2 points better than on random rearrangements of the same keys (14.0 to 18.2 for these 11 settings; 7.8 to 25.3 for settings like them, for orientation). With reasoning off the difference was 3.7 points over 5 settings, and only one of those 5 had an interval above zero."
+   ],
+   "review": false,
+   "fix": [
+    [
+     "better",
+     "higher"
+    ]
+   ]
+  },
+  "claim3": {
+   "text": "Given the table of the key map, these settings answered {{c3.est.u}} points higher than with a sham table with the same number of entries ({{c3.ci.u}} for these {{c3.n}} settings; {{c3.cx.u}} for settings like them, for orientation). With reasoning off the difference was {{c3.off.est.u}} points over {{c3.off.n}} settings, and only one of those {{c3.off.n}} had an interval above zero.",
+   "claim": "Claim 3",
+   "of": "Poster sentence",
+   "whole": true,
+   "quote": "Given the table of the key map, these settings answered 19.9 points higher than with a sham table with the same number of entries (18.0 to 21.7 for these 12 settings; 6.7 to 34.7 for settings like them, for orientation). With reasoning off the difference was 2.8 points over 6 settings, and only one of those 6 had an interval above zero.",
+   "occurs": [
+    "Given the table of the key map, these settings answered 19.9 points better than with a sham table with the same number of entries (18.0 to 21.7 for these 12 settings; 6.7 to 34.7 for settings like them, for orientation). With reasoning off the difference was 2.8 points over 6 settings, and only one of those 6 had an interval above zero."
+   ],
+   "review": false,
+   "fix": [
+    [
+     "better",
+     "higher"
+    ]
+   ]
+  },
+  "claim4": {
+   "text": "In the same model with reasoning on, the loss from wrong-layout text was {{c4.est.u}} points smaller than with reasoning off ({{c4.ci.u}} for these {{c4.pairs}} model pairs; {{c4.cx.u}} for pairs like them, for orientation). This took about {{c4.F}} times as many reasoning tokens as the same items in native script ({{c4.Fci}}; {{c4.Fcx}} for orientation). For {{c4.incl0}} of the {{c4.pairs}} pairs the interval included zero.",
+   "claim": "Claim 4",
+   "of": "Poster sentence",
+   "whole": true,
+   "quote": "In the same model with reasoning on, the loss from wrong-layout text was 15.8 points smaller than with reasoning off (12.8 to 18.8 for these 5 model pairs; 7.0 to 25.5 for pairs like them, for orientation). This took about 67 times as many reasoning tokens as the same items in native script (58 to 78; 27 to 135 for orientation). For one of the 5 pairs the interval included zero.",
+   "occurs": [
+    "In the same model with reasoning on, the loss from wrong-layout text was 15.8 points smaller than with reasoning off (12.8 to 18.8 for these 5 model pairs; 7.0 to 25.5 for pairs like them, for orientation). This took about 67 times as many reasoning tokens as the same items in native script (58 to 78; 27 to 135 for orientation). For one of the 5 pairs the interval included zero."
+   ],
+   "review": false
+  },
+  "claim4tq": {
+   "text": "Beside the {{c4.est.u}} points: among replies that gave an answer the same contrast is {{c4.valid.u}} points; the share of replies that gave an answer is {{c4.comp.u}} points lower, because with reasoning on many more replies to wrong-layout text end without an answer. These are separate measures, not parts of a sum.",
+   "claim": "Correction 1",
+   "of": "Figure A's caption:",
+   "whole": true,
+   "quote": "Beside the 15.8 points: among replies that gave an answer the same contrast is 31.5 points; the share of replies that gave an answer is 20.1 points lower, because with reasoning on many more replies to wrong-layout text end without an answer. These are separate measures, not parts of a sum.",
+   "occurs": [
+    "Beside the 15.8 points: among replies that gave an answer the same contrast is 31.5 points; the share of replies that gave an answer is 20.1 points lower, because with reasoning on many more replies to wrong-layout text end without an answer. These are separate measures, not parts of a sum."
+   ],
+   "review": false
+  },
+  "c1tq": {
+   "text": "Share of replies with a valid answer: {{c1.comp}} points; among valid replies: {{c1.valid}}.",
+   "claim": "Correction 1",
+   "of": "the small print of a card of Claims 1 to 3",
+   "whole": true,
+   "quote": "Share of replies with a valid answer: +2.8 points; among valid replies: +5.8.",
+   "occurs": [
+    "Share of replies with a valid answer: +2.8 points; among valid replies: +5.8."
+   ],
+   "review": false
+  },
+  "c2tq": {
+   "text": "Share of replies with a valid answer: {{c2.comp}} points; among valid replies: {{c2.valid}}.",
+   "claim": "Correction 1",
+   "of": "the small print of a card of Claims 1 to 3",
+   "whole": true,
+   "quote": "Share of replies with a valid answer: +3.1 points; among valid replies: +15.8.",
+   "occurs": [
+    "Share of replies with a valid answer: +2.8 points; among valid replies: +5.8.",
+    "C2: +3.1 and +15.8"
+   ],
+   "review": false
+  },
+  "c3tq": {
+   "text": "Share of replies with a valid answer: {{c3.comp}} points; among valid replies: {{c3.valid}}.",
+   "claim": "Correction 1",
+   "of": "the small print of a card of Claims 1 to 3",
+   "whole": true,
+   "quote": "Share of replies with a valid answer: +7.5 points; among valid replies: +13.3.",
+   "occurs": [
+    "Share of replies with a valid answer: +2.8 points; among valid replies: +5.8.",
+    "C3: +7.5 and +13.3"
+   ],
+   "review": false
+  },
+  "status": {
+   "text": "Interim cut of {{status.cut}}: {{status.ended}} of {{status.planned}} planned runs complete; {{status.running}} were still running and {{status.not_started}} had not started. Every number rests on the runs that had ended by then.",
+   "claim": "Correction 2",
+   "of": "the lead's review of the page (REVIEW_lead.md 1.3), in the words of Correction 2",
+   "whole": true,
+   "quote": "Interim cut of 22 Nov 2026, 18:33 UTC: 73 of 129 planned runs complete; 6 were still running and 49 had not started. Every number rests on the runs that had ended by then.",
+   "occurs": [
+    "73 of 129 planned runs complete",
+    "6 were running, 49 had not started"
+   ],
+   "review": true
+  },
+  "claim5a": {
+   "text": "With reasoning off, {{claim5.five}} of the {{claim5.six}} settings answered wrong-layout Hebrew, Armenian and Arabic text at {{claim5.a.lo}}% to {{claim5.a.hi}}% (chance is {{chance}}%), against {{claim5.nat.lo}}% to {{claim5.nat.hi}}% for the same items in native script.",
+   "claim": "Claim 5",
+   "of": "Poster sentence",
+   "whole": false,
+   "quote": "With reasoning off, five of the six settings answered wrong-layout Hebrew, Armenian and Arabic text at 28% to 38% (chance is 25%), against 90% to 96% for the same items in native script. A note or a key table added about 3 points on average, and only one setting (gpt-6.1-terra, reasoning none) had an interval above zero for any of them.",
+   "occurs": [
+    "With reasoning off, five of the six settings answered wrong-layout Hebrew, Armenian and Arabic text at 28% to 38% (chance is 25%), against 90% to 96% for the same items in native script. A note or a key table added about 3 points on average, and only one setting (gpt-6.1-terra, reasoning none) had an interval above zero for any of them."
+   ],
+   "review": false
+  },
+  "claim5": {
+   "text": "With reasoning off, {{claim5.five}} of the {{claim5.six}} settings answered wrong-layout Hebrew, Armenian and Arabic text at {{claim5.a.lo}}% to {{claim5.a.hi}}% (chance is {{chance}}%), against {{claim5.nat.lo}}% to {{claim5.nat.hi}}% for the same items in native script. A note or a key table added about {{claim5.about3}} points on average, and only one setting (gpt-6.1-terra, reasoning none) had an interval above zero for any of them.",
+   "claim": "Claim 5",
+   "of": "Poster sentence",
+   "whole": true,
+   "quote": "With reasoning off, five of the six settings answered wrong-layout Hebrew, Armenian and Arabic text at 28% to 38% (chance is 25%), against 90% to 96% for the same items in native script. A note or a key table added about 3 points on average, and only one setting (gpt-6.1-terra, reasoning none) had an interval above zero for any of them.",
+   "occurs": [
+    "With reasoning off, five of the six settings answered wrong-layout Hebrew, Armenian and Arabic text at 28% to 38% (chance is 25%), against 90% to 96% for the same items in native script. A note or a key table added about 3 points on average, and only one setting (gpt-6.1-terra, reasoning none) had an interval above zero for any of them."
+   ],
+   "review": false
+  },
+  "claim6": {
+   "text": "With reasoning off, the same {{s1.n}} settings scored {{s1.ORA_minus_DIR_b.est.u}} points higher when given the correct native text ({{s1.ORA_minus_DIR_b.ci.u}}), but only {{s1.G_two_b.est.u}} points higher when given back their own transcription ({{s1.G_two_b.ci.u}} for these settings; {{s1.G_two_b.cx.u}} for settings like them, for orientation).",
+   "claim": "Claim 6",
+   "of": "Poster sentence",
+   "whole": true,
+   "quote": "With reasoning off, the same 5 settings scored 51.4 points higher when given the correct native text (47.4 to 55.2), but only 6.7 points higher when given back their own transcription (4.1 to 9.3 for these settings; -0.3 to 14.2 for settings like them, for orientation).",
+   "occurs": [
+    "With reasoning off, the same 5 settings scored 51.4 points higher when given the correct native text (47.4 to 55.2), but only 6.7 points higher when given back their own transcription (4.1 to 9.3 for these settings; -0.3 to 14.2 for settings like them, for orientation)."
+   ],
+   "review": false
+  },
+  "claim7": {
+   "text": "Reasoning did not help every model pair alike: in {{c4ext.incl0}} pairs the interval included zero. With reasoning on, {{cap.n}} of the 5 main settings stopped at the {{cap.budget}}-token output cap on {{cap.share}} of wrong-layout items (Armenian: all of them for one setting), so those replies had no answer.",
+   "claim": "Claim 7",
+   "of": "Poster sentence",
+   "whole": true,
+   "quote": "Reasoning did not help every model pair alike: in 2 of 8 pairs the interval included zero. With reasoning on, 2 of the 5 main settings stopped at the 32,000-token output cap on 40% to 60% of wrong-layout items (Armenian: all of them for one setting), so those replies had no answer.",
+   "occurs": [
+    "Reasoning did not help every model pair alike: in 2 of 8 pairs the interval included zero. With reasoning on, 2 of the 5 main settings stopped at the 32,000-token output cap on 40% to 60% of wrong-layout items (Armenian: all of them for one setting), so those replies had no answer."
+   ],
+   "review": false
+  },
+  "claim8": {
+   "text": "With reasoning off, the advantage of a familiar layout pair over a random map ({{s3.fam.u}} points over {{s3.n}} settings) came almost all from one setting (gpt-6.1-terra, reasoning none: {{s3.terra.u}} points). For an unfamiliar pairing of two standard layouts, no setting's interval excluded zero.",
+   "claim": "Claim 8",
+   "of": "Poster sentence",
+   "whole": true,
+   "quote": "With reasoning off, the advantage of a familiar layout pair over a random map (13.3 points over 3 settings) came almost all from one setting (gpt-6.1-terra, reasoning none: 37.6 points). For an unfamiliar pairing of two standard layouts, no setting's interval excluded zero.",
+   "occurs": [
+    "With reasoning off, the advantage of a familiar layout pair over a random map (13.3 points over 3 settings) came almost all from one setting (gpt-6.1-terra, reasoning none: 37.6 points). For an unfamiliar pairing of two standard layouts, no setting's interval excluded zero."
+   ],
+   "review": false
+  },
+  "p1": {
+   "text": "Pilot, {{p1.date}}: forced to pick an option, {{p1.settings}} settings scored {{p1.alone}} ({{p1.alone.ci.u}}) on {{p1.items}} same-spelling words shown alone, where no reader can expect more than {{p1.bound}}. Other same-spelling words inside sentences scored {{p1.sent}} ({{p1.sent.ci.u}}).",
+   "claim": "P1",
+   "of": "Poster sentence",
+   "whole": true,
+   "quote": "Pilot, 16 Nov 2026: forced to pick an option, 21 settings scored 48.9% (46.7 to 50.6) on 36 same-spelling words shown alone, where no reader can expect more than 50%. Other same-spelling words inside sentences scored 99.1% (98.1 to 99.9).",
+   "occurs": [
+    "Pilot, 16 Nov 2026: forced to pick an option, 21 settings scored 48.9% (46.7 to 50.6) on 36 same-spelling words shown alone, where no reader can expect more than 50%. Other same-spelling words inside sentences scored 99.1% (98.1 to 99.9)."
+   ],
+   "review": false
+  },
+  "p1status": {
+   "text": "The registered tests of this half are registered; they are not computed in this interim cut.",
+   "claim": "Status line",
+   "of": "Poster sentence",
+   "whole": true,
+   "quote": "The registered tests of this half are registered; they are not computed in this interim cut.",
+   "occurs": [
+    "The registered tests of this half are registered; they are not computed in this interim cut."
+   ],
+   "review": false
+  },
+  "p4": {
+   "text": "Earlier study (the accepted abstract, May to June 2026): two command-line coding agents, {{p4.calls}} valid calls, Chinese only. On {{p4.tasks}} tasks whose answer is an exact term, both scored {{p4.low}} with toneless pinyin and {{p4.high}} with the terms kept in characters; the kept terms were the answers themselves.",
+   "claim": "P4",
+   "of": "Line",
+   "whole": true,
+   "quote": "Earlier study (the accepted abstract, May to June 2026): two command-line coding agents, 48 valid calls, Chinese only. On three tasks whose answer is an exact term, both scored 0.333 with toneless pinyin and 1.00 with the terms kept in characters; the kept terms were the answers themselves.",
+   "occurs": [
+    "Earlier study (the accepted abstract, May to June 2026): two command-line coding agents, 48 valid calls, Chinese only. On three tasks whose answer is an exact term, both scored 0.333 with toneless pinyin and 1.00 with the terms kept in characters; the kept terms were the answers themselves."
+   ],
+   "review": false
+  },
+  "headline0": {
+   "text": "Garbled text can be decoded, at a cost.",
+   "claim": "Headline",
+   "of": "Poster sentence",
+   "whole": true,
+   "quote": "Garbled text can be decoded, at a cost.",
+   "occurs": [
+    "Garbled text can be decoded, at a cost."
+   ],
+   "review": false
+  },
+  "headline1": {
+   "text": "Ambiguous text cannot.",
+   "claim": "Headline",
+   "of": "Poster sentence",
+   "whole": true,
+   "quote": "Ambiguous text cannot.",
+   "occurs": [
+    "Ambiguous text cannot."
+   ],
+   "review": false
+  }
+ },
+ "figA": {
+  "rows": [
+   {
+    "pair": "luna_none/luna_high",
+    "short": "luna",
+    "off": "luna_none",
+    "on": "luna_high",
+    "model": "gpt-6-luna",
+    "off_level": "reasoning none",
+    "on_level": "reasoning high",
+    "est": 0.3226461659245426,
+    "ci": [
+     0.25577414388816866,
+     0.3875720624738166
+    ],
+    "incl0": false,
+    "a_off": 0.363325,
+    "a_on": 0.7125,
+    "nat_off": 0.9358500000000001,
+    "nat_on": 0.955
+   },
+   {
+    "pair": "dblite_off/dblite_on",
+    "short": "dblite",
+    "off": "dblite_off",
+    "on": "dblite_on",
+    "model": "doubao-seed-2-1-lite-260915",
+    "off_level": "reasoning off",
+    "on_level": "reasoning on",
+    "est": 0.17103857883819834,
+    "ci": [
+     0.1265284856791479,
+     0.2158352825346677
+    ],
+    "incl0": false,
+    "a_off": 0.36834999999999996,
+    "a_on": 0.535,
+    "nat_off": 0.9425,
+    "nat_on": 0.9325
+   },
+   {
+    "pair": "kimi_off/kimi_on",
+    "short": "kimi",
+    "off": "kimi_off",
+    "on": "kimi_on",
+    "model": "kimi-k3-1-pro-261024",
+    "off_level": "reasoning off",
+    "on_level": "reasoning on",
+    "est": 0.14587290747721948,
+    "ci": [
+     0.08971936316310006,
+     0.2012145345042061
+    ],
+    "incl0": false,
+    "a_off": 0.39335,
+    "a_on": 0.53,
+    "nat_off": 0.9458,
+    "nat_on": 0.9375
+   },
+   {
+    "pair": "terra_none/terra_high",
+    "short": "terra",
+    "off": "terra_none",
+    "on": "terra_high",
+    "model": "gpt-6.1-terra",
+    "off_level": "reasoning none",
+    "on_level": "reasoning high",
+    "est": 0.13478343681260616,
+    "ci": [
+     0.09991261699701347,
+     0.16960500111464252
+    ],
+    "incl0": false,
+    "a_off": 0.5675,
+    "a_on": 0.7025,
+    "nat_off": 0.9517,
+    "nat_on": 0.95
+   },
+   {
+    "pair": "dsflash_off/dsflash_on",
+    "short": "dsflash",
+    "off": "dsflash_off",
+    "on": "dsflash_on",
+    "model": "deepseek-v4-1-flash-261017",
+    "off_level": "reasoning off",
+    "on_level": "reasoning on",
+    "est": 0.015893649787118425,
+    "ci": [
+     -0.042561172350451225,
+     0.07223219960745576
+    ],
+    "incl0": true,
+    "a_off": 0.328325,
+    "a_on": 0.375,
+    "nat_off": 0.91335,
+    "nat_on": 0.9375
+   }
+  ],
+  "note": "positions: descriptive cells of run1, 100 items per cell, equal-weight mean of Russian, Hebrew, Armenian and Arabic; values: registered per-pair estimates (96 items per language)"
+ },
+ "strip": {
+  "C1": {
+   "per": [
+    {
+     "setting": "dblite_off",
+     "on": false,
+     "v": -0.02323057411833571,
+     "lo": -0.06283535390302548,
+     "hi": 0.012936356404569924,
+     "incl0": true
+    },
+    {
+     "setting": "dblite_on",
+     "on": true,
+     "v": 0.1131397771537277,
+     "lo": 0.05368453112427212,
+     "hi": 0.17132435350759234,
+     "incl0": false
+    },
+    {
+     "setting": "dsflash_off",
+     "on": false,
+     "v": -0.01796799691536534,
+     "lo": -0.05283730624664645,
+     "hi": 0.016634267545322608,
+     "incl0": true
+    },
+    {
+     "setting": "dsflash_on",
+     "on": true,
+     "v": 0.30401513515020173,
+     "lo": 0.2689866465083898,
+     "hi": 0.3382367551779377,
+     "incl0": false
+    },
+    {
+     "setting": "kimi_off",
+     "on": false,
+     "v": -0.010636298810046437,
+     "lo": -0.04186987616103582,
+     "hi": 0.01973083228702828,
+     "incl0": true
+    },
+    {
+     "setting": "luna_high",
+     "on": true,
+     "v": 0.00999672489843701,
+     "lo": -0.024135126653313053,
+     "hi": 0.04528200570386743,
+     "incl0": true
+    },
+    {
+     "setting": "luna_none",
+     "on": false,
+     "v": -0.019589869019165148,
+     "lo": -0.05152622598968709,
+     "hi": 0.011516904022670643,
+     "incl0": true
+    },
+    {
+     "setting": "opus_low",
+     "on": true,
+     "v": 0.03877615726062144,
+     "lo": 0.00646798333522675,
+     "hi": 0.07185761712451978,
+     "incl0": false
+    },
+    {
+     "setting": "sol62_low",
+     "on": true,
+     "v": 0.07257276648525857,
+     "lo": 0.038092975038962924,
+     "hi": 0.11096628599618706,
+     "incl0": false
+    },
+    {
+     "setting": "sol_low",
+     "on": true,
+     "v": 0.11351780749371111,
+     "lo": 0.07801541889236352,
+     "hi": 0.15476634250768992,
+     "incl0": false
+    },
+    {
+     "setting": "sonnet_off",
+     "on": false,
+     "v": 0.007810768812671164,
+     "lo": -0.05059782040598824,
+     "hi": 0.06420583797654676,
+     "incl0": true
+    },
+    {
+     "setting": "terra_high",
+     "on": true,
+     "v": 0.22010145846544069,
+     "lo": 0.17549105766265805,
+     "hi": 0.26197287865563085,
+     "incl0": false
+    },
+    {
+     "setting": "terra_none",
+     "on": false,
+     "v": 0.24149530452637621,
+     "lo": 0.195445769767072,
+     "hi": 0.2867128018211575,
+     "incl0": false
+    }
+   ],
+   "off_n": 6,
+   "off_incl0": 5,
+   "exception": "terra_none",
+   "all": {
+    "v": 0.08076932010642562,
+    "ci": [
+     0.06464076087696079,
+     0.0968047727498818
+    ],
+    "cx": [
+     0.023647937670691614,
+     0.14393046870657278
+    ],
+    "n": 13
+   },
+   "off": {
+    "v": 0.02964688907935579,
+    "ci": [
+     0.010367133167398377,
+     0.04851933849706501
+    ],
+    "cx": [
+     -0.03172745924242983,
+     0.11962826923420623
+    ],
+    "n": 6
+   }
+  },
+  "C2": {
+   "per": [
+    {
+     "setting": "dblite_off",
+     "on": false,
+     "v": -0.009078038883168799,
+     "lo": -0.04937266306826982,
+     "hi": 0.02686145710955246,
+     "incl0": true
+    },
+    {
+     "setting": "dblite_on",
+     "on": true,
+     "v": 0.09003997335109924,
+     "lo": 0.04381316767155101,
+     "hi": 0.13341625556080378,
+     "incl0": false
+    },
+    {
+     "setting": "dsflash_off",
+     "on": false,
+     "v": 0.014376274402923309,
+     "lo": -0.02269126904696264,
+     "hi": 0.04799454020974666,
+     "incl0": true
+    },
+    {
+     "setting": "dsflash_on",
+     "on": true,
+     "v": 0.3336423444976076,
+     "lo": 0.291963142689733,
+     "hi": 0.3743244281756032,
+     "incl0": false
+    },
+    {
+     "setting": "kimi_off",
+     "on": false,
+     "v": 0.03246560373892153,
+     "lo": -0.00306069472203176,
+     "hi": 0.06828077555778019,
+     "incl0": true
+    },
+    {
+     "setting": "luna_high",
+     "on": true,
+     "v": 0.3530767367209739,
+     "lo": 0.28864879438347246,
+     "hi": 0.413567255002366,
+     "incl0": false
+    },
+    {
+     "setting": "luna_none",
+     "on": false,
+     "v": 0.006341605596269154,
+     "lo": -0.03197182297004682,
+     "hi": 0.04299439484562638,
+     "incl0": true
+    },
+    {
+     "setting": "sol62_low",
+     "on": true,
+     "v": 0.31159946399370114,
+     "lo": 0.24298980106975654,
+     "hi": 0.38142572105867734,
+     "incl0": false
+    },
+    {
+     "setting": "sol_low",
+     "on": true,
+     "v": 0.348022530434256,
+     "lo": 0.27992387581623307,
+     "hi": 0.4110148661444076,
+     "incl0": false
+    },
+    {
+     "setting": "terra_high",
+     "on": true,
+     "v": 0.1582834928229665,
+     "lo": 0.11167023818572182,
+     "hi": 0.2070137417978032,
+     "incl0": false
+    },
+    {
+     "setting": "terra_none",
+     "on": false,
+     "v": 0.14265994387579997,
+     "lo": 0.1045720848297521,
+     "hi": 0.18187873370351498,
+     "incl0": false
+    }
+   ],
+   "off_n": 5,
+   "off_incl0": 4,
+   "exception": "terra_none",
+   "all": {
+    "v": 0.16194817550466814,
+    "ci": [
+     0.14049042501117104,
+     0.18235284181671518
+    ],
+    "cx": [
+     0.07769053958249653,
+     0.2525701558369981
+    ],
+    "n": 11
+   },
+   "off": {
+    "v": 0.03735307774614903,
+    "ci": [
+     0.019530203383984715,
+     0.055254424275583316
+    ],
+    "cx": [
+     -0.009509467653853678,
+     0.09481744137276747
+    ],
+    "n": 5
+   }
+  },
+  "C3": {
+   "per": [
+    {
+     "setting": "dblite_off",
+     "on": false,
+     "v": -0.02299468860141375,
+     "lo": -0.05505975263485155,
+     "hi": 0.011498933372284395,
+     "incl0": true
+    },
+    {
+     "setting": "dblite_on",
+     "on": true,
+     "v": 0.49105584352294873,
+     "lo": 0.42563746114621354,
+     "hi": 0.5593763605061213,
+     "incl0": false
+    },
+    {
+     "setting": "dsflash_off",
+     "on": false,
+     "v": -0.007155589767066372,
+     "lo": -0.039778007731751434,
+     "hi": 0.026347452316212307,
+     "incl0": true
+    },
+    {
+     "setting": "dsflash_on",
+     "on": true,
+     "v": 0.7661728764250693,
+     "lo": 0.7124651875193438,
+     "hi": 0.8152018172313457,
+     "incl0": false
+    },
+    {
+     "setting": "kimi_off",
+     "on": false,
+     "v": -0.0025771235749305925,
+     "lo": -0.036306240267488445,
+     "hi": 0.029348055630997905,
+     "incl0": true
+    },
+    {
+     "setting": "luna_high",
+     "on": true,
+     "v": 0.48468456494772283,
+     "lo": 0.41554525367078005,
+     "hi": 0.5525636500133744,
+     "incl0": false
+    },
+    {
+     "setting": "luna_none",
+     "on": false,
+     "v": -0.012426039143875401,
+     "lo": -0.04455553368783256,
+     "hi": 0.019067275624883664,
+     "incl0": true
+    },
+    {
+     "setting": "sol62_low",
+     "on": true,
+     "v": 0.2490939179809794,
+     "lo": 0.19719018825404663,
+     "hi": 0.3013596329105448,
+     "incl0": false
+    },
+    {
+     "setting": "sol_low",
+     "on": true,
+     "v": 0.16692020718884754,
+     "lo": 0.12049088640505784,
+     "hi": 0.21502932243340536,
+     "incl0": false
+    },
+    {
+     "setting": "sonnet_off",
+     "on": false,
+     "v": -0.036448457528501385,
+     "lo": -0.08843446221063414,
+     "hi": 0.01744989118924692,
+     "incl0": true
+    },
+    {
+     "setting": "terra_high",
+     "on": true,
+     "v": 0.059229539547522,
+     "lo": 0.030302008695395056,
+     "hi": 0.08922238770526605,
+     "incl0": false
+    },
+    {
+     "setting": "terra_none",
+     "on": false,
+     "v": 0.2507351475279107,
+     "lo": 0.20357291413261908,
+     "hi": 0.29813920132418,
+     "incl0": false
+    }
+   ],
+   "off_n": 6,
+   "off_incl0": 5,
+   "exception": "terra_none",
+   "all": {
+    "v": 0.19885751654376776,
+    "ci": [
+     0.179825429372089,
+     0.21739848432089298
+    ],
+    "cx": [
+     0.06729029168309046,
+     0.34707374218633785
+    ],
+    "n": 12
+   },
+   "off": {
+    "v": 0.0281888748186872,
+    "ci": [
+     0.010278500673386823,
+     0.04635102862891148
+    ],
+    "cx": [
+     -0.03439658220519559,
+     0.12403914904697633
+    ],
+    "n": 6
+   }
+  }
+ },
+ "s1": {
+  "ORA_minus_DIR_b": {
+   "v": 0.5137870161966547,
+   "ci": [
+    0.4739550593214664,
+    0.5520341634683577
+   ],
+   "cx": [
+    0.3425434924682896,
+    0.6338102623054551
+   ],
+   "n": 5
+  },
+  "G_two_b": {
+   "v": 0.06720499116187134,
+   "ci": [
+    0.04102963650619806,
+    0.09256473836711061
+   ],
+   "cx": [
+    -0.0027947561674620753,
+    0.1423452731551701
+   ],
+   "n": 5
+  }
+ },
+ "c4ext": {
+  "forest": [
+   {
+    "pair": "luna_none/luna_high",
+    "short": "luna",
+    "model": "gpt-6-luna",
+    "family": "OpenAI",
+    "v": 0.3226461659245426,
+    "ci": [
+     0.2572025770925177,
+     0.38785071018916867
+    ],
+    "incl0": false
+   },
+   {
+    "pair": "dspro_off/dspro_on",
+    "short": "dspro",
+    "model": "deepseek-v4-pro-ga-260813",
+    "family": "DeepSeek",
+    "v": 0.22333173062405787,
+    "ci": [
+     0.16717708106610638,
+     0.27780164322499673
+    ],
+    "incl0": false
+   },
+   {
+    "pair": "dblite_off/dblite_on",
+    "short": "dblite",
+    "model": "doubao-seed-2-1-lite-260915",
+    "family": "ByteDance",
+    "v": 0.17103857883819837,
+    "ci": [
+     0.1268077845602476,
+     0.21552103810129505
+    ],
+    "incl0": false
+   },
+   {
+    "pair": "kimi_off/kimi_on",
+    "short": "kimi",
+    "model": "kimi-k3-1-pro-261024",
+    "family": "Moonshot",
+    "v": 0.14587290747721948,
+    "ci": [
+     0.08819511959895625,
+     0.2004162532435228
+    ],
+    "incl0": false
+   },
+   {
+    "pair": "terra_none/terra_high",
+    "short": "terra",
+    "model": "gpt-6.1-terra",
+    "family": "OpenAI",
+    "v": 0.13478343681260616,
+    "ci": [
+     0.10019546183131521,
+     0.16953548847053768
+    ],
+    "incl0": false
+   },
+   {
+    "pair": "qwen397b_off/qwen397b_on",
+    "short": "qwen397b",
+    "model": "qwen3.5-397b-a17b",
+    "family": "Alibaba",
+    "v": 0.06096648014847128,
+    "ci": [
+     0.016017888817881586,
+     0.10583308820342648
+    ],
+    "incl0": false
+   },
+   {
+    "pair": "dsflash_off/dsflash_on",
+    "short": "dsflash",
+    "model": "deepseek-v4-1-flash-261017",
+    "family": "DeepSeek",
+    "v": 0.01589364978711842,
+    "ci": [
+     -0.04030906296631684,
+     0.07359535798093411
+    ],
+    "incl0": true
+   },
+   {
+    "pair": "qwen27b_off/qwen27b_on",
+    "short": "qwen27b",
+    "model": "qwen3.8-27b",
+    "family": "Alibaba",
+    "v": -0.004378532057669647,
+    "ci": [
+     -0.060192390702781644,
+     0.05144974070268542
+    ],
+    "incl0": true
+   }
+  ],
+  "mean": 0.13376930219431807,
+  "cap": [
+   {
+    "setting": "dsflash_on",
+    "model": "deepseek-v4-1-flash-261017",
+    "level": "reasoning on",
+    "n": 400,
+    "correct": 150,
+    "wrong": 10,
+    "truncated": 240,
+    "other": 0
+   },
+   {
+    "setting": "kimi_on",
+    "model": "kimi-k3-1-pro-261024",
+    "level": "reasoning on",
+    "n": 400,
+    "correct": 212,
+    "wrong": 26,
+    "truncated": 162,
+    "other": 0
+   },
+   {
+    "setting": "luna_high",
+    "model": "gpt-6-luna",
+    "level": "reasoning high",
+    "n": 400,
+    "correct": 285,
+    "wrong": 115,
+    "truncated": 0,
+    "other": 0
+   },
+   {
+    "setting": "dblite_on",
+    "model": "doubao-seed-2-1-lite-260915",
+    "level": "reasoning on",
+    "n": 400,
+    "correct": 214,
+    "wrong": 186,
+    "truncated": 0,
+    "other": 0
+   },
+   {
+    "setting": "terra_high",
+    "model": "gpt-6.1-terra",
+    "level": "reasoning high",
+    "n": 400,
+    "correct": 281,
+    "wrong": 119,
+    "truncated": 0,
+    "other": 0
+   }
+  ]
+ },
+ "s3": {
+  "theta_fam": {
+   "v": 0.13339919851412188,
+   "ci": [
+    0.10907149035541111,
+    0.15754010413478217
+   ],
+   "cx": [
+    -0.019911856258243765,
+    0.3633352632514668
+   ],
+   "n": 3,
+   "per": [
+    {
+     "setting": "terra_none",
+     "v": 0.3762752861728545,
+     "lo": 0.3227571289185253,
+     "hi": 0.42808947645653844,
+     "incl0": false
+    },
+    {
+     "setting": "kimi_off",
+     "v": 0.04024122807017544,
+     "lo": 0.00030682005348354856,
+     "hi": 0.07781791253208571,
+     "incl0": false
+    },
+    {
+     "setting": "dsflash_off",
+     "v": -0.01631891870066421,
+     "lo": -0.05074956755026033,
+     "hi": 0.016828044809318134,
+     "incl0": true
+    }
+   ]
+  },
+  "theta_comp": {
+   "v": -0.011782676571920763,
+   "ci": [
+    -0.03393085939109298,
+    0.0104260571752785
+   ],
+   "cx": [
+    -0.04559783641118335,
+    0.0212250583131549
+   ],
+   "n": 3,
+   "per": [
+    {
+     "setting": "terra_none",
+     "v": -0.006197512919896649,
+     "lo": -0.046206829775453,
+     "hi": 0.03232140653199383,
+     "incl0": true
+    },
+    {
+     "setting": "kimi_off",
+     "v": 0.0026647286821705396,
+     "lo": -0.033034825926054626,
+     "hi": 0.04016296077431712,
+     "incl0": true
+    },
+    {
+     "setting": "dsflash_off",
+     "v": -0.03181524547803618,
+     "lo": -0.06893216684689421,
+     "hi": 0.0067429615301955225,
+     "incl0": true
+    }
+   ]
+  }
+ },
+ "p1": {
+  "alone": 48.9,
+  "alone_ci": "[46.7, 50.6]",
+  "sent": 99.1,
+  "sent_ci": "[98.1, 99.9]",
+  "bound": 50.0
+ }
+}

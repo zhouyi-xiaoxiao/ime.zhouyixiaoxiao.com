@@ -56,11 +56,6 @@
     if (v >= 100) return Math.round(v).toLocaleString("en-GB");
     return (Math.round(v * 10) / 10).toLocaleString("en-GB");
   }
-  function money(c) {
-    if (!c || !fin(c.value)) return "";
-    var v = c.value, s = v >= 0.01 ? v.toFixed(4) : v >= 0.0001 ? v.toFixed(5) : v.toPrecision(2);
-    return s + " " + c.currency;
-  }
   function fillText(t) {
     return String(t).replace(/\{\{([^}]+)\}\}/g, function (m, k) { return has(B.numbers, k) ? B.numbers[k].text : m; });
   }
@@ -90,9 +85,8 @@
     Object.keys(I.cells).forEach(function (k) {
       I.cells[k].sort(function (a, b) { return (rank[b.status] || 0) - (rank[a.status] || 0) || (b.date > a.date ? 1 : -1); });
     });
-    I.cost = dict(); B.costs.forEach(function (c) { I.cost[c.setting + "|" + c.arm] = c; });
-    I.zh = dict(); B.zh.per_setting.forEach(function (p) { I.zh[p.setting] = p; });
-    I.contrast = dict(); B.contrasts.forEach(function (c) { I.contrast[c.id] = c; });
+    I.zh = dict(); ((B.zh || {}).per_setting || []).forEach(function (p) { I.zh[p.setting] = p; });
+    I.contrast = dict(); (B.contrasts || []).forEach(function (c) { I.contrast[c.id] = c; });
   }
   function cellsOf(s, l, a) { return I.cells[s + "|" + l + "|" + a + "|full"] || []; }
   function cellOf(s, l, a) { return cellsOf(s, l, a)[0] || null; }
@@ -132,7 +126,7 @@
     var a = I.arm[arm] || {}, l = I.lang[lang];
     if (!s.planned && !s.has_cells) {
       return { kind: "notplanned", short: "not planned", text: s.smoke === "fail"
-        ? "Not planned: this setting failed the registry's 5-call smoke check (" + (s.smoke_note || "") + "), so the main run leaves it out."
+        ? "Not planned: this setting did not pass the registry's 5-call smoke check (" + (s.smoke_note || "") + "), so the main run leaves it out."
         : "Not planned: the main run leaves this setting out." };
     }
     var po = (B.design.pilot_pooled_only || []).filter(function (p) { return p.setting === s.id && p.arm === arm && p.langs.indexOf(lang) >= 0; })[0];
@@ -624,7 +618,7 @@
     }
     h += "<h4>How the calls ended</h4>" + outcomes(c, s);
     var op = wide() ? " open" : "";
-    h += '</div><div><details class="fold"' + op + "><summary>Tokens, cost and time</summary>" + costs(s, n, c) + "</details>";
+    h += '</div><div><details class="fold"' + op + "><summary>Tokens and time</summary>" + tokensTime(n, c) + "</details>";
     h += '<details class="fold"' + op + "><summary>About this number</summary>" + about(c) + "</details>";
     h += "</div></div>";
     var others = (I.bySetting[s.id] || []).filter(function (x) { return x.lang === S.lang && x.arm !== S.arm; });
@@ -645,7 +639,7 @@
   function healthLine(s) {
     var h = s.pilot_run_health;
     if (!h) return "";
-    return "Over all " + int(h.calls) + " pilot calls of this setting (run health): " + int(h.truncated) + " cut off at the output budget, " +
+    return "Over all " + int(h.calls) + " pilot calls of this setting (run health): " + int(h.truncated) + " stopped at the output budget, " +
            int(h.unparseable) + " unparseable, " + int(h.refusal) + " refused, " + int(h.no_reply) + " without a reply.";
   }
   function outcomes(c, s) {
@@ -665,39 +659,28 @@
       r("wrong", o.wrong); r("no valid answer", c.no_valid);
       r("refused", o.refused, true);
       if (fin(o.declined)) r("declined (a provider's stock message)", o.declined, true);
-      r("cut off at the output budget", o.truncated, true); r("unparseable", o.unparseable, true);
+      r("stopped at the output budget", o.truncated, true); r("unparseable", o.unparseable, true);
       if (fin(o.no_reply)) r("no reply", o.no_reply, true);
     } else {
       if (fin(o.refused)) r("refused", o.refused, true);
-      if (fin(o.truncated)) r("cut off at the output budget", o.truncated, true);
+      if (fin(o.truncated)) r("stopped at the output budget", o.truncated, true);
     }
     t += "</tbody></table>";
     var note = "";
-    if (c.outcomes_from === "run_health") note = "None of this setting's " + int((s.pilot_run_health || {}).calls) + " pilot calls was cut off at the output budget, unparseable or without a reply (run health), so every call that is neither correct nor refused is wrong.";
+    if (c.outcomes_from === "run_health") note = "None of this setting's " + int((s.pilot_run_health || {}).calls) + " pilot calls was stopped at the output budget, unparseable or without a reply (run health), so every call that is neither correct nor refused is wrong.";
     else if (!split) note = "This summary does not split these calls by outcome. " + healthLine(s);
     return bar + lgd + t + (note ? '<p class="small">' + esc(note) + "</p>" : "");
   }
-  function costs(s, n, c) {
+  function tokensTime(n, c) {
     var h = "";
     function line(lbl, v) { h += '<div class="kv"><span class="k-l">' + lbl + '</span><span class="k-v">' + v + "</span></div>"; }
     function rt(cell) { var r = cell && cell.reasoning_tokens; return r ? '<span class="nw">' + tok(r.mean) + " mean</span>" + (fin(r.median) ? ', <span class="nw">' + tok(r.median) + " median</span>" : "") : "not in this summary"; }
     h += '<p class="small">Reasoning tokens per call over the calls of the numbers above, as each API reports them; the summaries give no interval.</p>';
     if (c.arm !== "native") line("Reasoning tokens, as written", rt(n));
     line("Reasoning tokens, " + esc(armLabel(c.arm, c.lang, true)), rt(c));
-    if (c.cost_per_call) line("List-price cost per call", money(c.cost_per_call));
-    if (c.latency_s) line("Latency", fin(c.latency_s.median) ? c.latency_s.median + " s median" : c.latency_s.mean + " s mean");
-    var pc = I.cost[s.id + "|" + c.arm], pn = c.arm !== "native" ? I.cost[s.id + "|native"] : null;
-    if (!c.cost_per_call && (pc || pn)) {
-      h += '<p class="small cost-head">From the pilot cost table: ' + esc((pc || pn).scope) + ". These are not values for this language alone; the tokens below come from the same calls as the cost.</p>";
-      [[pn, "as written"], [pc, armLabel(c.arm, c.lang, true)]].forEach(function (x) {
-        if (!x[0]) return;
-        var r = x[0];
-        line("List-price cost per call, " + esc(x[1]), money(r.cost_per_call) + '<br><span class="small"><span class="nw">' + int(r.calls) + " calls</span>, <span class=\"nw\">" +
-             tok(r.output_tokens_mean) + ' output tokens</span>, <span class="nw">' + tok(r.reasoning_tokens_mean) + ' reasoning tokens</span>, <span class="nw">' + r.latency_s + " s</span></span>");
-      });
-    } else if (!c.cost_per_call) {
-      h += '<p class="small">No cost or latency is recorded for this setting and form.</p>';
-    }
+    var lat = c.latency_s;
+    if (lat && (fin(lat.median) || fin(lat.mean))) line("Latency", fin(lat.median) ? lat.median + " s median" : lat.mean + " s mean");
+    else h += '<p class="small">No latency is recorded in the summaries for this setting and form.</p>';
     return h;
   }
   function about(c) {
@@ -1044,23 +1027,36 @@
       "+" + esc(num("site.zh.h1.form")) + " of its +" + esc(num("site.zh.h1.est")) + " points go with the change to bare option numbers, which cannot flag; it gives no cause.</p>";
     Charts.table(cb, { caption: "Points; first interval over the classes with the settings held fixed, second with settings and classes resampled.",
       cols: [{ key: "id", label: "contrast" }, { key: "w", label: "arms" }, { key: "e", label: "difference, points", num: true }, { key: "c1", label: "interval, classes", num: true },
-             { key: "c2", label: "interval, settings and classes", num: true }, { key: "p", label: "p", num: true }, { key: "s", label: "supported" }],
-      rows: B.zh.contrasts.map(function (x) {
-        return { id: /^H\d/.test(x.id) ? x.id : "secondary", w: armName(x.a) + " against " + armName(x.b) + " (" + (x.outcome === "zero" ? "answers 0" : "says so") + ")", e: signed(x.est), c1: sival(x.ci, 1), c2: sival(x.ci_settings, 1),
-                 p: fin(x.p_holm) ? x.p_holm.toExponential(1) + " (Holm)" : fin(x.p) ? (x.p < 0.001 ? x.p.toExponential(1) : x.p.toFixed(3)) : "",
-                 s: x.supported == null ? x.family : x.supported ? "yes, in this pilot" : "no" };
+             { key: "c2", label: "interval, settings and classes", num: true }],
+      rows: (z.contrasts || []).map(function (x) {
+        return { id: /^H\d/.test(x.id) ? x.id : "secondary", w: armName(x.a) + " against " + armName(x.b) + " (" + (x.outcome === "zero" ? "answers 0" : "says so") + ")", e: signed(x.est), c1: sival(x.ci, 1), c2: sival(x.ci_settings, 1) };
       }) });
   }
 
   /* ------------------------------------------------------------------ boot */
+  // Version 4: the explorer is the pilot archive, closed by default. Its data (the bundle) is loaded only when the
+  // archive is opened, or when the address links a view of it (then the archive opens by itself).
   function boot() {
     initTheme();
     if (!wide()) $$("details.fold-narrow").forEach(function (d) { d.open = false; });  // open without JavaScript and on wide screens
+    var arch = $("#arch");
+    var q = new URLSearchParams(location.search);
+    var asked = !!(q.get("view") || q.get("model")) || /^#(explore|archive)$/.test(location.hash);
+    if (arch && !arch.open && !asked) {
+      arch.addEventListener("toggle", function once() { if (arch.open) { arch.removeEventListener("toggle", once); start(); } });
+      return;
+    }
+    if (arch) arch.open = true;
+    start();
+  }
+  function start() {
     loadJSON("bundle")
       .then(function (b) {
         B = b;
         index();
-        drawFigA(); drawFigD(); drawFigE();
+        if ($("#figA")) drawFigA();
+        if ($("#figD")) drawFigD();
+        if ($("#figE")) drawFigE();
         buildControls();
         var linked = readURL();
         renderExplorer(null);
@@ -1072,7 +1068,7 @@
         $$("#explore .js-only, .chart-tools").forEach(function (x) { x.hidden = true; });
         var p = document.createElement("p");
         p.className = "nojs";
-        p.textContent = "The results data could not be loaded, so the interactive charts and the explorer are not shown. The text of the page, the tables below each figure and the converter work without it.";
+        p.textContent = "The results data could not be loaded, so the interactive charts and the explorer are not drawn. The text of the page, the tables below each figure and the converter work without it.";
         var ex = $("#explore .wrap");
         if (ex) ex.appendChild(p);
       });

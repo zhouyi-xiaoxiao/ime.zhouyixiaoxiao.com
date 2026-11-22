@@ -60,9 +60,10 @@
         state = st;
         btns.forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
         spans.forEach(function (s, i) {
-          s.textContent = st === "typed" ? KeyConv.type(meant[i], pair).text : meant[i];
+          var t = st === "typed" ? KeyConv.type(meant[i], pair).text : meant[i];
           if (st === "typed") { s.setAttribute("aria-hidden", "true"); s.setAttribute("lang", lang); }
           else { s.removeAttribute("aria-hidden"); s.removeAttribute("lang"); }
+          turnOver(s, t, i);
         });
         // while the typed form is shown, the heading keeps its meaning for assistive technology
         if (h) { if (st === "typed") h.setAttribute("aria-label", meant.join(" ")); else h.removeAttribute("aria-label"); }
@@ -71,6 +72,65 @@
       });
     });
   }
+
+  // The letters turn over one after another, 12 ms apart (version 4, motion 6.2); with reduced motion, or without
+  // the motion module, the text is replaced at once. Words stay whole for line breaking, and the plain text is put
+  // back when the turn is over.
+  var flipTimers = [];
+  function turnOver(el, t, which) {
+    clearTimeout(flipTimers[which]);
+    if (!window.Motion || !Motion.on()) { el.textContent = t; return; }
+    el.textContent = "";
+    var k = 0;
+    t.split(/( )/).forEach(function (w) {
+      if (w === " ") { el.appendChild(document.createTextNode(" ")); return; }
+      if (!w) return;
+      var ws = document.createElement("span");
+      ws.className = "fw";
+      Array.from(w).forEach(function (c) {
+        var l = document.createElement("span");
+        l.className = "fl";
+        l.textContent = c;
+        l.style.animationDelay = (12 * k++) + "ms";   // CSSOM, which the page's CSP allows
+        ws.appendChild(l);
+      });
+      el.appendChild(ws);
+    });
+    flipTimers[which] = setTimeout(function () { el.textContent = t; }, 12 * k + 360);
+  }
+
+  // The converter types its first example by itself, once, when the section first comes into view (motion.js calls
+  // this); the first touch inside the converter stops it and puts the whole example in.
+  var demo = { timer: 0, done: false, full: null };
+  function demoStop() {
+    if (!demo.timer) return;
+    clearInterval(demo.timer);
+    demo.timer = 0;
+    var inp = $("#conv-in");
+    if (inp && demo.full != null && conv.fromPreset) { inp.value = demo.full; schedule(true); }
+    var box = $("#conv");
+    if (box) box.classList.remove("demo");
+  }
+  function demoStart() {
+    var inp = $("#conv-in"), box = $("#conv");
+    if (demo.done || !inp || !box || conv.touched || !conv.fromPreset || !inp.value) return;
+    demo.done = true;
+    demo.full = inp.value;
+    var chars = Array.from(demo.full), i = 0;
+    inp.value = "";
+    box.classList.add("demo");
+    ["pointerdown", "keydown", "focusin", "wheel"].forEach(function (ev) { box.addEventListener(ev, demoStop, { once: true, passive: true }); });
+    schedule(true);
+    var step = Math.max(28, Math.min(160, Math.round(3200 / chars.length)));   // a short example types slowly enough to be seen
+    demo.timer = setInterval(function () {
+      if (!conv.fromPreset) { demoStop(); return; }
+      i += 1;
+      inp.value = chars.slice(0, i).join("");
+      schedule(true);
+      if (i >= chars.length) { clearInterval(demo.timer); demo.timer = 0; box.classList.remove("demo"); }
+    }, step);
+  }
+  window.ConvDemo = { start: demoStart, stop: demoStop, ready: function () { return !!PAIRS.length; } };
 
   /* ------------------------------------------------------------------ converter: state */
   var conv = {
@@ -133,7 +193,18 @@
     var s = p.label || ((p.intended === "us" ? "English" : p.intendedName) + " typed on " + (p.active === "us" ? "US English" : p.activeName));
     return p.lossChars ? s + " · some keys type nothing" : s;
   }
+  /* a short name for the menu, so that a phone shows the whole of the selected pair; the full name is in the note
+     under the menu (and the option's title). Falls back to the full name wherever two short names would clash. */
+  function shortLabel(p) {
+    var s = p.label || ((p.intended === "us" ? "English" : p.intendedName) + " typed on " + (p.active === "us" ? "US English" : p.activeName));
+    s = s.replace(/ \(a cipher, not a layout\)$/, "");
+    s = s.replace(/^([^(,]+) \([^)]*\), random key map (\d)/, function (m, lang, k) { return lang + ", random map " + k; })
+         .replace(/, random key map (\d)/, function (m, k) { return ", random map " + k; });
+    return s.replace(/ typed on US English( \(QWERTY\))?$/, " \u2192 US").replace(/ typed on /, " \u2192 ");
+  }
   function fillMenu(sel) {
+    var seen = {};
+    PAIRS.forEach(function (p) { var k = shortLabel(p); seen[k] = (seen[k] || 0) + 1; });
     GROUPS.forEach(function (g) {
       var list = PAIRS.filter(function (p) { return groupOf(p) === g.id || (g.id === "other" && !GROUPS.some(function (x) { return x.id === groupOf(p); })); });
       if (!list.length) return;
@@ -147,7 +218,9 @@
       list.forEach(function (p) {
         var o = document.createElement("option");
         o.value = p.id;
-        o.textContent = pairLabel(p);
+        var k = shortLabel(p);
+        o.textContent = seen[k] > 1 ? pairLabel(p) : k;
+        o.title = pairLabel(p);
         og.appendChild(o);
       });
       sel.appendChild(og);
@@ -166,7 +239,7 @@
   }
   function otherSide(p, lid) { return lid === p.active ? p.intended : p.active; }
   function pairNote(p) {
-    var out = [], t = p.test;
+    var out = ["<strong>" + esc(pairLabel(p)) + ".</strong>"], t = p.test;
     if (t && t.roundTripNatural) {
       var k = t.roundTripNatural[0], n = t.roundTripNatural[1], nEx = PRE ? presetsFor(p.id).length : 0;
       var what = PRE ? " (the " + plural(nEx, "example", "examples") + " below and " +
@@ -356,7 +429,7 @@
     drawKeyboard();
 
     var bits = [], status, lastKeys = [], nLost = 0, lostAll = [], ok = true;
-    if (conv.cut) bits.push("The text box takes up to " + int(MAX_CHARS) + " characters: the text (" + int(conv.cut) + ") was cut to its first " + int(MAX_CHARS));
+    if (conv.cut) bits.push("The text box takes up to " + int(MAX_CHARS) + " characters: the text (" + int(conv.cut) + ") was shortened to its first " + int(MAX_CHARS));
     else if (capped) bits.push("Only the first " + int(MAX_CHARS) + " of " + int(total) + " characters are converted");
     if (text !== cut) bits.push("converted in composed form (Unicode NFC)");
     try {
@@ -383,7 +456,7 @@
         if (out.textContent !== d.text) out.textContent = d.text;
         var nd = cpCount(text);
         bits.push(plural(nd, "character", "characters") + " decoded with the inverse of the same key map");
-        if (d.preimage === false) bits.push("this text could not have been typed on this pair exactly; the reading shown is the closest one");
+        if (d.preimage === false) bits.push("this text could not have been typed on this pair exactly; the reading given is the closest one");
         if (same && o.dir === "type") {
           var want = KeyConv.reference(o.conv, conv.pair);
           if (d.text !== want) {
@@ -400,7 +473,7 @@
       status = "This text could not be converted";
     }
     meta.innerHTML = bits.join(" · ");
-    if (conv.cut || capped) status += "; the text was cut to " + int(MAX_CHARS) + " characters";
+    if (conv.cut || capped) status += "; the text was shortened to " + int(MAX_CHARS) + " characters";
     conv.last = { pair: conv.pair, dir: conv.dir, input: raw, conv: text, output: out.textContent, ok: ok,
                   lost: lostAll.some(function (e) { return e.kind === "empty"; }), keys: typeMode ? lastKeys : [] };
     markHits(conv.last.keys);
@@ -544,7 +617,7 @@
       $$("#conv, .flip").forEach(function (x) { x.hidden = true; });
       var p = document.createElement("p");
       p.className = "nojs";
-      p.textContent = "The key maps could not be loaded, so the converter is not shown.";
+      p.textContent = "The key maps could not be loaded, so the converter cannot run.";
       var w = $("#try .lede");
       if (w) w.parentNode.insertBefore(p, w.nextSibling);
     });

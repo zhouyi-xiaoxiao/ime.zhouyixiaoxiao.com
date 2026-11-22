@@ -6,7 +6,7 @@ schema in `tools/CONVERTER_NOTES.md`). `tools/make_bundle.py` writes the bundle 
 applied (k/n, a Wilson interval, a difference). A field that is absent means "not available";
 nothing is interpolated, and a (setting, language, arm) with no data has no cell.
 
-Shares are fractions (0.57 = 57%) in `cells`, layout `contrasts` and `costs`; the Chinese tables
+Shares are fractions (0.57 = 57%) in `cells` and layout `contrasts`; the Chinese tables
 (`zh`) keep the source's percent and points. Intervals are 95%.
 
 ## Top level
@@ -32,7 +32,6 @@ Shares are fractions (0.57 = 57%) in `cells`, layout `contrasts` and `costs`; th
 | `languages` | [Language] | the 122 Belebele variants and one pool |
 | `cells` | [Cell] | setting × language × arm × run |
 | `contrasts` | [Contrast] | named differences with intervals |
-| `costs` | [Cost] | list-price cost per call, tokens and latency per setting and arm |
 | `zh` | Zh | the Chinese ambiguity tables |
 
 ## Run
@@ -73,7 +72,6 @@ poster pack with its own source note.
 | `level`, `level_label`, `level_order` | registry setting name; label in the poster's words ("effort none", "thinking off"); order off < off-requested < minimal < low < medium < high < xhigh < max, `on` last |
 | `reasoning` | `off` / `on` / `off-requested` (requested, not observed) |
 | `output_budget` | the registry's output-token budget for this setting (MODEL_MATRIX.md); `pilot_output_budget` is what the November pilots sent |
-| `price_class` | `cheap` / `middle` / `expensive` / `unknown` (the run plan's roster rule, section 6). List prices themselves are not published; the site shows list-price cost per call only |
 | `roster` | true for the 147 registered settings |
 | `smoke`, `smoke_note` | the registry's 5-call smoke check: `pass`, `pass*` or `fail` (with the reason) |
 | `planned` | true when the main run plans the setting (registered and passed the smoke check) |
@@ -108,7 +106,6 @@ ladder languages, `pilot_layout`), `kind` (`variant` / `pool`). The pool `pool_c
 | `subset` | set when the cell rests on a subset of the items (Claude: the first 20 items of each cross-script layout) |
 | `reasoning_tokens` | {mean, median} per call as each API reports them |
 | `output_tokens` | {mean} |
-| `cost_per_call` | {value, currency} at list price; for the pilots see `costs` instead |
 | `latency_s` | {median} or {mean} |
 | `floor` | {value, method: `overlap`}: the floor without reading for this record set (below) |
 | `operator` | id in `operators` where the typed text came from another operator than the arm's main one |
@@ -124,15 +121,7 @@ passage: that is the arm `native_nopassage` of the main run.
 
 `id`, `setting?`, `lang?`, `a`, `b` (arm ids), `label`, `est` (a − b), `ci`, `ci_method`,
 `unit` (`share` or `points`), `n`, `a_value?`, `b_value?`, `run`, `status`, `family`
-(`exploratory` / `confirmatory` / `secondary`), `note?`; main-run contrasts may add `p_holm`,
-`supported`, `ci_settings`.
-
-## Cost (pilot)
-
-`setting`, `arm`, `scope` (what was pooled), `calls`, `input_tokens_mean`, `output_tokens_mean`,
-`reasoning_tokens_mean`, `cost_per_call` {value, currency}, `latency_s`, `run`, `status`,
-`operator?`. From the pilot cost table (means over the setting's successful calls of that form in
-the layout pilot: every language it ran, repeats included; `calls` says how many).
+(`exploratory` / `confirmatory` / `secondary`), `note?`; main-run contrasts may add `ci_settings`.
 
 ## Zh
 
@@ -141,7 +130,7 @@ the layout pilot: every language it ran, repeats included; `calls` says how many
 sentence_label, k, n, pct, ci, ci_method, determined {k, n, pct}, bare? {k, n, pct}}],
 `sentences` {note, control} (the exact sentences), `contrasts` [{id `H1`…`H2c` or
 "`x` minus `y`", a, b, outcome, est, ci (over classes), ci_settings (settings and classes
-resampled), p_holm or p, supported, classes_pos, classes_neg, family, unit: points}],
+resampled), classes_pos, classes_neg, family, unit: points}],
 `per_setting` [{setting, pilot_name, forced {k, n, pct, ci}, arms {arm: {k, n, bare, declines}},
 contrasts {H: {est, ci}}, reasoning_share}], `calls` {pilot, followup}, `items`.
 
@@ -175,7 +164,7 @@ such files. One object per (setting, language, arm[, scope]):
  "ci_method": "cluster bootstrap over passages, 95%",
  "outcomes": {"correct": 412, "wrong": 170, "refused": 0, "truncated": 18, "unparseable": 0},
  "reasoning_tokens": {"median": 0, "mean": 0}, "output_tokens": {"mean": 9.1},
- "cost_per_call": {"value": 0.00051, "currency": "USD"}, "latency_s": {"median": 1.4},
+ "latency_s": {"median": 1.4},
  "floor": {"value": 0.39, "method": "overlap"},
  "condition": "kb_layout_keys_named", "seed": null, "pair": "ru>us"}
 ```
@@ -192,10 +181,36 @@ computed from `outcomes`. A `ci_method` that is not a key of `methods` is shown 
 file's folder and dated by the file unless the document carries `run` and `date`).
 
 Contrasts: objects with `"kind": "contrast"` (or in `contrasts`) with `id`, `a`, `b`, `label`,
-`est`, `ci`, `unit`, `family`, `status`, and optionally `setting`, `lang`, `p_holm`, `supported`,
+`est`, `ci`, `unit`, `family`, `status`, and optionally `setting`, `lang`,
 `ci_settings`. The site prefers, for the same (setting, language, arm, scope), a final cell over an
 interim one over a pilot one, and lists the others beside it.
 
 `tools/test_bundle.py` checks this contract: every condition name of the main data build maps to an
 arm (a `_qonly` name to the same arm, question-only scope), a synthetic file in each input shape
-reads back under those arms, and the bundle on disk names no venue, local path or price list.
+reads back under those arms, and the bundle on disk names no venue and no local path.
+
+# interim.json — schema `ime-site-interim/1` (version 4, 22 Nov 2026)
+
+The registered interim results the page prints (the first screens and every block down to "Status and limits").
+Written by `tools/make_interim.py` from the registered outputs of registration one (frozen analysis code, interim
+mode, cut 2026-11-22T18:33:22Z) and, for the ambiguous half's pilot block and the earlier study, from the poster's
+version-3 content pack. The page does not load this file: `tools/fill_static.py` writes its numbers, sentences and
+figures into `index.html`. Every value is traced in `interim_trace.tsv` (key, printed text, value, claim, source
+file, key or rule).
+
+| key | what |
+|---|---|
+| `cut` | `iso` (the cut), `text` (as printed), `running`, `not_started` (rows at the cut) |
+| `settings` | setting id → `model` (name from the registered row table), `level` (`reasoning none`, …), `label`, `on` |
+| `numbers` | key → `text` (as printed), `value`, `claim` (the claims section it belongs to), `form` (the exact string the claims print; the build checks it occurs there), `source`, `rule` |
+| `copy` | key → `text` (a template over `numbers`), `claim`, `quote` (the claims sentence; the build and `tools/check_interim.py` check the page reads exactly so), `whole` |
+| `figA.rows` | the five off/on pairs of C4: `est`, `ci` (the pair's registered estimate and interval, proportions), `a_off`, `a_on`, `nat_off`, `nat_on` (descriptive cells, equal-weight mean of four languages: positions only) |
+| `strip.C1..C3` | `all` and `off` (estimate `v`, `ci` these settings, `cx` settings like these, `n`), `per` (per setting: `v`, `lo`, `hi`, `on`, `incl0`) |
+| `s1` | S1 (Claim 6): `ORA_minus_DIR_b`, `G_two_b` with `v`, `ci`, `cx` |
+| `c4ext` | Claim 7: `forest` (eight pairs: `v`, `ci`, `family`, `incl0`), `mean`, `cap` (reasoning-on (a) replies: correct, wrong, truncated at the output cap, n) |
+| `s3` | Claim 8: `theta_fam`, `theta_comp` with `v`, `ci`, `cx`, `per` |
+| `p1` | the addendum's pilot block: `alone`, `sent` (percent), their intervals, `bound` |
+
+Proportions are fractions (0.081 = 8.1 points); intervals are 95% percentile intervals over 10,000 draws: `ci` with
+the settings fixed ("these settings"), `cx` crossed passage × setting ("settings like these", for orientation only).
+No test statistics are in this file: in interim mode the frozen code withholds them.
