@@ -841,3 +841,25 @@ span.rs-more-note:not(:first-child)::before { content: ", "; }
   .bar-in { gap: 6px; padding-left: 12px; padding-right: 10px; }
   .nav a { font-size: 0.8125rem; padding: 14px 4px; }
 }
+
+/* site-roster, second part (23 Nov 2026): four languages; a refused prompt is said where the eye is */
+.rs-ctl .rs-langs { display: grid; grid-template-columns: repeat(4, max-content); gap: 0; }
+.rs-ctl .rs-langs .seg { margin: 0 0 0 -1px; border-radius: 0; }
+.rs-ctl .rs-langs .seg:first-child { margin-left: 0; border-radius: 4px 0 0 4px; }
+.rs-ctl .rs-langs .seg:last-child { border-radius: 0 4px 4px 0; }
+.rs-ctl .rs-langs .seg[aria-pressed="true"] { position: relative; z-index: 1; }
+@media (max-width: 479.98px) {
+  /* two rows of two on a phone */
+  .rs-ctl .rs-langs { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; max-width: 360px; }
+  .rs-ctl .rs-langs .seg { margin: 0 0 -1px -1px; }
+  .rs-ctl .rs-langs .seg:nth-child(odd) { margin-left: 0; }
+  .rs-ctl .rs-langs .seg:nth-child(1) { border-radius: 4px 0 0 0; }
+  .rs-ctl .rs-langs .seg:nth-child(2) { border-radius: 0 4px 0 0; }
+  .rs-ctl .rs-langs .seg:nth-child(3) { border-radius: 0 0 0 4px; }
+  .rs-ctl .rs-langs .seg:nth-child(4) { border-radius: 0 0 4px 0; }
+}
+.rs-svg .rs-ref { fill: var(--ink); font-weight: 500; }
+.rs-when-all { display: none; }
+.rs-all-on .rs-when-all { display: inline; }
+.rs-all-on .rs-when-new { display: none; }
+.rs-refused { margin: 4px 0 0; }
