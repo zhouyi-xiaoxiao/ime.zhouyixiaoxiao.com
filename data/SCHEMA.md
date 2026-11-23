@@ -214,3 +214,19 @@ file, key or rule).
 Proportions are fractions (0.081 = 8.1 points); intervals are 95% percentile intervals over 10,000 draws: `ci` with
 the settings fixed ("these settings"), `cx` crossed passage × setting ("settings like these", for orientation only).
 No test statistics are in this file: in interim mode the frozen code withholds them.
+
+## `roster.json` (the section "Models": exploratory roster, 23 Nov 2026)
+
+Outside the registration; descriptive, no test. Written by `tools/make_roster.py` from the roster table of the
+poster's version 5; not loaded by the page (the section is static SVG and a table written from it).
+
+| key | what |
+|---|---|
+| `data_utc` | when the roster table was read from the run records |
+| `items` | items per cell (25: the same items for every model, one call each) |
+| `languages`, `conditions`, `levels` | codes and names; conditions: `kb_layout_keys` (wrong-layout text alone), `kb_layout_keys_named` (the layout named), `native` (the original text) |
+| `models` | in the order drawn: `key`, `name` (as the page prints it), `display`, `group` (`newest` drawn by default, `more` behind "all models"), `original_only` (no wrong-layout cell at all) |
+| `cells` | only cells whose runs had finished: `model`, `level`, `lang`, `condition`, `k`, `n`, `pct`, `wilson95` (95% Wilson interval, percent), `refused`, `no_answer_other` (other replies without an answer: truncated, unparseable), `source` (`registered table` or `supplement of 23 Nov 2026`), `runs` (names of the runs) |
+| `not_finished` | cells left out because a run was still going |
+
+A reply without an answer (refused or other) counts as wrong.

@@ -1,0 +1,2685 @@
+{
+ "about": "Exploratory roster of 23 Nov 2026, outside the registration; descriptive, no test. Each cell: the same 25 items for every model, one call per item; a reply without an answer counts as wrong. Only cells whose runs had finished are included. Written by the site's tools/make_roster.py from the roster table of the poster's version 5.",
+ "data_utc": "2026-11-23T04:13:52Z",
+ "items": 25,
+ "languages": [
+  {
+   "code": "heb_Hebr",
+   "name": "Hebrew"
+  },
+  {
+   "code": "rus_Cyrl",
+   "name": "Russian"
+  }
+ ],
+ "conditions": [
+  {
+   "code": "kb_layout_keys",
+   "name": "wrong-layout text alone"
+  },
+  {
+   "code": "kb_layout_keys_named",
+   "name": "wrong-layout text, layout named"
+  },
+  {
+   "code": "native",
+   "name": "original text"
+  }
+ ],
+ "levels": [
+  "off",
+  "low",
+  "medium",
+  "high",
+  "xhigh",
+  "max"
+ ],
+ "models": [
+  {
+   "key": "gpt_6_2_astra",
+   "name": "gpt-6.2-astra",
+   "display": "GPT-6.2 Astra",
+   "group": "newest",
+   "original_only": false
+  },
+  {
+   "key": "gpt_6_2_sol",
+   "name": "gpt-6.2-sol",
+   "display": "GPT-6.2 Sol",
+   "group": "newest",
+   "original_only": false
+  },
+  {
+   "key": "claude_fable_5_2",
+   "name": "claude-fable-5-2",
+   "display": "Claude Fable 5.2",
+   "group": "newest",
+   "original_only": false
+  },
+  {
+   "key": "claude_opus_5_5",
+   "name": "claude-opus-5-5",
+   "display": "Claude Opus 5.5",
+   "group": "newest",
+   "original_only": false
+  },
+  {
+   "key": "claude_sonnet_5_5",
+   "name": "claude-sonnet-5-5",
+   "display": "Claude Sonnet 5.5",
+   "group": "newest",
+   "original_only": false
+  },
+  {
+   "key": "claude_haiku_5_5",
+   "name": "claude-haiku-5-5",
+   "display": "Claude Haiku 5.5",
+   "group": "newest",
+   "original_only": true
+  },
+  {
+   "key": "gpt_6_1_sol",
+   "name": "gpt-6.1-sol",
+   "display": null,
+   "group": "more",
+   "original_only": false
+  },
+  {
+   "key": "gpt_6_1_terra",
+   "name": "gpt-6.1-terra",
+   "display": null,
+   "group": "more",
+   "original_only": false
+  },
+  {
+   "key": "gpt_6_astra",
+   "name": "gpt-6-astra",
+   "display": null,
+   "group": "more",
+   "original_only": false
+  },
+  {
+   "key": "gpt_6_luna",
+   "name": "gpt-6-luna",
+   "display": null,
+   "group": "more",
+   "original_only": false
+  }
+ ],
+ "cells": [
+  {
+   "model": "gpt_6_2_astra",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "xhigh",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_abovehigh"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "max",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_abovehigh"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "xhigh",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_abovehigh"
+   ]
+  },
+  {
+   "model": "gpt_6_2_astra",
+   "level": "max",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_abovehigh"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "k": 14,
+   "n": 25,
+   "pct": 56.0,
+   "wilson95": [
+    37.1,
+    73.3
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "k": 14,
+   "n": 25,
+   "pct": 56.0,
+   "wilson95": [
+    37.1,
+    73.3
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "k": 14,
+   "n": 25,
+   "pct": 56.0,
+   "wilson95": [
+    37.1,
+    73.3
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "medium",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "xhigh",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_abovehigh"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "max",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_abovehigh"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "medium",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "medium",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "xhigh",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_abovehigh"
+   ]
+  },
+  {
+   "model": "gpt_6_2_sol",
+   "level": "max",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt62_abovehigh"
+   ]
+  },
+  {
+   "model": "claude_fable_5_2",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 3,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min3_fable52"
+   ]
+  },
+  {
+   "model": "claude_fable_5_2",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "k": 14,
+   "n": 20,
+   "pct": 70.0,
+   "wilson95": [
+    48.1,
+    85.5
+   ],
+   "refused": 6,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min5_fable52"
+   ]
+  },
+  {
+   "model": "claude_fable_5_2",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "k": 23,
+   "n": 25,
+   "pct": 92.0,
+   "wilson95": [
+    75.0,
+    97.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min3_fable52"
+   ]
+  },
+  {
+   "model": "claude_fable_5_2",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "k": 23,
+   "n": 25,
+   "pct": 92.0,
+   "wilson95": [
+    75.0,
+    97.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min5_fable52"
+   ]
+  },
+  {
+   "model": "claude_fable_5_2",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 23,
+   "n": 25,
+   "pct": 92.0,
+   "wilson95": [
+    75.0,
+    97.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min3_fable52"
+   ]
+  },
+  {
+   "model": "claude_fable_5_2",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 23,
+   "n": 25,
+   "pct": 92.0,
+   "wilson95": [
+    75.0,
+    97.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min5_fable52"
+   ]
+  },
+  {
+   "model": "claude_fable_5_2",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "k": 18,
+   "n": 25,
+   "pct": 72.0,
+   "wilson95": [
+    52.4,
+    85.7
+   ],
+   "refused": 3,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min3_fable52ru"
+   ]
+  },
+  {
+   "model": "claude_fable_5_2",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "k": 18,
+   "n": 25,
+   "pct": 72.0,
+   "wilson95": [
+    52.4,
+    85.7
+   ],
+   "refused": 3,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min5_fable52ru"
+   ]
+  },
+  {
+   "model": "claude_fable_5_2",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min3_fable52ru"
+   ]
+  },
+  {
+   "model": "claude_fable_5_2",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min5_fable52ru"
+   ]
+  },
+  {
+   "model": "claude_opus_5_5",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_anthropic_opus_low"
+   ]
+  },
+  {
+   "model": "claude_opus_5_5",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 1,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min4_opus55"
+   ]
+  },
+  {
+   "model": "claude_opus_5_5",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "k": 23,
+   "n": 25,
+   "pct": 92.0,
+   "wilson95": [
+    75.0,
+    97.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_anthropic_opus_low"
+   ]
+  },
+  {
+   "model": "claude_opus_5_5",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min4_opus55"
+   ]
+  },
+  {
+   "model": "claude_opus_5_5",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 23,
+   "n": 25,
+   "pct": 92.0,
+   "wilson95": [
+    75.0,
+    97.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_anthropic_opus_low"
+   ]
+  },
+  {
+   "model": "claude_opus_5_5",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min4_opus55"
+   ]
+  },
+  {
+   "model": "claude_opus_5_5",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_anthropic_opus_low_ru"
+   ]
+  },
+  {
+   "model": "claude_opus_5_5",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min4_opus55"
+   ]
+  },
+  {
+   "model": "claude_opus_5_5",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_anthropic_opus_low_ru"
+   ]
+  },
+  {
+   "model": "claude_opus_5_5",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min4_opus55"
+   ]
+  },
+  {
+   "model": "claude_opus_5_5",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_anthropic_opus_low_ru"
+   ]
+  },
+  {
+   "model": "claude_opus_5_5",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min4_opus55"
+   ]
+  },
+  {
+   "model": "claude_sonnet_5_5",
+   "level": "off",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "k": 6,
+   "n": 25,
+   "pct": 24.0,
+   "wilson95": [
+    11.5,
+    43.4
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_anthropic_sonoff_c1"
+   ]
+  },
+  {
+   "model": "claude_sonnet_5_5",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "k": 11,
+   "n": 25,
+   "pct": 44.0,
+   "wilson95": [
+    26.7,
+    62.9
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min2_sonnet55"
+   ]
+  },
+  {
+   "model": "claude_sonnet_5_5",
+   "level": "off",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "k": 8,
+   "n": 25,
+   "pct": 32.0,
+   "wilson95": [
+    17.2,
+    51.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_anthropic_sonoff_c1"
+   ]
+  },
+  {
+   "model": "claude_sonnet_5_5",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "k": 18,
+   "n": 25,
+   "pct": 72.0,
+   "wilson95": [
+    52.4,
+    85.7
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min2_sonnet55"
+   ]
+  },
+  {
+   "model": "claude_sonnet_5_5",
+   "level": "off",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 23,
+   "n": 25,
+   "pct": 92.0,
+   "wilson95": [
+    75.0,
+    97.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_anthropic_sonoff_c1"
+   ]
+  },
+  {
+   "model": "claude_sonnet_5_5",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 23,
+   "n": 25,
+   "pct": 92.0,
+   "wilson95": [
+    75.0,
+    97.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min2_sonnet55"
+   ]
+  },
+  {
+   "model": "claude_sonnet_5_5",
+   "level": "off",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 17,
+   "n": 25,
+   "pct": 68.0,
+   "wilson95": [
+    48.4,
+    82.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_anthropic_sonoff_c1_ru"
+   ]
+  },
+  {
+   "model": "claude_sonnet_5_5",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 19,
+   "n": 25,
+   "pct": 76.0,
+   "wilson95": [
+    56.6,
+    88.5
+   ],
+   "refused": 0,
+   "no_answer_other": 2,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min2_sonnet55"
+   ]
+  },
+  {
+   "model": "claude_sonnet_5_5",
+   "level": "off",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "k": 17,
+   "n": 25,
+   "pct": 68.0,
+   "wilson95": [
+    48.4,
+    82.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_anthropic_sonoff_c1_ru"
+   ]
+  },
+  {
+   "model": "claude_sonnet_5_5",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 1,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min2_sonnet55"
+   ]
+  },
+  {
+   "model": "claude_sonnet_5_5",
+   "level": "off",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_anthropic_sonoff_c1_ru"
+   ]
+  },
+  {
+   "model": "claude_sonnet_5_5",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min2_sonnet55"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "off",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 19,
+   "n": 25,
+   "pct": 76.0,
+   "wilson95": [
+    56.6,
+    88.5
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min1_haiku_off"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min1_haiku_on"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min1_haiku_on"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min1_haiku_on"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "off",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 20,
+   "n": 25,
+   "pct": 80.0,
+   "wilson95": [
+    60.9,
+    91.1
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min1_haiku_off"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min1_haiku_on"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "medium",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min1_haiku_on"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "roster_anthropic_min1_haiku_on"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "k": 16,
+   "n": 25,
+   "pct": 64.0,
+   "wilson95": [
+    44.5,
+    79.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "xhigh",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt6x_abovehigh"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "xhigh",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt6x_abovehigh"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "k": 13,
+   "n": 25,
+   "pct": 52.0,
+   "wilson95": [
+    33.5,
+    70.0
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "xhigh",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt6x_abovehigh"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "xhigh",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt6x_abovehigh"
+   ]
+  },
+  {
+   "model": "gpt_6_astra",
+   "level": "xhigh",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt6x_abovehigh"
+   ]
+  },
+  {
+   "model": "gpt_6_astra",
+   "level": "xhigh",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt6x_abovehigh"
+   ]
+  },
+  {
+   "model": "gpt_6_luna",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "k": 17,
+   "n": 25,
+   "pct": 68.0,
+   "wilson95": [
+    48.4,
+    82.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_luna",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "k": 20,
+   "n": 25,
+   "pct": 80.0,
+   "wilson95": [
+    60.9,
+    91.1
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_luna",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_luna",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 22,
+   "n": 25,
+   "pct": 88.0,
+   "wilson95": [
+    70.0,
+    95.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_luna",
+   "level": "xhigh",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "k": 21,
+   "n": 25,
+   "pct": 84.0,
+   "wilson95": [
+    65.3,
+    93.6
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt6x_abovehigh"
+   ]
+  },
+  {
+   "model": "gpt_6_luna",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "k": 20,
+   "n": 25,
+   "pct": 80.0,
+   "wilson95": [
+    60.9,
+    91.1
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_luna",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 23,
+   "n": 25,
+   "pct": 92.0,
+   "wilson95": [
+    75.0,
+    97.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "registered table",
+   "runs": [
+    "e2b_core_openai_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_luna",
+   "level": "xhigh",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "k": 23,
+   "n": 25,
+   "pct": 92.0,
+   "wilson95": [
+    75.0,
+    97.8
+   ],
+   "refused": 0,
+   "no_answer_other": 0,
+   "source": "supplement of 23 Nov 2026",
+   "runs": [
+    "supp_roster_gpt6x_abovehigh"
+   ]
+  }
+ ],
+ "not_finished": [
+  {
+   "model": "claude_haiku_5_5",
+   "level": "off",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_haiku55_heb"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_haiku55_heb"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_haiku55_heb"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_haiku55_heb"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "off",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_haiku55_heb"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_haiku55_heb"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_haiku55_heb"
+   ]
+  },
+  {
+   "model": "claude_haiku_5_5",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_haiku55_heb"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "medium",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "medium",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "medium",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_sol",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "medium",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "medium",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_1_terra",
+   "level": "medium",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_astra",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_astra",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_astra",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_astra",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_astra",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_astra",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_astra",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_astra",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_astra",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_astra",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_astra",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_astra",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "low",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "medium",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "high",
+   "lang": "heb_Hebr",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "medium",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "medium",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "kb_layout_keys_named",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "low",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "medium",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  },
+  {
+   "model": "gpt_6_sol",
+   "level": "high",
+   "lang": "rus_Cyrl",
+   "condition": "native",
+   "runs": [
+    "supp_roster_gpt6x_reason"
+   ]
+  }
+ ]
+}

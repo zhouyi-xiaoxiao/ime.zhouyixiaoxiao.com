@@ -774,3 +774,70 @@ html:not(.motion) .replay { display: none; }
 }
 .fa-hint { font-size: var(--fs-small); color: var(--ink-2); }
 .cap-svg { margin-top: 18px; }
+
+/* ---------------------------------------------------------------- site-roster (23 Nov 2026): the section "Models"
+   (exploratory roster). Same grammar as Figure A: vermilion = wrong-layout text; ring = reasoning off; dot = on;
+   ink tick = the same items in the original text; dashed line = chance; thin whisker = 95% Wilson interval. */
+.rs-ctl { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 0 0 10px; }
+.rs-ctl .fig-ctl { margin: 0; flex-wrap: nowrap; }
+.rs-ctl .seg { min-height: 44px; font-size: var(--fs-1); white-space: nowrap; }
+.rs-ctl .rs-all { border-radius: 4px !important; margin-left: 0 !important; }
+.rs-ctl .rs-all::before { content: ""; display: inline-block; width: 11px; height: 11px; border: 1.5px solid currentColor;
+  border-radius: 2px; margin-right: 8px; vertical-align: -1px; }
+.rs-ctl .rs-all[aria-pressed="true"]::before { background: currentColor; box-shadow: inset 0 0 0 2px var(--ink); }
+.rs-key { list-style: none; margin: 4px 0 8px; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 18px;
+  font-size: var(--fs-small); color: var(--ink-2); }
+.rs-key li { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.rs-key svg { display: block; flex: 0 0 auto; }
+.rs-key .k-ring { fill: var(--bg); stroke: var(--typed); stroke-width: 2.2; }
+.rs-key .k-dot { fill: var(--typed); }
+.rs-key .k-tick { stroke: var(--ink); stroke-width: 2.4; }
+.rs-key .k-ci { stroke: var(--typed); stroke-width: 1.4; }
+.rs-svg .rs-tick { stroke: var(--ink); stroke-width: 2.4; }
+.rs-svg .rs-ci line { stroke: var(--typed); stroke-width: 1.3; }
+.rs-svg .rs-join { stroke: var(--typed); stroke-width: 3; opacity: 0.45; }
+.rs-svg .rs-val { fill: var(--typed); font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; }
+.rs-svg .rs-val-nat { fill: var(--ink); }
+.rs-svg .rs-lv { fill: var(--ink-2); }
+.rs-svg .rs-only { fill: var(--ink-2); font-style: italic; }
+.rs-svg .rs-pt { cursor: pointer; }
+.rs-svg .rs-pt:focus { outline: none; }
+.rs-svg .rs-hl { display: none; fill: none; stroke: var(--ink); stroke-width: 1.6; }
+.rs-svg .rs-pt.sel .rs-hl, .rs-svg .rs-pt:focus-visible .rs-hl { display: inline; }
+.rs-svg .rs-pt.sel .rs-lv { fill: var(--ink); font-weight: 700; }
+.rs-svg .rs-ax-all { display: none; }
+.rs-svg .rs-more { display: none; }
+.rs-all-on .rs-svg .rs-more { display: inline; }
+.rs-all-on .rs-svg .rs-ax-new { display: none; }
+.rs-all-on .rs-svg .rs-ax-all { display: inline; }
+.rs-more-note { display: none; }
+.rs-all-on .rs-more-note { display: inline; }
+span.rs-more-note:not(:first-child)::before { content: ", "; }
+.rs-detail { border-left-color: var(--typed); min-height: 3em; }
+.rs-missing { margin: 4px 0 0; }
+.rs-print { max-width: 66ch; margin: 10px 0 0; }
+.rs-fig { margin: 18px 0 0; max-width: 820px; }
+.rs-tbl-in { overflow-x: auto; }
+.rs-table td, .rs-table th { font-size: var(--fs-0); }
+.rs-run { display: block; color: var(--ink-3); font-size: 0.8125rem; overflow-wrap: anywhere; }
+.rs-run code { font-size: 1em; }
+@media (max-width: 620px) {
+  .rs-table th[scope="row"] { display: block; padding: 2px 0; border: 0; }
+  .rs-table td:first-of-type { font-weight: 400; }
+  .rs-table td:first-of-type::before { content: attr(data-label); }
+  .rs-run { text-align: right; }
+}
+@media (min-width: 900px) {
+  /* open on a wide screen, but the section stays short: the table scrolls inside its own box under a fixed head */
+  .rs-tbl-in { max-height: 34rem; overflow: auto; border-bottom: 1px solid var(--rule); }
+  .rs-table thead th { position: sticky; top: 0; background: var(--bg); z-index: 1; }
+}
+@media (max-width: 379.98px) {
+  /* six section links (Models added 23 Nov 2026) still fit beside the brand and the theme button at 360 px */
+  .nav a { font-size: 0.75rem; padding: 14px 3px; }
+}
+@media (min-width: 380px) and (max-width: 459.98px) {
+  /* 390 to 430 px phones: the six links fit too (as the rule for 360 px above, one step larger) */
+  .bar-in { gap: 6px; padding-left: 12px; padding-right: 10px; }
+  .nav a { font-size: 0.8125rem; padding: 14px 4px; }
+}
