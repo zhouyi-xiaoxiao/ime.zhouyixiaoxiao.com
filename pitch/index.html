@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AsTyped: a layer between the keyboard and the model</title>
+<meta name="description" content="AsTyped is a layer between the keyboard and any language model. A browser prototype: it finds the likely keyboard layout, proposes the restored text, and asks when a spelling has several readings.">
+<meta name="theme-color" content="#0d0d0d">
+<link rel="stylesheet" href="pitch.css">
+</head>
+<body>
+
+<header class="hud" aria-label="Deck">
+  <a class="mark" href="#1" aria-label="AsTyped, first slide">As<span>Typed</span></a>
+  <div class="hud-r">
+    <span id="timer" class="timer" hidden aria-live="off">3:00</span>
+    <span id="count" class="count">1 / 4</span>
+  </div>
+</header>
+
+<main id="deck">
+
+<!-- 1. The problem -->
+<section class="slide s-hook" id="s1" data-steps="3" data-auto="900,2600,2400" aria-label="The problem">
+  <div class="hook-veil" aria-hidden="true"></div>
+  <div class="hook-body">
+    <p class="hook-label">
+      <span class="lab lab-0">A message to an AI assistant</span>
+      <span class="lab lab-1">What the AI receives</span>
+      <span class="lab lab-2">What the user meant</span>
+    </p>
+    <div class="hook-line" id="hline">
+      <span class="hword" id="hword" aria-live="polite"></span><span class="caret" aria-hidden="true"></span>
+    </div>
+    <p class="hook-cap" id="hcap">&nbsp;</p>
+    <h1 class="hook-h at3">AI reads what you typed. <em>Not what you meant.</em></h1>
+    <div class="kbd" id="kbd" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- 2. The evidence -->
+<section class="slide s-gap" id="s2" data-steps="3" data-auto="700,2600,2600" aria-label="The evidence">
+  <div class="wrap">
+    <p class="kicker">Measured · registered interim estimates, and a separate pilot</p>
+    <h2>Two ways typed text goes wrong. <span class="dim">We measured both.</span></h2>
+    <div class="lanes">
+      <article class="lane lane-a at1">
+        <h3><span class="n">1</span>Given the right text, models answer far better. Their own repair recovers little of it.</h3>
+        <div class="bars">
+          <div class="bar">
+            <span class="bl">The model is given back its own transcription</span>
+            <span class="bt"><i style="--w:13%"></i></span>
+            <b class="num" data-to="6.7" data-sign="+">+6.7</b>
+          </div>
+          <div class="bar big">
+            <span class="bl">The model is given the correct text</span>
+            <span class="bt"><i style="--w:100%"></i></span>
+            <b class="num" data-to="51.4" data-sign="+">+51.4</b>
+          </div>
+        </div>
+        <p class="fine">Answer accuracy, in points, above answering the wrong-layout text directly (with a note saying how it was typed). Reasoning off, 5 model settings. Interim: no registered test has been decided.</p>
+      </article>
+      <article class="lane lane-b at2">
+        <h3><span class="n">2</span>Some spellings cannot say which word was meant. Someone has to ask.</h3>
+        <div class="fork">
+          <span class="fork-src">beizi</span>
+          <svg class="fork-svg" viewBox="0 0 60 120" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 60 C30 60 30 20 60 20"/><path d="M0 60 L60 60"/><path d="M0 60 C30 60 30 100 60 100"/>
+          </svg>
+          <ul class="fork-out">
+            <li><span lang="zh">杯子</span> cup</li>
+            <li><span lang="zh">被子</span> quilt</li>
+            <li><span lang="zh">辈子</span> lifetime</li>
+          </ul>
+        </div>
+        <div class="tiles">
+          <div class="tile"><b class="num" data-to="48.9" data-unit="%">48.9%</b><span>36 same-spelling words, alone. The test allows at most 50%.</span></div>
+          <div class="tile ok"><b class="num" data-to="99.1" data-unit="%">99.1%</b><span>other same-spelling words, in sentences written to allow one reading.</span></div>
+        </div>
+        <p class="fine">Chinese typed as pinyin without tones. Exploratory pilot, 21 model settings, forced choice.</p>
+      </article>
+    </div>
+    <p class="punch at3">So: <em>repair</em> what can be repaired. <em>Ask</em> about the rest.</p>
+  </div>
+</section>
+
+<!-- 3. The product -->
+<section class="slide s-prod" id="s3" data-steps="3" data-auto="700,6200,5200" aria-label="The product">
+  <div class="wrap prod-grid">
+    <div class="prod-l">
+      <p class="kicker">The product · working prototype</p>
+      <h2>One layer between the keyboard and <span class="nb">any model</span></h2>
+      <ol class="does">
+        <li><b>Detects</b> the likely keyboard layout.</li>
+        <li><b>Restores</b> the text and shows the change.</li>
+        <li><b>Asks</b> when a spelling has several readings.</li>
+      </ol>
+      <div class="try at3">
+        <img class="qr" src="qr.svg" width="132" height="132" alt="QR code for ime.zhouyixiaoxiao.com/pitch">
+        <p><b>Your turn.</b> Scan it, try the examples, or type your own.<br><span class="url">ime.zhouyixiaoxiao.com/pitch</span></p>
+      </div>
+    </div>
+    <div class="proto at1" id="proto">
+      <div class="flow" id="flow" aria-hidden="true">
+        <span class="fl fl-u">keyboard</span><span class="fl-w"><i></i></span>
+        <span class="fl fl-a">AsTyped</span><span class="fl-w"><i></i></span>
+        <span class="fl fl-m">any model</span>
+      </div>
+      <label class="plabel" for="pin">What the user typed</label>
+      <textarea id="pin" rows="2" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Type here, or pick an example"></textarea>
+      <div class="chips" id="pchips"></div>
+      <div class="hyp" id="phyp" aria-hidden="true"></div>
+      <div class="pout" id="pout" aria-live="polite"></div>
+      <p class="pfoot" id="pfoot">Runs in this browser: no model is called and the text stays on this device. Test on held-out text, 20 layouts: right layout for 95% of 3-to-12-word samples; 0 of 500 English samples changed. Single words are much weaker.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. The plan -->
+<section class="slide s-plan" id="s4" data-steps="3" data-auto="700,2800,2600" aria-label="The plan">
+  <div class="wrap">
+    <p class="kicker">From research to a product</p>
+    <h2>One customer, one test, one decision</h2>
+    <div class="cards at1">
+      <article><h3>Who first</h3><p>One team that writes in two scripts all day. Starting point: a support team working in Russian and English.</p></article>
+      <article><h3>The test</h3><p>Their real messages, with and without AsTyped. Count the time saved, and the wrong changes.</p></article>
+      <article><h3>The decision</h3><p>If staff keep it and the manager pays for a trial, build the integration. If not, stop.</p></article>
+      <article class="rai"><h3>Built to be checked</h3><p>Runs on the device. Keeps what you typed beside what it proposes. Asks instead of guessing.</p></article>
+    </div>
+    <div class="prize at2">
+      <p class="prize-h">With the prize</p>
+      <ol>
+        <li><b>Participant time</b> for that trial and a typing study: does skipping the switch change time and errors?</li>
+        <li><b>An end-to-end test</b>: how much of the 51 points does the prototype recover?</li>
+        <li><b>A public leaderboard</b> of the gap, model by model.</li>
+      </ol>
+      <p class="ask">And one ask of this room: <b>an introduction to a manager of a bilingual team.</b></p>
+    </div>
+    <p class="close at3">AI should understand people <span class="astyped" id="closetype">as they type</span><span class="caret c2" aria-hidden="true"></span></p>
+    <p class="sig">Xiaoxiao Zhouyi · University of Bristol · UKAIRS 2026 poster 89 · ime.zhouyixiaoxiao.com/pitch</p>
+  </div>
+</section>
+
+</main>
+
+<nav class="ctl" aria-label="Slides">
+  <button id="prev" type="button" aria-label="Back">&#8592;</button>
+  <span class="dots" id="dots" aria-hidden="true"></span>
+  <button id="next" type="button" aria-label="Next">&#8594;</button>
+</nav>
+
+<script src="../data/keymaps.js"></script>
+<script src="../assets/js/keyconv.js"></script>
+<script src="astyped-data.js"></script>
+<script src="astyped.js"></script>
+<script src="pitch.js"></script>
+</body>
+</html>
