@@ -6,7 +6,7 @@
 <title>AsTyped: a layer between the keyboard and the model</title>
 <meta name="description" content="AsTyped is a layer between the keyboard and any language model. A browser prototype: it finds the likely keyboard layout, proposes the restored text, and asks when a spelling has several readings.">
 <meta name="theme-color" content="#0d0d0d">
-<link rel="stylesheet" href="pitch.css">
+<link rel="stylesheet" href="pitch.css?v=3">
 </head>
 <body>
 
@@ -122,19 +122,20 @@
     <p class="kicker">From research to a product</p>
     <h2>One customer, one test, one decision</h2>
     <div class="cards at1">
-      <article><h3>Who first</h3><p>One team that writes in two scripts all day. Starting point: a support team working in Russian and English.</p></article>
-      <article><h3>The test</h3><p>Their real messages, with and without AsTyped. Count the time saved, and the wrong changes.</p></article>
-      <article><h3>The decision</h3><p>If staff keep it and the manager pays for a trial, build the integration. If not, stop.</p></article>
+      <article><h3>Who first</h3><p>One team whose assistant serves people who write in two scripts. A misread message costs them.</p></article>
+      <article><h3>The test</h3><p>Count the wrong-layout and Latin-letter messages in their logs. Replay them with and without AsTyped.</p></article>
+      <article><h3>The decision</h3><p>If the share is worth a paid pilot to them, build the integration. If not, stop and keep the benchmark.</p></article>
       <article class="rai"><h3>Built to be checked</h3><p>Runs on the device. Keeps what you typed beside what it proposes. Asks instead of guessing.</p></article>
     </div>
+    <p class="fine seen at1">Seen by others: on real maternal-health messages in five Indian languages and Nepali, leading models scored up to 24 points lower when the message was romanised (Script Gap, arXiv:2512.10780). Not yet measured, as far as we found: how often such messages reach assistants.</p>
     <div class="prize at2">
       <p class="prize-h">With the prize</p>
       <ol>
-        <li><b>Participant time</b> for that trial and a typing study: does skipping the switch change time and errors?</li>
+        <li><b>The first audit</b>: one team's logs, counted and replayed with and without the layer.</li>
         <li><b>An end-to-end test</b>: how much of the 51 points does the prototype recover?</li>
         <li><b>A public leaderboard</b> of the gap, model by model.</li>
       </ol>
-      <p class="ask">And one ask of this room: <b>an introduction to a manager of a bilingual team.</b></p>
+      <p class="ask">And one ask of this room: <b>an introduction to someone who runs such an assistant.</b></p>
     </div>
     <p class="close at3">AI should understand people <span class="astyped" id="closetype">as they type</span><span class="caret c2" aria-hidden="true"></span></p>
     <p class="sig">Xiaoxiao Zhouyi · University of Bristol · UKAIRS 2026 poster 89 · ime.zhouyixiaoxiao.com/pitch</p>
@@ -152,7 +153,7 @@
 <script src="../data/keymaps.js"></script>
 <script src="../assets/js/keyconv.js"></script>
 <script src="astyped-data.js"></script>
-<script src="astyped.js"></script>
-<script src="pitch.js"></script>
+<script src="astyped.js?v=3"></script>
+<script src="pitch.js?v=3"></script>
 </body>
 </html>

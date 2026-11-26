@@ -262,6 +262,8 @@ body.stage .hyp, body.stage .chips { min-height: 0; }
   .proto { box-shadow: 6px 6px 0 var(--paper); }
 }
 
+.s-plan .seen { margin: clamp(8px, 1.5vh, 16px) 0 0; }
+
 /* ---------- reduced motion, print ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 1ms !important; transition-delay: 0s !important; animation-duration: 1ms !important; animation-delay: 0s !important; }
