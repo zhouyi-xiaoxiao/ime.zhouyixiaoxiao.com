@@ -6,7 +6,7 @@
 <title>AsTyped: a layer between the keyboard and the model</title>
 <meta name="description" content="AsTyped is a layer between the keyboard and any language model. A browser prototype: it finds the likely keyboard layout, proposes the restored text, and asks when a spelling has several readings.">
 <meta name="theme-color" content="#0d0d0d">
-<link rel="stylesheet" href="pitch.css?v=4">
+<link rel="stylesheet" href="pitch.css?v=5">
 </head>
 <body>
 
@@ -111,7 +111,7 @@
       <div class="chips" id="pchips"></div>
       <div class="hyp" id="phyp" aria-hidden="true"></div>
       <div class="pout" id="pout" aria-live="polite"></div>
-      <p class="pfoot" id="pfoot">Runs in this browser: no model is called and the text stays on this device. Test on held-out text, 20 layouts: right layout for 95% of 3-to-12-word samples; 0 of 500 English samples changed. Single words are much weaker.</p>
+      <p class="pfoot" id="pfoot">Runs in this browser: no model is called and the text stays on this device. Held-out test, 20 layouts: right layout for 90% of 3-to-12-word samples; single words are much weaker. On 1.9 million real chat messages: all 104 verified cases restored; about 1 in 2,000 other messages still wrongly flagged, mostly code.</p>
     </div>
   </div>
 </section>
@@ -152,8 +152,8 @@
 
 <script src="../data/keymaps.js"></script>
 <script src="../assets/js/keyconv.js"></script>
-<script src="astyped-data.js"></script>
-<script src="astyped.js?v=3"></script>
-<script src="pitch.js?v=3"></script>
+<script src="astyped-data.js?v=5"></script>
+<script src="astyped.js?v=5"></script>
+<script src="pitch.js?v=5"></script>
 </body>
 </html>

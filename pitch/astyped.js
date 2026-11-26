@@ -7,6 +7,8 @@
   'use strict';
   var data, keyconv, syllables, englishWords;
   var alphabets = new Map();
+  var layoutWords;
+  var latinPairs, latinFloors, latinWords;
 
   function init(options) {
     data = options.data;
@@ -17,8 +19,26 @@
     'hi hey hello hiya howdy bye goodbye thanks please ok okay yep nope uh oh wow oops'
       .split(' ').forEach(function (word) { englishWords.add(word); });
     alphabets = new Map();
+    layoutWords = new Map(data.langs.map(function (lang) {
+      return [lang.pair, new Set(lang.bigrams.words.split(' '))];
+    }));
     [data.english].concat(data.langs.map(function (lang) { return lang.bigrams; }))
       .forEach(function (model) { alphabets.set(model, new Set(Array.from(model.alphabet))); });
+    latinPairs = new Map();
+    latinWords = new Map();
+    latinFloors = Int16Array.from(data.latinModels, function (model) { return model.floor; });
+    data.latinModels.forEach(function (model, index) {
+      var letters = Array.from(model.pairs);
+      for (var i = 0; i < letters.length; i += 2) {
+        var pair = letters[i] + letters[i + 1];
+        if (!latinPairs.has(pair)) { latinPairs.set(pair, latinFloors.slice()); }
+        latinPairs.get(pair)[index] = parseInt(model.scores.slice(i, i + 2), 16) - 128;
+      }
+      model.words.split(' ').forEach(function (word) {
+        if (!latinWords.has(word)) { latinWords.set(word, []); }
+        latinWords.get(word).push(index);
+      });
+    });
     return api;
   }
 
@@ -69,8 +89,60 @@
 
   function probability(value) { return 1 / (1 + Math.exp(-value)); }
 
+  function bestLatin(text, prior, best) {
+    var sums = new Float64Array(latinFloors.length);
+    var recognized = new Uint32Array(latinFloors.length);
+    var last = ' ', size = 0, word = '', words = 0;
+    function add(ch) {
+      var scores = latinPairs.get(last + ch) || latinFloors;
+      for (var i = 0; i < sums.length; i++) { sums[i] += scores[i]; }
+      last = ch;
+      size++;
+      if (ch === ' ') {
+        (latinWords.get(word) || []).forEach(function (i) { recognized[i]++; });
+        word = '';
+        words++;
+      } else { word += ch; }
+    }
+    for (var ch of text.toLowerCase().normalize('NFD')) {
+      var point = ch.codePointAt(0);
+      if (inRanges(point, data.markRanges)) { continue; }
+      if (inRanges(point, data.letterRanges)) {
+        for (var letter of (data.latinFolds[ch] || ch)) { add(letter); }
+      } else if (last !== ' ') { add(' '); }
+    }
+    if (last !== ' ') { add(' '); }
+    for (var i = 0; i < sums.length; i++) {
+      var coverage = recognized[i] / words;
+      var score = sums[i] / (10 * size) + prior + 1.7 * coverage * coverage;
+      if (score > best.fit) {
+        best = {id: 'asis', label: data.latinModels[i].lang + ', as typed', fit: score};
+      }
+    }
+    return best;
+  }
+
+  function nativeWordCoverage(reading) {
+    var known = 0, words = 0, word = '';
+    var normalization = reading.lang.code === 'kor_Hang' ? 'NFD' : 'NFC';
+    for (var ch of reading.decoded.text.toLowerCase().normalize(normalization) + ' ') {
+      var point = ch.codePointAt(0);
+      if (inRanges(point, data.letterRanges) || inRanges(point, data.markRanges)) {
+        word += ch;
+      } else if (word) {
+        words++;
+        if (layoutWords.get(reading.id).has(word)) { known++; }
+        word = '';
+      }
+    }
+    return known / Math.max(1, words);
+  }
+
   function finish(result, readings) {
-    result.hypotheses = readings.slice(0, 5).map(function (entry) {
+    var shown = readings.slice(0, 5);
+    var asis = readings.find(function (reading) { return reading.id === 'asis'; });
+    if (asis && !shown.includes(asis)) { shown[shown.length - 1] = asis; }
+    result.hypotheses = shown.map(function (entry) {
       return {id: entry.id, label: entry.label, score: probability(entry.fit)};
     });
     result.confidence = readings.length > 1 ?
@@ -87,6 +159,29 @@
     return (text.match(/[!-\/:-@\[-`{-~]/g) || []).length;
   }
 
+  function looksLikeCode(text, asisFit) {
+    if (/(?:[a-z]+:\/\/|www\.)\S+|\S@\S|(?:^|\s)(?:\.\.?\/|~\/|[A-Za-z]:\\)\w|\w_\w/i.test(text)) { return true; }
+    if (/\+\+|--\w|=>|->|[=!<>+*/-]=|&&|\|\||::|\$\{\w+\}|\s[=+*/<>|]\s/.test(text)) { return true; }
+    if (/<\/?[a-z][\w.-]*\s*\/?>|\b[a-z]\w*(?:\.[a-z]\w*){2,}|\)\s*[;:]|\b\w+\(\s*\w+\(|\d+;\d+;\d+/i.test(text)) { return true; }
+    // A single path or identifier can be enough. Inside prose the same shifted
+    // keys occur on several layouts, so also check whether the letters fit as typed.
+    var snippet = text.trim();
+    if (/^[a-z]+(?:[A-Z][a-z\d]*)+$|^(?:\.?[\w-]+)?(?:[\\/.][\w.-]+)+$/.test(snippet)) { return true; }
+    if (/^\w*\[[^\n]*\]$|^\{[^\n]*\}$|^\w+\([^()]*\)$|^\(?\w+\s*[=+*<>]\s*\w+\)?$/.test(snippet)) { return true; }
+    if (/^\w+\s+(?:AND|OR|XOR)\s+\w+$|^\w[\w.-]*\s+-[a-zA-Z]\w*(?:\s|$)/.test(snippet)) { return true; }
+    if (asisFit > -0.65) {
+      var names = text.match(/\b[a-z]+(?:[A-Z][a-z]+)+\d*\b/g) || [];
+      if (names.some(function (name) {
+        return name.split(/(?=[A-Z])/).some(function (part) {
+          return part.length > 1 && englishWords.has(part.toLowerCase());
+        });
+      })) { return true; }
+      if (/\w[\\/]\w|\b\w+\.[a-z]{2,}\b|(?:^|\s)\/\w/.test(text)) { return true; }
+      if (/\[[^\]\n]*\]|\{[^}\n]*\}|\b\w+\([^()\n]*\)|\w[=+*<>]\w/.test(text)) { return true; }
+    }
+    return /^\s*(?:\$\s+\S|(?:cd|ls|pwd|cat|echo|mkdir|rm|cp|mv|grep|git|npm|python3?|curl|sudo|import|from)\s+\S)/.test(text);
+  }
+
   function analyze(input) {
     if (!data) { throw new Error('Call AsTyped.init first.'); }
     var result = {input: input, verdict: 'pass', kind: 'unknown', hypotheses: [],
@@ -97,7 +192,7 @@
     }
     var counts = letterCounts(input);
     if (counts.total - counts.latin > counts.latin) { return literal(result, 'native', 4); }
-    if (!counts.total || /(?:https?:\/\/|www\.)\S+|\S@\S|(?:\+\+|=>|===|&&|\|\|)/i.test(input)) {
+    if (!counts.total) {
       return literal(result, 'unknown', 2);
     }
 
@@ -115,8 +210,12 @@
     var coverage = recognized / Math.max(1, words.length);
     var englishScore = englishFit + englishPrior + 1.7 * coverage * coverage;
     if (oddShare === 0 && coverage === 1) { englishScore = Math.max(englishScore, 2.0); }
-    var asis = {id: 'asis', label: 'English, as typed', fit: englishScore};
-    var readings = [asis];
+    var english = {id: 'asis', label: 'English, as typed', fit: englishScore};
+    // A best-of-many bigram match alone is weak evidence, especially on one word.
+    // Frequent whole words add evidence only for the language in which they occur.
+    var asis = bestLatin(input, 0.35 - Math.min(2, oddShare), english);
+    if (looksLikeCode(input, asis.fit)) { return finish(result, [asis]); }
+    var readings = [english];
     var pinyin = pinyinReading(input, data, syllables, englishFit);
     if (pinyin) { readings.push({id: 'pinyin', label: 'Toneless pinyin', fit: pinyin.strength}); }
 
@@ -144,15 +243,18 @@
     var alternative = best.lang && readings.find(function (reading) {
       return !reading.decoded || reading.decoded.text !== best.decoded.text;
     });
-    if (best.lang && (!best.decoded.preimage || best.fit < -2.6 ||
-        best.fit - alternative.fit < requiredLead)) {
-      asis.label = 'As typed, language uncertain';
-      asis.fit = best.fit;
-      // Put the conservative reading first on a tie.
-      readings.splice(readings.indexOf(asis), 1);
-      readings.unshift(asis);
-      best = asis;
+    var abstain = best.lang && (!best.decoded.preimage || best.fit < -2.6 ||
+      best.fit - alternative.fit < requiredLead);
+    if (!abstain && best.lang && asis !== english) {
+      // A plausible layout can claim the same whole-word evidence as a Latin reading.
+      // Apply this only after the original layout, English and pinyin comparisons.
+      best.fit += 1.7 * Math.pow(nativeWordCoverage(best), 2);
+      abstain = best.fit - asis.fit < requiredLead;
     }
+    readings[readings.indexOf(english)] = asis;
+    if (abstain) { asis.fit = Math.max(best.fit, asis.fit); }
+    readings.sort(function (a, b) { return b.fit - a.fit || (a === asis ? -1 : b === asis ? 1 : 0); });
+    best = readings[0];
     finish(result, readings);
     if (best.id === 'pinyin') {
       result.kind = 'pinyin';
@@ -177,7 +279,7 @@
       result.note = 'The keystrokes typed on a US English layout decode to ' + best.lang.lang +
         ' on the ' + best.lang.layoutName + ' layout.';
     } else {
-      result.kind = asis.label === 'English, as typed' && counts.total >= 4 &&
+      result.kind = !abstain && asis.label === 'English, as typed' && counts.total >= 4 &&
         (englishFit > -1.6 || coverage === 1) ? 'english' : 'unknown';
     }
     return result;
@@ -271,9 +373,9 @@
         1.6 * cues / count - 0.65 * shared / count;
       if (count > 1 && shared === 0 && englishFit < -0.35) { strength += 0.5; }
       if (markers >= 2 && shared * 2 < count && (count > 1 || englishFit < -0.7)) {
-        strength = Math.max(strength, 1.6);
+        strength = Math.max(strength, 1.6 + 0.5 * Math.min(1, markers / count));
       }
-      if (umlaut) { strength = Math.max(strength, 2.7); }
+      if (umlaut) { strength = Math.max(strength, 3.2); }
     }
     return {tokens: tokens, strength: strength, count: count};
   }

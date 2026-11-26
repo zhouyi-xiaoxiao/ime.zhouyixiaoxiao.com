@@ -184,10 +184,16 @@
   function render(r, lite) {
     phyp.textContent = '';
     if (r && r.hypotheses && r.verdict !== 'empty') {
-      r.hypotheses.slice(0, 3).forEach(function (h, i) {
-        var row = el('div', 'hrow' + (i === 0 ? ' top' : '')), bar = el('i');
+      var seen = {}, shown = 0;   // the as-is models are not a language identifier: show them as one row
+      r.hypotheses.forEach(function (h) {
+        var label = String(h.label).replace(' typed on a US layout', ', wrong layout');
+        if (/, as typed$/.test(label) && label.indexOf('English') !== 0) { label = 'Other Latin-script text, as typed'; }
+        if (seen[label] || shown >= 3) { return; }
+        seen[label] = true;
+        var row = el('div', 'hrow' + (shown === 0 ? ' top' : '')), bar = el('i');
         bar.style.setProperty('--w', Math.round(Math.max(0.02, Math.min(1, +h.score || 0)) * 100) + '%');
-        row.appendChild(el('span', null, String(h.label).replace(' typed on a US layout', ', wrong layout'))); row.appendChild(bar); phyp.appendChild(row);
+        row.appendChild(el('span', null, label)); row.appendChild(bar); phyp.appendChild(row);
+        shown++;
       });
     }
     if (lite) { return; }
