@@ -6,7 +6,7 @@
 <title>AsTyped: a layer between the keyboard and the model</title>
 <meta name="description" content="AsTyped is a layer between the keyboard and any language model. A browser prototype: it finds the likely keyboard layout, proposes the restored text, and asks when a spelling has several readings.">
 <meta name="theme-color" content="#0d0d0d">
-<link rel="stylesheet" href="pitch.css?v=3">
+<link rel="stylesheet" href="pitch.css?v=4">
 </head>
 <body>
 
@@ -45,23 +45,23 @@
     <h2>Two ways typed text goes wrong. <span class="dim">We measured both.</span></h2>
     <div class="lanes">
       <article class="lane lane-a at1">
-        <h3><span class="n">1</span>Given the right text, models answer far better. Their own repair recovers little of it.</h3>
+        <h3><span class="n">1</span>The model&rsquo;s own repair recovers little of the gap.</h3>
         <div class="bars">
           <div class="bar">
-            <span class="bl">The model is given back its own transcription</span>
+            <span class="bl">Given its own transcription</span>
             <span class="bt"><i style="--w:13%"></i></span>
             <b class="num" data-to="6.7" data-sign="+">+6.7</b>
           </div>
           <div class="bar big">
-            <span class="bl">The model is given the correct text</span>
+            <span class="bl">Given the correct text</span>
             <span class="bt"><i style="--w:100%"></i></span>
             <b class="num" data-to="51.4" data-sign="+">+51.4</b>
           </div>
         </div>
-        <p class="fine">Answer accuracy, in points, above answering the wrong-layout text directly (with a note saying how it was typed). Reasoning off, 5 model settings. Interim: no registered test has been decided.</p>
+        <p class="fine">Accuracy points above answering the wrong-layout text directly (with a note on how it was typed). Reasoning off, 5 model settings. Interim: no registered test decided.</p>
       </article>
       <article class="lane lane-b at2">
-        <h3><span class="n">2</span>Some spellings cannot say which word was meant. Someone has to ask.</h3>
+        <h3><span class="n">2</span>Some spellings fit several words. Someone has to ask.</h3>
         <div class="fork">
           <span class="fork-src">beizi</span>
           <svg class="fork-svg" viewBox="0 0 60 120" preserveAspectRatio="none" aria-hidden="true">
@@ -74,10 +74,10 @@
           </ul>
         </div>
         <div class="tiles">
-          <div class="tile"><b class="num" data-to="48.9" data-unit="%">48.9%</b><span>36 same-spelling words, alone. The test allows at most 50%.</span></div>
-          <div class="tile ok"><b class="num" data-to="99.1" data-unit="%">99.1%</b><span>other same-spelling words, in sentences written to allow one reading.</span></div>
+          <div class="tile"><b class="num" data-to="48.9" data-unit="%">48.9%</b><span>The word alone. The test allows 50% at most.</span></div>
+          <div class="tile ok"><b class="num" data-to="99.1" data-unit="%">99.1%</b><span>Other such words, in sentences that allow one reading.</span></div>
         </div>
-        <p class="fine">Chinese typed as pinyin without tones. Exploratory pilot, 21 model settings, forced choice.</p>
+        <p class="fine">Chinese typed as pinyin without tones, 36 words. Exploratory pilot, 21 model settings, forced choice.</p>
       </article>
     </div>
     <p class="punch at3">So: <em>repair</em> what can be repaired. <em>Ask</em> about the rest.</p>
@@ -122,20 +122,20 @@
     <p class="kicker">From research to a product</p>
     <h2>One customer, one test, one decision</h2>
     <div class="cards at1">
-      <article><h3>Who first</h3><p>One team whose assistant serves people who write in two scripts. A misread message costs them.</p></article>
-      <article><h3>The test</h3><p>Count the wrong-layout and Latin-letter messages in their logs. Replay them with and without AsTyped.</p></article>
-      <article><h3>The decision</h3><p>If the share is worth a paid pilot to them, build the integration. If not, stop and keep the benchmark.</p></article>
-      <article class="rai"><h3>Built to be checked</h3><p>Runs on the device. Keeps what you typed beside what it proposes. Asks instead of guessing.</p></article>
+      <article><h3>Who first</h3><p>A team whose assistant serves people who write in two scripts.</p></article>
+      <article><h3>The test</h3><p>Count these messages in their logs. Replay with and without it.</p></article>
+      <article><h3>The decision</h3><p>Worth a paid pilot to them? Build it. If not, stop.</p></article>
+      <article class="rai"><h3>Built to be checked</h3><p>On the device. Shows every change. Asks instead of guessing.</p></article>
     </div>
-    <p class="fine seen at1">Seen by others: on real maternal-health messages in five Indian languages and Nepali, leading models scored up to 24 points lower when the message was romanised (Script Gap, arXiv:2512.10780). Not yet measured, as far as we found: how often such messages reach assistants.</p>
+    <p class="fine seen at1">Seen by others: models scored up to 24 points lower on romanised health messages (Script Gap, arXiv:2512.10780). Not yet measured: how often this reaches assistants.</p>
     <div class="prize at2">
       <p class="prize-h">With the prize</p>
       <ol>
-        <li><b>The first audit</b>: one team's logs, counted and replayed with and without the layer.</li>
-        <li><b>An end-to-end test</b>: how much of the 51 points does the prototype recover?</li>
-        <li><b>A public leaderboard</b> of the gap, model by model.</li>
+        <li><b>The first audit</b> of one team&rsquo;s logs.</li>
+        <li><b>An end-to-end test</b> of the prototype.</li>
+        <li><b>A public leaderboard</b> of the gap.</li>
       </ol>
-      <p class="ask">And one ask of this room: <b>an introduction to someone who runs such an assistant.</b></p>
+      <p class="ask">One ask of this room: <b>an introduction to someone who runs such an assistant.</b></p>
     </div>
     <p class="close at3">AI should understand people <span class="astyped" id="closetype">as they type</span><span class="caret c2" aria-hidden="true"></span></p>
     <p class="sig">Xiaoxiao Zhouyi · University of Bristol · UKAIRS 2026 poster 89 · ime.zhouyixiaoxiao.com/pitch</p>
