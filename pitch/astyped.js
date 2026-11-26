@@ -293,6 +293,11 @@
       var span = pinyinSpan(raw);
       return raw.slice(0, span.start) + entry.candidates[entry.chosen].word + raw.slice(span.end);
     });
+    var open = tokens.filter(function (entry) { return entry.ambiguous && entry.candidates && entry.chosen == null; });
+    if (open.length && result.verdict === 'ask') {   // other words still wait for the user
+      return Object.assign({}, result, {tokens: tokens, partial: send, send: null,
+        question: '"' + pinyinSpan(open[0].t).key + '" can be several words. Which one did you mean?'});
+    }
     var confirmed = Object.assign({}, result, {verdict: 'repaired', tokens: tokens, send: send,
       note: 'The user confirmed the Chinese reading of the toneless pinyin.'});
     delete confirmed.question;

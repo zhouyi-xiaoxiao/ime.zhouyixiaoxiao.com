@@ -16,10 +16,13 @@
   var steps = slides.map(function () { return 0; });
   var played = slides.map(function () { return false; });
   var timers = slides.map(function () { return []; });
-  var cur = 0, mode = null, io = null;
+  var cur = 0, mode = null, io = null, paused1 = false;
 
   function later(i, fn, ms) { var t = setTimeout(fn, reduce ? Math.min(ms, 20) : ms); timers[i].push(t); return t; }
-  function clearTimers(i) { timers[i].forEach(clearTimeout); timers[i] = []; }
+  var ptimers = [], took = false;   // prototype typing; "took" = the visitor typed or tapped in it
+  function plater(fn, ms) { var t = setTimeout(fn, reduce ? Math.min(ms, 20) : ms); ptimers.push(t); return t; }
+  function pclear() { ptimers.forEach(clearTimeout); ptimers = []; }
+  function clearTimers(i) { timers[i].forEach(clearTimeout); timers[i] = []; if (i === 2) { pclear(); } }
   function maxStep(i) { return +slides[i].dataset.steps || 0; }
 
   /* ---------- data ---------- */
@@ -108,11 +111,12 @@
     hw.classList.add('fade');
     later(0, function () {
       buildKbd(item.pair);
+      slides[0].classList.add('cyc');
       hw.classList.remove('fade');
       typeWord(item, 62, false, function (typed) {
         later(0, function () {
           hw.classList.add('fade');
-          later(0, function () { showMeant(item); caption(typed, item); hw.classList.remove('fade'); later(0, cycle, 1900); }, 240);
+          later(0, function () { showMeant(item); caption(typed, item); slides[0].classList.remove('cyc'); hw.classList.remove('fade'); later(0, cycle, 1900); }, 240);
         }, 620);
       });
     }, 260);
@@ -120,8 +124,11 @@
   var hook1 = [null,
     function (instant) { buildKbd(WORDS[0].pair); typeWord(WORDS[0], 170, instant); },
     function (instant) {
-      var item = WORDS[0], chars = Array.from(item.native), cells = $$('.ch', hw);
-      caption(cells.map(function (c) { return c.textContent; }).join(''), item);
+      var item = WORDS[0], chars = Array.from(item.native), typed = typedOf(item);
+      clearTimers(0);
+      if ($$('.ch', hw).length !== Array.from(typed).length) { typeWord(item, 0, true); }
+      var cells = $$('.ch', hw);
+      caption(typed, item);
       if (cells.length !== chars.length) { showMeant(item); return; }
       cells.forEach(function (c, i) {
         c.classList.remove('in'); c.appendChild(el('span', 'b', chars[i]));
@@ -130,7 +137,15 @@
     },
     function (instant) { cycleAt = 0; if (!instant && !reduce) { later(0, cycle, 2600); } }
   ];
-  function reset1() { hw.className = 'hword'; hw.textContent = ''; hw.style.fontSize = ''; hcap.innerHTML = '&nbsp;'; kbdPair = null; buildKbd(WORDS[0].pair); }
+  function typedOf(item) { return strokes(item).map(function (s) { return s.ch; }).join(''); }
+  function settle1() {   // coming back to slide 1: show its current step complete, then carry on
+    var s = steps[0], item;
+    slides[0].classList.remove('cyc'); hw.classList.remove('fade');
+    if (s === 1) { typeWord(WORDS[0], 0, true); }
+    if (s >= 2) { item = WORDS[s === 3 ? cycleAt : 0]; if (kbdPair !== item.pair) { buildKbd(item.pair); } showMeant(item); caption(typedOf(item), item); }
+    if (s === 3 && !reduce) { later(0, cycle, 1900); }
+  }
+  function reset1() { slides[0].classList.remove('cyc'); hw.className = 'hword'; hw.textContent = ''; hw.style.fontSize = ''; hcap.innerHTML = '&nbsp;'; kbdPair = null; buildKbd(WORDS[0].pair); }
 
   /* ---------- slide 2: numbers count up ---------- */
   function countUp(i, node, delay) {
@@ -142,6 +157,7 @@
       var t0 = performance.now(), dur = 1250;
       (function frame(now) {
         var p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+        if (mode === 'stage' && cur !== i) { show(to); return; }
         show(to * e);
         if (p < 1) { requestAnimationFrame(frame); } else { show(to); }
       })(t0);
@@ -164,7 +180,7 @@
     if (tail) { b.appendChild(d.createTextNode(' ' + tail)); }
     return b;
   }
-  function tag(cls, text, small) { var t = el('span', 'tag ' + cls, text); if (small) { t.appendChild(el('small', null, small)); } return t; }
+  function tag(cls, text, small) { var p = el('p', 'tagline'); p.appendChild(el('span', 'tag ' + cls, text)); if (small) { p.appendChild(el('span', 'tagnote', small)); } return p; }
   function render(r, lite) {
     phyp.textContent = '';
     if (r && r.hypotheses && r.verdict !== 'empty') {
@@ -184,14 +200,15 @@
       flow.className = 'flow go back';
       pout.appendChild(tag('t-ask', 'Asks the user', 'several readings'));
       pout.appendChild(el('p', 'q', r.question || 'Which word did you mean?'));
-      var ti = -1; (r.tokens || []).forEach(function (t, i) { if (ti < 0 && t.ambiguous) { ti = i; } });
+      var ti = -1; (r.tokens || []).forEach(function (t, i) { if (ti < 0 && t.ambiguous && t.chosen == null) { ti = i; } });
+      if (r.partial) { var sofar = el('p', 'restored plain', r.partial); sofar.lang = 'zh'; pout.appendChild(sofar); }
       var cands = el('div', 'cands');
       ((r.tokens[ti] && r.tokens[ti].candidates) || []).forEach(function (c, ci) {
         var b = el('button'); b.type = 'button'; b.dataset.word = c.word;
         var w = el('b', null, c.word); w.lang = 'zh'; b.appendChild(w);
         if (c.gloss) { b.appendChild(el('span', null, c.gloss)); }
         b.addEventListener('click', function (ev) {
-          ev.stopPropagation(); clearTimers(2);
+          ev.stopPropagation(); pclear();
           try { render(window.AsTyped.resolve(r, ti, ci)); } catch (e) { /* keep the question on screen */ }
         });
         cands.appendChild(b);
@@ -231,21 +248,21 @@
       if (k >= chars.length) { render(analyze(pin.value)); if (done) { done(); } return; }
       pin.value += chars[k++];
       if (k % 2 === 0) { render(analyze(pin.value), true); }
-      later(2, tick, 58);
+      plater(tick, 58);
     })();
   }
   function typedRu() { try { return window.KeyConv.type(DEMO_RU, 'ru>us').text; } catch (e) { return 'yfgbib gbcmvj rkbtyne'; } }
   function hook3(k, instant) {
-    if (k === 1) { if (instant) { run(typedRu()); } else { later(2, function () { demoType(typedRu()); }, 650); } }
+    if (took && mode === 'scroll') { return; }   // never type over a visitor
+    if (k === 1) { if (instant) { run(typedRu()); } else { plater(function () { demoType(typedRu()); }, 650); } }
     if (k === 2) {
-      if (PRINT) { return; }
+      pclear();
       if (instant) { run('beizi'); return; }
-      clearTimers(2);
       demoType('beizi');   // the question stays open: the choice is the user's
     }
   }
   function reset3() { pin.value = ''; render(analyze('')); }
-  function userTakesOver() { clearTimers(2); }
+  function userTakesOver() { took = true; pclear(); }
   if (pin) {
     pin.addEventListener('input', function () { userTakesOver(); render(analyze(pin.value)); });
     pin.addEventListener('focus', userTakesOver);
@@ -303,9 +320,11 @@
   function go(i, entering) {
     i = Math.max(0, Math.min(N - 1, i));
     if (mode === 'scroll') { slides[i].scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); return; }
+    var from = cur;
     if (i !== cur) { clearTimers(cur); }
     cur = i;
     slides.forEach(function (s, j) { s.classList.toggle('active', j === i); s.classList.toggle('before', j < i); });
+    if (i === 0 && from !== 0 && steps[0] > 0) { try { settle1(); } catch (e) { /* keep paging */ } }
     if (entering !== false && i > 0 && steps[i] === 0) { setStep(i, 1); }
     hud();
     if (history.replaceState) { history.replaceState(null, '', location.pathname + location.search + '#' + (i + 1)); }
@@ -347,9 +366,12 @@
     io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         var i = slides.indexOf(e.target);
-        if (e.isIntersecting && e.intersectionRatio >= 0.35) { cur = i; hud(); autoplay(i); }
+        if (e.isIntersecting && e.intersectionRatio >= 0.35) {
+          cur = i; hud(); autoplay(i);
+          if (i === 0 && paused1) { paused1 = false; try { settle1(); } catch (x) { /* keep scrolling */ } }
+        } else if (i === 0 && steps[0] === 3 && !paused1) { paused1 = true; clearTimers(0); }   // no typing off screen
       });
-    }, { threshold: [0.35, 0.6] });
+    }, { threshold: [0, 0.35, 0.6] });
     slides.forEach(function (s) { io.observe(s); });
   }
 
@@ -374,7 +396,7 @@
     var k = e.key;
     if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || k === ' ' || k === 'Enter') {
       if (mode === 'scroll' && (k === ' ' || k === 'ArrowDown' || k === 'PageDown')) { return; }
-      if (e.target && e.target.tagName === 'BUTTON' && (k === ' ' || k === 'Enter')) { return; }
+      if (e.target && (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') && (k === ' ' || k === 'Enter')) { return; }
       e.preventDefault(); next();
     } else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp' || k === 'Backspace') {
       if (mode === 'scroll' && (k === 'ArrowUp' || k === 'PageUp')) { return; }
@@ -408,11 +430,14 @@
   /* ---------- start ---------- */
   buildKbd(WORDS[0].pair);
   if (PRINT) { d.body.classList.add('print'); }
+  if (reduce) { d.body.classList.add('still'); }
   var first = parseInt((location.hash || '').slice(1), 10);
   if (Q.has('demo')) { first = 3; }
   if (first >= 1 && first <= N) { cur = first - 1; }
+  var want = cur;
   applyMode();
   if (PRINT) { slides.forEach(function (s, i) { setStep(i, maxStep(i), true); }); }
-  else if (mode === 'scroll' && cur > 0) { setTimeout(function () { slides[cur].scrollIntoView(); }, 60); }
+  else if (Q.has('final')) { setStep(cur, maxStep(cur), true); }
+  else if (mode === 'scroll' && want > 0) { setTimeout(function () { slides[want].scrollIntoView(); }, 60); }
   hud();
 })();
