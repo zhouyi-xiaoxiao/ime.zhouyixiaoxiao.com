@@ -188,7 +188,8 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
     <div><dt>有人是故意这么打的吗？</dt>
       <dd>Some are. One user in 2025 wrote, in wrong-layout Russian: I have no Russian layout, correct the text and read it as Russian. The assistant asked what they meant.</dd></div>
     <div><dt>Claude 呢？</dt>
-      <dd id="claudeAns">I replayed them on GPT-6.2 last night. Claude is running now; I don’t have that number yet.</dd></div>
+      <dd id="claudeAns">Same picture. I replayed the 107 cases on Claude today. The flagship, Opus 5.5, understood 89. The small one, Haiku 5.5, understood 43. That run went through Claude’s command-line tool, not a plain chat, so I treat it as a check, not a headline.
+      <span class="zh">对照 GPT：旗舰 90、便宜的 46，两家几乎一样。限制：约四分之一的回复提到了空的工作目录，说明模型看到了命令行工具自带的上下文；标注由另一个模型按同一套四类规则做，每条只跑一次。</span></dd></div>
     <div><dt>奖金怎么花？</dt>
       <dd>Three things: the first audit of one platform’s logs, an end-to-end test of the prototype, and a public leaderboard of the gap.</dd></div>
     <div><dt>不知道怎么答时</dt>
@@ -215,6 +216,8 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
     <tr><td>GPT-4o-mini 当时</td><td class="r">2 / 47</td></tr>
     <tr><td>今年旗舰（GPT-6.2 Astra）</td><td class="r">90 / 107</td></tr>
     <tr><td>今年便宜的（GPT-6 Luna）</td><td class="r">46 / 107</td></tr>
+    <tr><td>Claude Opus 5.5（经命令行工具，参考）</td><td class="r">89 / 107</td></tr>
+    <tr><td>Claude Haiku 5.5（经命令行工具，参考）</td><td class="r">43 / 107</td></tr>
     <tr><td>原型在独立真实样本上</td><td class="r">10 / 13</td></tr>
     <tr><td>原型留出测试，3–12 个词</td><td class="r">90%</td></tr>
     <tr><td>原型延迟，短消息</td><td class="r">&lt; 1 ms</td></tr>
