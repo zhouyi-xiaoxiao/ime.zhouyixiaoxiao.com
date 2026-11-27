@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>AsTyped 讲稿</title>
+<style>
+/* Layout: one reading column for a phone held in the hand; sticky jump bar; script first, answers after. */
+:root {
+  --bg: #fbfaf7; --fg: #15171a; --dim: #5c6370; --line: #dcd9d1; --band: #f0eee8;
+  --click: #c23a1e; --time: #1f55a5; --warn: #8a5a00; --warnbg: #fbf1d6;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #101214; --fg: #f1efe9; --dim: #a3a8b3; --line: #2b2f36; --band: #191c20;
+  --click: #ff8a6b; --time: #8db8ff; --warn: #f0c869; --warnbg: #2c2512; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #101214; --fg: #f1efe9; --dim: #a3a8b3; --line: #2b2f36; --band: #191c20;
+  --click: #ff8a6b; --time: #8db8ff; --warn: #f0c869; --warnbg: #2c2512; color-scheme: dark }
+html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 60px); }
+html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 19px; line-height: 1.5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: var(--bg); border-bottom: 1px solid var(--line); }
+nav .in { display: flex; gap: 6px; padding-block: 8px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); overflow-x: auto; }
+nav a { flex: 0 0 auto; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--fg); text-decoration: none; font-size: 15px; font-weight: 600; }
+nav a:focus-visible, button:focus-visible { outline: 3px solid var(--time); outline-offset: 2px; }
+main { max-width: 680px; margin: 0 auto; padding-block: 18px 80px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 34px; }
+section { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+h1 { font-size: 24px; line-height: 1.2; margin: 0; text-wrap: balance; }
+h2 { font-size: 15px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); margin: 0; padding-bottom: 6px; border-bottom: 2px solid var(--fg); }
+h3 { font-size: 17px; margin: 0; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+h3 .t { font-family: var(--mono); font-size: 15px; color: var(--time); font-weight: 600; white-space: nowrap; }
+p { margin: 0; }
+.say { font-size: 22px; line-height: 1.5; }
+.say b.n { font-weight: 700; }
+.c { display: inline-block; font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--click); border: 1.5px solid var(--click); border-radius: 6px; padding: 0 6px; margin: 0 3px; vertical-align: 2px; white-space: nowrap; }
+.zh { color: var(--dim); font-size: 16px; }
+.slide { display: flex; flex-direction: column; gap: 8px; padding-top: 4px; }
+.note { background: var(--band); border-radius: 10px; padding: 12px 14px; font-size: 16px; }
+.warn { background: var(--warnbg); color: var(--warn); border-radius: 10px; padding: 12px 14px; font-size: 16px; }
+.warn b { color: var(--fg); }
+dl { margin: 0; display: flex; flex-direction: column; gap: 18px; }
+dt { font-weight: 700; font-size: 18px; }
+dd { margin: 4px 0 0; font-size: 19px; }
+dd .zh { display: block; margin-top: 4px; }
+table { border-collapse: collapse; width: 100%; font-size: 16px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 8px 7px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--dim); font-weight: 600; font-size: 14px; }
+td.r { text-align: right; white-space: nowrap; font-weight: 700; padding-right: 0; }
+ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 17px; }
+kbd { font-family: var(--mono); font-size: 15px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 1px 7px; background: var(--band); }
+.url { font-family: var(--mono); font-size: 15px; word-break: break-all; }
+button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--band); color: var(--fg); }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+</style>
+</head>
+<body>
+
+
+<nav aria-label="跳转"><div class="in">
+  <a href="#script">讲稿</a><a href="#qa">问答</a><a href="#numbers">数字</a><a href="#ops">操作</a>
+</div></nav>
+
+<main>
+<section>
+  <h1>AsTyped · 3 分钟路演 + 2 分钟问答</h1>
+  <p class="zh">11 月 27 日 11:15。红框是翻页，蓝字是该到的时间。共 11 次翻页。</p>
+  <div class="row"><button id="awake" type="button">保持屏幕常亮</button><span class="zh" id="awakeState"></span></div>
+</section>
+
+<section id="script">
+  <h2>讲稿</h2>
+
+  <div class="slide">
+    <h3>第 1 页 · 问题 <span class="t">→ 0:30</span></h3>
+    <p class="say">Imagine you ask an AI assistant a question. <span class="c">翻</span> This is what it receives. <span class="c">翻</span> It was “привет”: hello, in Russian, typed with the keyboard still set to English. <span class="c">翻</span> AI reads what you typed, not what you meant.</p>
+  </div>
+
+  <div class="slide">
+    <h3>第 2 页 · 证据 <span class="t">→ 1:20</span></h3>
+    <p class="say">I’m Xiaoxiao, a PhD researcher at Bristol. This was my poster here this week. I tested two things. First: can the model fix this itself? I asked models questions typed on the wrong keyboard. When the model cleaned up the text itself first, it scored <b class="n">7</b> points better. When I gave it the text as it should have been typed, <b class="n">51</b> points better. So most of what could be fixed, the model does not fix on its own. These are interim numbers, and my prototype’s share of that gap is not measured yet. <span class="c">翻</span> Second: Chinese is often typed in Latin letters. “beizi” can mean cup, quilt or lifetime. Shown the word alone, models were right <b class="n">49</b> percent of the time. That is a coin flip, and nobody could do better: the letters do not say which word. Inside a sentence: <b class="n">99</b>. <span class="c">翻</span> So: repair what can be repaired, and ask about the rest.</p>
+    <p class="note">这是换成大白话的版本（10:35 改）。过了 1:25 就删：“This was my poster here this week” · “Inside a sentence: 99” · 第 4 页的 “and a public ranking of models”。</p>
+  </div>
+
+  <div class="slide">
+    <h3>第 3 页 · 原型 <span class="t">→ 1:55</span></h3>
+    <p class="say">AsTyped is a layer between the keyboard and the model. This prototype runs in the browser; no model is called. <span class="zh">（等它自己演）</span> It finds the likely layout, Russian, and shows the restored text beside what I typed. <span class="c">翻</span> “beizi”: it does not guess. It asks. <span class="c">翻</span> Scan this and try it during questions.</p>
+  </div>
+
+  <div class="slide">
+    <h3>第 4 页 · 计划 <span class="t">→ 3:00</span></h3>
+    <p class="say">I had not interviewed customers, so this week I ran the first count myself: <b class="n">5.3 million</b> real messages to ChatGPT, 2023 to mid-2025. Wrong keyboard: roughly <b class="n">1 message in 10,000</b>. Rare. <span class="zh">（停一下）</span> And in <b class="n">256</b> confirmed cases the assistant understood <b class="n">45</b>. Last night I sent 107 of them to this year’s models: the best one understood <b class="n">90</b>; a cheaper one, <b class="n">46</b>. So the best model is closing this, and the cheaper one is not. It is a small fix for assistants that run on cheaper models, and a measurement nobody else has. Next: one company whose users switch between two alphabets, like Russian and English. They run the count on their own data. Then a paid pilot, or I stop. <span class="c">翻</span> The prize pays for that count, a test of whether my prototype really helps the model, and a public ranking of models. One ask of this room: introduce me to someone who runs such an assistant. <span class="c">翻</span> AI should understand people as they type. Thank you.</p>
+    <p class="note">可选，加在收尾句前：<br>“Today that depends on which model you can afford.”</p>
+  </div>
+</section>
+
+<section id="qa">
+  <h2>问答 · 第一句直接回答</h2>
+  <dl>
+    <div><dt>大模型不是已经解决了吗？</dt>
+      <dd>For the commonest case, mostly: 90 of 107, and it still asked or misread one time in six. The cheaper model got 46, and sometimes guessed wrong with confidence. And “beizi” no model can settle without asking.</dd></div>
+    <div><dt>这是旧数据，现在呢？</dt>
+      <dd>The open logs run to July 2025; nobody publishes this year’s. The rate is the same order. GPT-4o got 18 of 74 real cases. For this year’s models I replayed them last night: 90 and 46.</dd></div>
+    <div><dt>万分之一，太小了吧？</dt>
+      <dd>Yes, it is rare. In Russian conversations it is about 1 in 2,000, and these are lower bounds. That is why the plan is one count on one team’s side, then a paid pilot, or stop.</dd></div>
+    <div><dt>这很容易抄吧？壁垒在哪？</dt>
+      <dd>The code is easy. Anyone here could write it in a week. What nobody had until this week is the measurement: how often this happens and which models fail. That is what I own, and the prize buys the next one.</dd></div>
+    <div><dt>大厂明天自己做了怎么办？</dt>
+      <dd>Then it is solved for their users, and my benchmark is how everyone checks it. I would count that as a good outcome.</dd></div>
+    <div><dt>怎么实现的？延迟多少？</dt>
+      <dd>A plain program, no neural network: about 800 kilobytes of code and lookup tables. It replays the key positions on twenty keyboard layouts and scores each reading with character statistics. Under a millisecond for a short message, a few milliseconds for a long one, on a laptop.</dd></div>
+    <div><dt>原型能找回那 51 分里的多少？</dt>
+      <dd>I don’t have an end-to-end number. 51 is with the correct text supplied. Measuring what the prototype recovers, counting wrong repairs, is the second thing the prize pays for.</dd></div>
+    <div><dt>原型在真实消息上准吗？</dt>
+      <dd>On an independent sample of real messages it restored 10 of 13. One went to the wrong layout; two very short ones were missed. About 1 in 2,000 other messages is still wrongly flagged, mostly code.</dd></div>
+    <div><dt>第 2 页说修复只找回 7 分，第 4 页说旗舰读懂 90 条？</dt>
+      <dd>Different measures. Slide 2 is answer accuracy on test questions in my registered study, reasoning off. Slide 4 is whether the reply addressed what the person meant, on real messages, mostly Russian.
+      The study has reasoning off and covers layouts beyond Russian, such as Armenian, where models do much worse.
+      <span class="zh">先核对登记实验这一项用的语言再说后半句。不要说两者一致。</span></dd></div>
+    <div><dt>beizi 为什么上限是 50%？</dt>
+      <dd>Each spelling in that test stands for two different words, and each word is the right answer once. A reader who sees only the spelling cannot tell which one is wanted, so it can expect at most half. Models scored 48.9: they are at that limit. The information is not in the text.
+      <span class="zh">18 组同拼写的词，每组两个目标词，共 36 题；只给拼音，强制选一个。</span></dd></div>
+    <div><dt>own transcription 和 correct text 是什么？</dt>
+      <dd>Same questions, three ways. One: the model gets the wrong-layout text and answers. Two: it first transcribes the text itself, then answers from its own transcription: plus 7 points. Three: we hand it the correct text: plus 51. So it can answer. What it cannot do reliably, with reasoning off, is read.
+      <span class="zh">+6.7 = 模型自己先还原再答；+51.4 = 直接给它正确原文。差的 45 分就是“读”这一步丢的。</span></dd></div>
+    <div><dt>谈过客户吗？谁付钱？</dt>
+      <dd>No, not yet, and nobody pays yet. The buyer I am testing is the owner of a customer-facing assistant in a two-script market. First milestone: one paid pilot with one team, at a fixed fee.</dd></div>
+    <div><dt>那 256 条是谁核实的？</dt>
+      <dd>Each case was reviewed one by one, with a written reason, by an AI reviewer under strict rules, and a sample was checked again. The review files are kept.
+      <span class="zh">你自己看过样本，才加 “I read a sample myself”。</span></dd></div>
+    <div><dt>“反问”也算没读懂？</dt>
+      <dd>Asking is better than guessing, but the person has to type it again. I report them separately: in the first set, 72 asked and 17 misread.</dd></div>
+    <div><dt>有人是故意这么打的吗？</dt>
+      <dd>Some are. One user in 2025 wrote, in wrong-layout Russian: I have no Russian layout, correct the text and read it as Russian. The assistant asked what they meant.</dd></div>
+    <div><dt>Claude 呢？</dt>
+      <dd id="claudeAns">I replayed them on GPT-6.2 last night. Claude is running now; I don’t have that number yet.</dd></div>
+    <div><dt>奖金怎么花？</dt>
+      <dd>Three things: the first audit of one team’s logs, an end-to-end test of the prototype, and a public leaderboard of the gap.</dd></div>
+    <div><dt>不知道怎么答时</dt>
+      <dd>I don’t know yet; that is what the audit answers.</dd></div>
+  </dl>
+</section>
+
+<section id="numbers">
+  <h2>数字</h2>
+  <table>
+    <tr><th>是什么</th><th class="r">数</th></tr>
+    <tr><td>给正确文本，准确率提高</td><td class="r">+51.4</td></tr>
+    <tr><td>给模型自己的转写，提高</td><td class="r">+6.7</td></tr>
+    <tr><td>beizi 这类词，单独 / 句子里</td><td class="r">48.9% / 99.1%</td></tr>
+    <tr><td>真实消息总数（2023-04 至 2025-07）</td><td class="r">5.3 million</td></tr>
+    <tr><td>错键盘，每万条：前段 / 后段</td><td class="r">1.0 / 0.7</td></tr>
+    <tr><td>俄语对话里出现</td><td class="r">185 / 366,743</td></tr>
+    <tr><td>核实的消息里当时读懂</td><td class="r">45 / 256</td></tr>
+    <tr><td>GPT-4o 当时</td><td class="r">18 / 74</td></tr>
+    <tr><td>GPT-4o-mini 当时</td><td class="r">2 / 47</td></tr>
+    <tr><td>今年旗舰（GPT-6.2 Astra）</td><td class="r">90 / 107</td></tr>
+    <tr><td>今年便宜的（GPT-6 Luna）</td><td class="r">46 / 107</td></tr>
+    <tr><td>原型在独立真实样本上</td><td class="r">10 / 13</td></tr>
+    <tr><td>原型留出测试，3–12 个词</td><td class="r">90%</td></tr>
+    <tr><td>原型延迟，短消息</td><td class="r">&lt; 1 ms</td></tr>
+  </table>
+  <p class="zh">毫秒 = millisecond。Script Gap（arXiv:2512.10780）：罗马化的健康消息上模型低至多 24 分；“近 200 万次错误”是作者的推算，要说 “could cause”。</p>
+</section>
+
+
+
+<section id="ops">
+  <h2>操作</h2>
+  <ul>
+    <li>电脑打开：<span class="url">ime.zhouyixiaoxiao.com/pitch/?mode=stage</span></li>
+    <li><kbd>F</kbd> 全屏 · <kbd>T</kbd> 计时 · <kbd>→</kbd> 或空格翻页 · <kbd>1</kbd>–<kbd>4</kbd> 跳页</li>
+    <li>翻页器先试一下能不能翻；不行就用键盘。</li>
+    <li>网络不行：打开备用 PDF（4 页）。</li>
+    <li>第 3 页让原型自己演，别念小字。</li>
+    <li>签到时跟 Caron 确认在路演名单上。</li>
+  </ul>
+</section>
+</main>
+
+<script>
+(function () {
+  var btn = document.getElementById('awake'), st = document.getElementById('awakeState'), lock = null;
+  function set(t) { st.textContent = t; }
+  function ask() {
+    if (!('wakeLock' in navigator)) { set('这个浏览器不支持，请在系统设置里调长自动锁定'); return; }
+    navigator.wakeLock.request('screen').then(function (l) {
+      lock = l; set('已开启'); l.addEventListener('release', function () { lock = null; set('已关闭，点一下重新开启'); });
+    }).catch(function () { set('没开成，请在系统设置里调长自动锁定'); });
+  }
+  btn.addEventListener('click', ask);
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible' && st.textContent.indexOf('已') === 0 && !lock) { ask(); } });
+})();
+</script>
+
+</body>
+</html>
