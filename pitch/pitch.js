@@ -164,7 +164,7 @@
     }, delay);
   }
   function hook2(k, instant) {
-    if (k > 2 || instant) { return; }
+    if (k > 2 || instant || mode === 'scroll') { return; }
     $$('.at' + k + ' .num[data-to]', slides[1]).forEach(function (n, j) { countUp(1, n, 250 + j * 450); });
   }
   function reset2() { $$('.num[data-to]', slides[1]).forEach(function (n) { n.textContent = (n.dataset.sign || '') + (+n.dataset.to).toFixed(n.dataset.dp != null ? +n.dataset.dp : 1) + (n.dataset.unit || ''); }); }
@@ -288,7 +288,7 @@
   var closeEl = $('#closetype'), closeText = closeEl ? closeEl.textContent : '';
   function hook4(k, instant) {
     if (k !== maxStep(3) || !closeEl) { return; }
-    if (instant || reduce) { closeEl.textContent = closeText; return; }
+    if (instant || reduce || mode === 'scroll') { closeEl.textContent = closeText; return; }
     closeEl.textContent = '';
     Array.from(closeText).forEach(function (c, i) { later(3, function () { closeEl.textContent += c; }, 900 + i * 85); });
   }
@@ -327,7 +327,7 @@
     i = Math.max(0, Math.min(N - 1, i));
     if (mode === 'scroll') { slides[i].scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); return; }
     var from = cur;
-    if (i !== cur) { clearTimers(cur); }
+    if (i !== cur) { if (cur === 3 && closeEl) { closeEl.textContent = closeText; } clearTimers(cur); }
     cur = i;
     slides.forEach(function (s, j) { s.classList.toggle('active', j === i); s.classList.toggle('before', j < i); });
     if (i === 0 && from !== 0 && steps[0] > 0) { try { settle1(); } catch (e) { /* keep paging */ } }
