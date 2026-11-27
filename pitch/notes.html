@@ -92,7 +92,7 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
 
   <div class="slide">
     <h3>第 4 页 · 周四 → 今天 → 六个月 <span class="t">→ 3:00</span></h3>
-    <p class="say">On Thursday this was a research poster: no product, no customer, no count. The bootcamp asked me: who pays, and how often does this happen? So I changed my customer to the company that owns the assistant. And I counted real messages. Wrong keyboard: <b class="n">1 in 10,000</b>. Across AI assistants today, that is about <b class="n">800,000</b> messages a day. <b class="n">300 million</b> a year. <span class="zh">（停一下）</span> Last night I sent 107 real cases to this year’s models. The best one understood <b class="n">90</b>. A cheaper one, <b class="n">46</b>. So my customer is a company running a support chatbot on a cheaper model, for people who switch alphabets. <span class="c">翻</span> In six months: one paid pilot, and a public ranking of models. My ask: introduce me to one such company. <span class="c">翻</span> Today this fails people who do not type in English. AI should understand people as they type. Thank you.</p>
+    <p class="say">On Thursday this was a research poster: no product, no customer, no count. The bootcamp asked me: who pays, and how often does this happen? So I changed my customer, from the person typing to the platform that runs the assistant. And I counted real messages. Wrong keyboard: <b class="n">1 in 10,000</b>. Across AI assistants today, that is about <b class="n">800,000</b> messages a day, and up to <b class="n">2 million</b>. <span class="zh">（停一下）</span> Last night I sent 107 real cases to this year’s models. The best one understood <b class="n">90</b>. A cheaper one, <b class="n">46</b>. So my customer is a chatbot platform: it runs support bots for thousands of businesses, on cheaper models, where people switch alphabets. <span class="c">翻</span> In six months: one paid pilot, and a public ranking of models. My ask: introduce me to one such platform. <span class="c">翻</span> Today this fails people who do not type in English. AI should understand people as they type. Thank you.</p>
     <p class="note">全文约 290 词，按慢语速（每分钟 110 词左右）加翻页停顿约 3 分钟。超时先删 “In a sentence: 99”，再删第 1 页最后一句。“The bootcamp asked me” 如果实际是某位导师问的，换成 “A mentor asked me”。</p>
   </div>
 </section>
@@ -101,18 +101,21 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
   <h2>问答 · 第一句直接回答</h2>
   <dl>
     <div><dt>客户到底是谁？怎么找到？</dt>
-      <dd>The product owner of a customer-support chatbot, at a bank or telecom whose users type on Cyrillic or Hebrew keyboards. They pay per message, so they run a cheaper model. I reach them through chatbot platform vendors, one of which already ships a layout fix, and through introductions from this room.</dd></div>
+      <dd>A chatbot platform: a company that runs support bots for thousands of businesses, in markets where people switch alphabets, such as Russian, Hebrew or Arabic. One integration covers every business on it, and at their volume 1 in 10,000 is thousands of messages a day. One such platform already built a layout fix itself, so they know the problem. I reach them through introductions from this room.</dd></div>
+    <div><dt>平台为什么愿意付钱？</dt>
+      <dd>Three reasons. Volume: a platform with 100 million messages a day sees about 10,000 of these a day. Reach: one integration covers every business on the platform. Cost: it lets them stay on cheaper models, which understood 46 of 107, instead of paying for the best model on all traffic.
+      <span class="zh">单个银行每月只有几十次，付费理由弱；平台量大、卖一次覆盖全部客户。还没有任何平台确认过，这是六个月试点要验证的。</span></dd></div>
     <div><dt>这两天你改了什么？</dt>
-      <dd>Three things. The customer: from the person typing to the company that owns the assistant. The claim: I counted before claiming, and found it is rare. The plan: one paid pilot or stop, instead of a product for everyone.</dd></div>
+      <dd>Three things. The customer: from the person typing to the platform that runs the assistant. The claim: I counted before claiming, and found it is rare per message and large in total. The plan: one paid pilot with one platform, instead of a product for everyone.</dd></div>
     <div><dt>六个月的目标现实吗？</dt>
-      <dd>It is small on purpose: one team, one count on their own data, one fixed-fee pilot. The tool that does the count already exists.</dd></div>
+      <dd>It is small on purpose: one platform, one count on their own data, one fixed-fee pilot. The tool that does the count already exists.</dd></div>
     <div><dt>大模型不是已经解决了吗？</dt>
       <dd>For the commonest case, mostly: 90 of 107, and it still asked or misread one time in six. The cheaper model got 46, and sometimes guessed wrong with confidence. And “beizi” no model can settle without asking.</dd></div>
     <div><dt>这是旧数据，现在呢？</dt>
       <dd>The open logs run to July 2025; nobody publishes this year’s. The rate is the same order. GPT-4o got 18 of 74 real cases. For this year’s models I replayed them last night: 90 and 46.</dd></div>
     <div><dt>万分之一，太小了吧？</dt>
-      <dd>Per message, yes. But AI assistants now handle about 8 billion messages a day; at 1 in 10,000 that is about 800,000 messages a day, 300 million a year. In Russian conversations it is about 1 in 2,000, and these are lower bounds. I am extrapolating from one service, which is why the first step is a count on one team’s own data.
-      <span class="zh">算法：ChatGPT 每天约 45 亿条（seoClarity 2026 年 10 月估计：OpenAI 2025 年 7 月公布每周 180 亿条、7 亿周活，2026 年 9 月周活 12 亿，按人均不变推算）。ChatGPT 约占 AI 助手访问量的 55%（Similarweb 2026 年 8 到 9 月），所以全部助手约 45 ÷ 0.55 ≈ 80 亿条/天。× 万分之一 = 每天约 80 万条，一年约 3 亿条。被追问来源时照这个顺序说。5.3 million 是我数过的样本量，被问“你数了多少”时再说。</span></dd></div>
+      <dd>Per message, yes. But AI assistants now handle about 8 billion messages a day; at 1 in 10,000 that is about 800,000 messages a day. At the upper bound of what I measured, 2.5 in 10,000, it is 2 million a day. In Russian conversations it is about 1 in 2,000, and these are lower bounds. I am extrapolating from one service, which is why the first step is a count on one platform’s own data.
+      <span class="zh">算法：ChatGPT 每天约 45 亿条（seoClarity 2026 年 10 月估计：OpenAI 2025 年 7 月公布每周 180 亿条、7 亿周活，2026 年 9 月周活 12 亿，按人均不变推算）。ChatGPT 约占 AI 助手访问量的 55%（Similarweb 2026 年 8 到 9 月），所以全部助手约 45 ÷ 0.55 ≈ 80 亿条/天。× 万分之一 = 每天约 80 万条。上限：第一段数据的区间上限是每万条 2.5，80 亿 × 2.5/10,000 = 每天 200 万条。被追问来源时照这个顺序说。5.3 million 是我数过的样本量，被问“你数了多少”时再说。</span></dd></div>
     <div><dt>这很容易抄吧？壁垒在哪？</dt>
       <dd>The code is easy. Anyone here could write it in a week. What nobody had until this week is the measurement: how often this happens and which models fail. That is what I own, and the prize buys the next one.</dd></div>
     <div><dt>大厂明天自己做了怎么办？</dt>
@@ -134,7 +137,7 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
       <dd>Same questions, three ways. One: the model gets the wrong-layout text and answers. Two: it first transcribes the text itself, then answers from its own transcription: plus 7 points. Three: we hand it the correct text: plus 51. So it can answer. What it cannot do reliably, with reasoning off, is read.
       <span class="zh">+6.7 = 模型自己先还原再答；+51.4 = 直接给它正确原文。差的 45 分就是“读”这一步丢的。</span></dd></div>
     <div><dt>谈过客户吗？谁付钱？</dt>
-      <dd>No, not yet, and nobody pays yet. The buyer I am testing is the owner of a customer-facing assistant in a two-script market. First milestone: one paid pilot with one team, at a fixed fee.</dd></div>
+      <dd>No, not yet, and nobody pays yet. The buyer I am testing is a chatbot platform in a two-alphabet market. First milestone: one paid pilot with one platform, at a fixed fee.</dd></div>
     <div><dt>那 256 条是谁核实的？</dt>
       <dd>Each case was reviewed one by one, with a written reason, by an AI reviewer under strict rules, and a sample was checked again. The review files are kept.
       <span class="zh">你自己看过样本，才加 “I read a sample myself”。</span></dd></div>
@@ -145,7 +148,7 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
     <div><dt>Claude 呢？</dt>
       <dd id="claudeAns">I replayed them on GPT-6.2 last night. Claude is running now; I don’t have that number yet.</dd></div>
     <div><dt>奖金怎么花？</dt>
-      <dd>Three things: the first audit of one team’s logs, an end-to-end test of the prototype, and a public leaderboard of the gap.</dd></div>
+      <dd>Three things: the first audit of one platform’s logs, an end-to-end test of the prototype, and a public leaderboard of the gap.</dd></div>
     <div><dt>不知道怎么答时</dt>
       <dd>I don’t know yet; that is what the audit answers.</dd></div>
   </dl>
@@ -160,7 +163,8 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
     <tr><td>beizi 这类词，单独 / 句子里</td><td class="r">48.9% / 99.1%</td></tr>
     <tr><td>真实消息总数（2023-04 至 2025-07）</td><td class="r">5.3 million</td></tr>
     <tr><td>全部 AI 助手每天消息量（估计，2026）</td><td class="r">8 billion</td></tr>
-    <tr><td>按万分之一：每天 / 每年</td><td class="r">800,000 / 300 million</td></tr>
+    <tr><td>按万分之一：每天</td><td class="r">800,000</td></tr>
+    <tr><td>上限（每万条 2.5）：每天</td><td class="r">2 million</td></tr>
     <tr><td>错键盘，每万条：前段 / 后段</td><td class="r">1.0 / 0.7</td></tr>
     <tr><td>俄语对话里出现</td><td class="r">185 / 366,743</td></tr>
     <tr><td>核实的消息里当时读懂</td><td class="r">45 / 256</td></tr>
