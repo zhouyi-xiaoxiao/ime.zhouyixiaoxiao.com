@@ -127,8 +127,8 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
       The study has reasoning off and covers layouts beyond Russian, such as Armenian, where models do much worse.
       <span class="zh">先核对登记实验这一项用的语言再说后半句。不要说两者一致。</span></dd></div>
     <div><dt>beizi 为什么上限是 50%？</dt>
-      <dd>Each spelling in that test stands for two different words, and each word is the right answer once. A reader who sees only the spelling cannot tell which one is wanted, so it can expect at most half. Models scored 48.9: they are at that limit. The information is not in the text.
-      <span class="zh">18 组同拼写的词，每组两个目标词，共 36 题；只给拼音，强制选一个。</span></dd></div>
+      <dd>Each question is asked twice. The model sees “beizi” and four options: lifetime, cup, quilt, plate. Once the writer meant cup; once, quilt. The two questions look exactly the same, so whatever the model answers, it is right at most one time in two. Models scored 48.9: they are at that limit. The information is not in the text.
+      <span class="zh">beizi 有三个读法，但只考其中两个（杯子、被子）：同一道题出两次，标准答案不同，所以上限是 50%，不是 33%。共 18 组 × 2 = 36 题，只给拼音，必须选一个。句子里的 99.1% 用的是另外 36 个词，例如 “gongsi … gei meiwei gudong fenhong”（股东，不是古董或鼓动）。</span></dd></div>
     <div><dt>own transcription 和 correct text 是什么？</dt>
       <dd>Same questions, three ways. One: the model gets the wrong-layout text and answers. Two: it first transcribes the text itself, then answers from its own transcription: plus 7 points. Three: we hand it the correct text: plus 51. So it can answer. What it cannot do reliably, with reasoning off, is read.
       <span class="zh">+6.7 = 模型自己先还原再答；+51.4 = 直接给它正确原文。差的 45 分就是“读”这一步丢的。</span></dd></div>
