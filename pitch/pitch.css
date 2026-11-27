@@ -297,6 +297,22 @@ body.stage .scene .close { font-size: clamp(34px, min(6.6vw, 11.6vh), 100px); }
 .logos img.sq { height: clamp(30px, 3.6vw, 46px); mix-blend-mode: screen; }
 @media (max-width: 899px) { .who .qr { display: none; } .who { text-align: center; } }
 
+/* phones: room for a thumb, room beside a notch, and the prototype inside a 320px screen */
+body.scroll .chips { gap: 8px; }
+body.scroll .chips button { padding: 8px 13px; }
+body.scroll .who a, body.scroll .fine a { display: inline-block; padding: 7px 0; }
+body.scroll .who p { line-height: 1.3; }
+.proto > * { min-width: 0; }
+@supports (padding: max(0px)) {
+  body.scroll .slide { padding-left: max(var(--pad), env(safe-area-inset-left)); padding-right: max(var(--pad), env(safe-area-inset-right)); }
+  .hud { padding-left: max(var(--pad), env(safe-area-inset-left)); padding-right: max(var(--pad), env(safe-area-inset-right)); }
+}
+@media (max-width: 350px) {
+  .flow { gap: 4px; font-size: 11px; }
+  .fl { padding: 2px 6px; }
+  .fl-w { min-width: 8px; }
+}
+
 /* slide 4 is dark: the deck ends where it began */
 .s-plan { background: var(--night); color: #ededed; }
 .s-plan .kicker, .s-plan .fine, .s-plan .sig { color: rgba(237, 237, 237, .58); }

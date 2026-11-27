@@ -344,13 +344,21 @@
     var floor = cur > 0 ? 1 : 0;
     if (steps[cur] > floor) { setStep(cur, steps[cur] - 1); } else if (cur > 0) { go(cur - 1, false); }
   }
+  var seen0 = true;   // scroll mode: slide 1 is on screen
   function autoplay(i) {
     if (played[i]) { return; }
     played[i] = true;
     var gaps = (slides[i].dataset.auto || '').split(',').map(Number), t = 0;
     for (var k = 1; k <= maxStep(i); k++) {
       t += gaps[k - 1] || 2500;
-      (function (kk) { later(i, function () { if (steps[i] < kk) { setStep(i, kk); } }, t); })(k);
+      // its own timers: a step's animation clears the slide's timers (slide 1, step 2), and that must not cancel the next step
+      (function (kk) {
+        setTimeout(function () {
+          if (mode !== 'scroll' || steps[i] >= kk) { return; }
+          if (i === 0 && kk === maxStep(0) && !seen0) { setStep(0, kk, true); paused1 = true; return; }   // no typing off screen
+          setStep(i, kk);
+        }, reduce ? Math.min(t, 20) : t);
+      })(k);
     }
   }
   function pickMode() {
@@ -372,12 +380,15 @@
     io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         var i = slides.indexOf(e.target);
-        if (e.isIntersecting && e.intersectionRatio >= 0.35) {
+        // a slide taller than about three screens never shows 35% of itself; half a screen of it counts too
+        var enough = e.isIntersecting && (e.intersectionRatio >= 0.35 || (!!e.rootBounds && e.intersectionRect.height >= 0.5 * e.rootBounds.height));
+        if (i === 0) { seen0 = enough; }
+        if (enough) {
           cur = i; hud(); autoplay(i);
           if (i === 0 && paused1) { paused1 = false; try { settle1(); } catch (x) { /* keep scrolling */ } }
         } else if (i === 0 && steps[0] === 3 && !paused1) { paused1 = true; clearTimers(0); }   // no typing off screen
       });
-    }, { threshold: [0, 0.35, 0.6] });
+    }, { threshold: [0, 0.1, 0.2, 0.35, 0.6] });
     slides.forEach(function (s) { io.observe(s); });
   }
 
