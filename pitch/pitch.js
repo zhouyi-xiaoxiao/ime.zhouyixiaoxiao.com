@@ -149,8 +149,8 @@
 
   /* ---------- slide 2: numbers count up ---------- */
   function countUp(i, node, delay) {
-    var to = +node.dataset.to, sign = node.dataset.sign || '', unit = node.dataset.unit || '';
-    function show(v) { node.textContent = sign + v.toFixed(1) + unit; }
+    var to = +node.dataset.to, sign = node.dataset.sign || '', unit = node.dataset.unit || '', dp = node.dataset.dp != null ? +node.dataset.dp : 1;
+    function show(v) { node.textContent = sign + v.toFixed(dp) + unit; }
     if (reduce) { show(to); return; }
     show(0);
     later(i, function () {
@@ -165,9 +165,9 @@
   }
   function hook2(k, instant) {
     if (k > 2 || instant) { return; }
-    $$('.at' + k + ' .num', slides[1]).forEach(function (n, j) { countUp(1, n, 250 + j * 450); });
+    $$('.at' + k + ' .num[data-to]', slides[1]).forEach(function (n, j) { countUp(1, n, 250 + j * 450); });
   }
-  function reset2() { $$('.num', slides[1]).forEach(function (n) { n.textContent = (n.dataset.sign || '') + (+n.dataset.to).toFixed(1) + (n.dataset.unit || ''); }); }
+  function reset2() { $$('.num[data-to]', slides[1]).forEach(function (n) { n.textContent = (n.dataset.sign || '') + (+n.dataset.to).toFixed(n.dataset.dp != null ? +n.dataset.dp : 1) + (n.dataset.unit || ''); }); }
 
   /* ---------- slide 3: the prototype ---------- */
   var pin = $('#pin'), pout = $('#pout'), phyp = $('#phyp'), flow = $('#flow'), chips = $('#pchips');
@@ -287,10 +287,10 @@
   /* ---------- slide 4: the closing line is typed ---------- */
   var closeEl = $('#closetype'), closeText = closeEl ? closeEl.textContent : '';
   function hook4(k, instant) {
-    if (k !== 3 || !closeEl) { return; }
+    if (k !== maxStep(3) || !closeEl) { return; }
     if (instant || reduce) { closeEl.textContent = closeText; return; }
     closeEl.textContent = '';
-    Array.from(closeText).forEach(function (c, i) { later(3, function () { closeEl.textContent += c; }, 700 + i * 85); });
+    Array.from(closeText).forEach(function (c, i) { later(3, function () { closeEl.textContent += c; }, 900 + i * 85); });
   }
 
   /* ---------- steps ---------- */
@@ -443,6 +443,7 @@
   var want = cur;
   applyMode();
   if (PRINT) { slides.forEach(function (s, i) { setStep(i, maxStep(i), true); }); }
+  else if (Q.has('step')) { setStep(cur, +Q.get('step') || 1, true); }
   else if (Q.has('final')) { setStep(cur, maxStep(cur), true); }
   else if (mode === 'scroll' && want > 0) { setTimeout(function () { slides[want].scrollIntoView(); }, 60); }
   hud();
