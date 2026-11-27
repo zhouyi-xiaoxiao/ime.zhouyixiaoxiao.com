@@ -42,6 +42,8 @@ p { margin: 0; }
 .note { background: var(--band); border-radius: 10px; padding: 12px 14px; font-size: 16px; }
 .warn { background: var(--warnbg); color: var(--warn); border-radius: 10px; padding: 12px 14px; font-size: 16px; }
 .warn b { color: var(--fg); }
+.anno { padding-left: 34px; font-size: 16px; }
+.anno b { font-weight: 700; }
 dl { margin: 0; display: flex; flex-direction: column; gap: 18px; }
 dt { font-weight: 700; font-size: 18px; }
 dd { margin: 4px 0 0; font-size: 19px; }
@@ -78,11 +80,20 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
     <h3>第 1 页 · 问题 <span class="t">→ 0:35</span></h3>
     <p class="say">Imagine you ask an AI assistant a question. <span class="c">翻</span> This is what it receives. <span class="c">翻</span> It was “привет”: hello, in Russian, typed with the keyboard still set to English. <span class="c">翻</span> AI reads what you typed, not what you meant. <span class="zh">（等屏幕换到希伯来语）</span> I’m Xiaoxiao, a PhD researcher at Bristol.</p>
     <p class="note">第三次翻页后约 3 秒，屏幕会自动换成希伯来语，之后是韩语、阿拉伯语。等它换一次的这几秒里做自我介绍，然后翻到第 2 页。</p>
+    <ul class="note anno">
+      <li><b>为什么这样开场：</b>一个词的乱码，观众一秒看懂；后面不再放长的乱码例子。</li>
+    </ul>
   </div>
 
   <div class="slide">
     <h3>第 2 页 · 证据 <span class="t">→ 1:25</span></h3>
     <p class="say"><span class="c">翻 换页</span> I measured two things. First, a public reading test, retyped on the wrong keyboard. When the model tried to fix the text itself, it gained <b class="n">7</b> percentage points of accuracy. When I gave it the correct text, <b class="n">51</b>. So the model does not fix this on its own. <span class="c">翻</span> Second: Chinese typed in Latin letters. “beizi” can mean cup, quilt or lifetime. With the word alone, models were right <b class="n">49</b> percent of the time: a coin flip. In a sentence: <b class="n">99</b>. <span class="c">翻</span> So: repair what can be repaired, and ask about the rest.</p>
+    <ul class="note anno">
+      <li><b>“a public reading test”：</b>7 和 51 测的是 Belebele 的公开阅读题（Meta 做的多语言四选一），不是自己出的；我只是把同一批题按“键盘停在英文”重打。自己出的只有拼音那组（beizi，49 和 99）。</li>
+      <li><b>“7 percentage points”：</b>是百分点，答对的比例多了 7 个点，不是相对提高 7%。51 后面不重复单位。</li>
+      <li><b>乱码长这样</b>（演示，不是实验原题）：“Как Анна добралась до работы сегодня?” 打出来是 <span class="url">Rfr Fyyf lj,hfkfcm lj hf,jns ctujlyz&amp;</span>。短文、问题、四个选项全是这种形式。</li>
+      <li><b>屏幕上不放这种长例子：</b>第 1 页和第 3 页的原型已经演示了，再放一屏要多十秒。被问“怎么测的”时答：“Public multiple-choice reading questions from Belebele, retyped as if the keyboard was on the wrong layout.”</li>
+    </ul>
   </div>
 
   <div class="slide">
@@ -93,7 +104,17 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
   <div class="slide">
     <h3>第 4 页 · 规模 → 模型 → 小层与请求 → 愿景 <span class="t">→ 3:00</span></h3>
     <p class="say"><span class="c">翻 换页</span> On Thursday this was a research poster. The bootcamp asked me: who pays, and how often does this happen? So I changed my customer, from the person typing to the platform that runs the assistant. And I counted real messages. Wrong keyboard: about <b class="n">1 in 10,000</b>. Across AI assistants today, that is about <b class="n">800,000</b> messages a day. <span class="zh">（停一下，让大家看数字）</span> <span class="c">翻</span> Last night I sent 107 real cases to this year’s models. A flagship model understood <b class="n">90</b>. A cheaper one, <b class="n">46</b>: it missed more than half. <span class="c">翻</span> A small problem, on a very large surface. One small layer, no model call, one integration per platform. In six months: one paid pilot, and a public ranking of models. My ask, to CDI and to everyone in this room: introduce me to one chatbot platform. <span class="c">翻</span> Billions of people type their language on a keyboard that was not made for it. Every keyboard, every script, every model: AI should understand people as they type. Thank you.</p>
-    <p class="note">请求那句点了 CDI 和在场的人，说的时候看着台下。可选的一句玩笑，气氛好、时间够才说，接在请求后面：“And I promise to write to them on the right keyboard.” 第 2、4 页是“一屏一件事”：每翻一次，上一屏消失、下一屏出现，所以要说到那一句再翻。第 4 页共四屏：800,000 → 90 和 46 → 小层、六个月、请求 → 收尾句。结尾放慢说，“every keyboard, every script, every model” 每个词组之间停一下。全文约 300 词；还超时就先删 “In a sentence: 99”，再删 “The bootcamp asked me: who pays, and how often does this happen?”。“The bootcamp asked me” 如果实际是某位导师问的，换成 “A mentor asked me”。不要说 “the best model”（只测了两个型号），也不要说“平台都跑便宜模型”（这是试点要验证的假设）。</p>
+    <ul class="note anno">
+      <li><b>“So I changed my customer…” 必须留：</b>这是 Leap Forward 要看的“这两天改变了什么”，也给后面的请求铺路，还提前回答了“谁付钱”。</li>
+      <li><b>超时的短版</b>（少 9 个词）：“On Thursday this was a research poster. The bootcamp changed my customer: from the person typing, to the platform that runs the assistant. And I counted real messages.” “The bootcamp” 如果实际是某位导师，换成 “A mentor”。</li>
+      <li><b>800,000 出来后停两秒不说话。</b>不配乐：现场讲只要一个声音，停顿比音乐管用。</li>
+      <li><b>请求点了 CDI 和在场的人，</b>说的时候看着台下。用 “chatbot platform” 不换词：和前面“客户是平台”是一条线，台下也知道该介绍谁。</li>
+      <li><b>可选的一句玩笑，</b>气氛好、时间够才说，接在请求后面：“And I promise to write to them on the right keyboard.” 时间紧就跳过，收尾句不能被它挤掉。</li>
+      <li><b>一屏一件事：</b>第 2、4 页每翻一次，上一屏消失、下一屏出现，所以要说到那一句再翻。第 4 页共四屏：800,000 → 90 和 46 → 小层、六个月、请求 → 收尾句。</li>
+      <li><b>结尾放慢说，</b>“every keyboard, every script, every model” 每个词组之间停一下。</li>
+      <li><b>全文约 325 词。</b>还超时就先删 “In a sentence: 99”，再把第 4 页开头换成上面的短版。</li>
+      <li><b>不要说</b> “the best model”（只测了两个型号），也不要说“平台都跑便宜模型”（这是试点要验证的假设）。</li>
+    </ul>
   </div>
 </section>
 
@@ -102,6 +123,9 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
   <dl>
     <div><dt>客户到底是谁？怎么找到？</dt>
       <dd>A chatbot platform: a company that runs support bots for thousands of businesses, in markets where people switch alphabets, such as Russian, Hebrew or Arabic. One integration covers every business on it, and at their volume 1 in 10,000 is thousands of messages a day. One such platform already built a layout fix itself, so they know the problem. I reach them through introductions from this room.</dd></div>
+    <div><dt>“platform” 具体指什么？举几个例子？</dt>
+      <dd>A company that runs chatbots for many businesses. Customer-service platforms such as Intercom, Zendesk or Ada. Messaging platforms such as Infobip or Twilio. And since CDI is powered by AWS: the teams behind Amazon Connect and Lex. I have not spoken to any of them yet; these are the introductions I am asking for.
+      <span class="zh">只说“想被介绍给这类公司”，不说它们有这个问题：这些名字是按类别举的，没有逐家核实它们用什么模型。四类：客服机器人平台（Intercom、Zendesk、Ada、Freshworks、Salesforce）；AWS 自己的产品（Amazon Connect、Lex、Bedrock），今天最可能当场要到引荐；消息通道平台（Infobip、Twilio、Sinch、Gupshup、Yellow.ai），多语言市场强；搭建工具（Botpress、Voiceflow、Kore.ai）。先找 AWS 这条线，其次是多语言市场的消息平台。</span></dd></div>
     <div><dt>平台为什么愿意付钱？</dt>
       <dd>Three reasons. Volume: a platform with 100 million messages a day sees about 10,000 of these a day. Reach: one integration covers every business on the platform. Cost: it lets them stay on cheaper models, which understood 46 of 107, instead of paying for the best model on all traffic.
       <span class="zh">单个银行每月只有几十次，付费理由弱；平台量大、卖一次覆盖全部客户。还没有任何平台确认过，这是六个月试点要验证的。</span></dd></div>
@@ -144,6 +168,9 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
       <span class="zh">+6.7 = 模型自己先还原再答；+51.4 = 直接给它正确原文。差的 45 分就是“读”这一步丢的。</span></dd></div>
     <div><dt>谈过客户吗？谁付钱？</dt>
       <dd>No, not yet, and nobody pays yet. The buyer I am testing is a chatbot platform in a two-alphabet market. First milestone: one paid pilot with one platform, at a fixed fee.</dd></div>
+    <div><dt>会开源吗？怎么收费？</dt>
+      <dd>The layer can be open. What a platform pays for is the audit on its own data and the integration. The first sale is a fixed-fee pilot; pricing after the pilot is open.
+      <span class="zh">不主动说，被问才答。开源那一层换来的是名声和采用，收费的是审计和接入。现在还没有人付钱。</span></dd></div>
     <div><dt>那 256 条是谁核实的？</dt>
       <dd>Each case was reviewed one by one, with a written reason, by an AI reviewer under strict rules, and a sample was checked again. The review files are kept.
       <span class="zh">你自己看过样本，才加 “I read a sample myself”。</span></dd></div>
@@ -198,6 +225,7 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
     <li>翻页器先试一下能不能翻；不行就用键盘。</li>
     <li>网络不行：打开备用 PDF（4 页内容，按屏展开成 9 张）。</li>
     <li>第 3 页让原型自己演，别念小字。</li>
+    <li>不配乐。电脑静音，免得通知出声。</li>
     <li>最后一屏有二维码和链接，问答时就停在这一屏；要演示原型按 <kbd>3</kbd>。</li>
     <li>翻早了按 <kbd>←</kbd> 退回上一屏。</li>
     <li>签到时跟 Caron 确认在路演名单上。</li>
