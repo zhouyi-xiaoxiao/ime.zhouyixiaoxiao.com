@@ -114,6 +114,9 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
       <dd>It is small on purpose: one platform, one count on their own data, one fixed-fee pilot. The tool that does the count already exists.</dd></div>
     <div><dt>大模型不是已经解决了吗？</dt>
       <dd>For the commonest case, mostly: 90 of 107, and it still asked or misread one time in six. The cheaper model got 46, and sometimes guessed wrong with confidence. And “beizi” no model can settle without asking.</dd></div>
+    <div><dt>数据从哪来？用了什么数据集？</dt>
+      <dd>Three sources, all public. The test questions are from Belebele, Meta’s multilingual reading benchmark; I retyped the same questions as wrong-keyboard text. The real messages are from WildChat, released by the Allen Institute for AI: conversations between real users and a free ChatGPT-based service, April 2023 to July 2025. And the 107 cases I replayed last night are real messages from those logs.
+      <span class="zh">逐个数字对应：7 和 51 → Belebele 四选一阅读题，每种语言 96 题，俄语、希伯来语、亚美尼亚语、阿拉伯语等。49% 和 99% → 我自己出的 72 道拼音题，词表来自 CC-CEDICT 词典和词频表。万分之一 → WildChat，530 万条。90 和 46 → WildChat 里核实过的 107 条。80 亿条/天 → seoClarity 和 Similarweb 的公开估计。追问隐私：WildChat 是用户同意后公开发布的，我只用公开版本。</span></dd></div>
     <div><dt>这是旧数据，现在呢？</dt>
       <dd>The open logs run to July 2025; nobody publishes this year’s. The rate is the same order. GPT-4o got 18 of 74 real cases. For this year’s models I replayed them last night: 90 and 46.</dd></div>
     <div><dt>万分之一，太小了吧？</dt>
