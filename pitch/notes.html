@@ -67,7 +67,7 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
 <main>
 <section>
   <h1>AsTyped · 3 分钟路演 + 2 分钟问答</h1>
-  <p class="zh">11 月 27 日 11:15。红框是翻页，蓝字是该到的时间。共 11 次翻页。</p>
+  <p class="zh">11 月 27 日 11:15。红框是翻页，蓝字是该到的时间。共 11 次翻页。目标奖项：Leap Forward。</p>
   <div class="row"><button id="awake" type="button">保持屏幕常亮</button><span class="zh" id="awakeState"></span></div>
 </section>
 
@@ -81,8 +81,8 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
 
   <div class="slide">
     <h3>第 2 页 · 证据 <span class="t">→ 1:20</span></h3>
-    <p class="say">I’m Xiaoxiao, a PhD researcher at Bristol. This was my poster here this week. I tested two things. First: can the model fix this itself? I asked models questions typed on the wrong keyboard. When the model cleaned up the text itself first, it scored <b class="n">7</b> points better. When I gave it the text as it should have been typed, <b class="n">51</b> points better. So most of what could be fixed, the model does not fix on its own. These are interim numbers, and my prototype’s share of that gap is not measured yet. <span class="c">翻</span> Second: Chinese is often typed in Latin letters. “beizi” can mean cup, quilt or lifetime. Shown the word alone, models were right <b class="n">49</b> percent of the time. That is a coin flip, and nobody could do better: the letters do not say which word. Inside a sentence: <b class="n">99</b>. <span class="c">翻</span> So: repair what can be repaired, and ask about the rest.</p>
-    <p class="note">这是换成大白话的版本（10:35 改）。过了 1:25 就删：“This was my poster here this week” · “Inside a sentence: 99” · 第 4 页的 “and a public ranking of models”。</p>
+    <p class="say">I’m Xiaoxiao, a PhD researcher at Bristol. I tested two things. First: can the model fix this itself? I asked models questions typed on the wrong keyboard. When the model cleaned up the text itself first, it scored <b class="n">7</b> points better. When I gave it the text as it should have been typed, <b class="n">51</b> points better. So most of what could be fixed, the model does not fix on its own. These are interim numbers, and my prototype’s share of that gap is not measured yet. <span class="c">翻</span> Second: Chinese is often typed in Latin letters. “beizi” can mean cup, quilt or lifetime. Shown the word alone, models were right <b class="n">49</b> percent of the time. That is a coin flip, and nobody could do better: the letters do not say which word. Inside a sentence: <b class="n">99</b>. <span class="c">翻</span> So: repair what can be repaired, and ask about the rest.</p>
+    <p class="note">过了 1:25 就删：“Inside a sentence: 99” · “These are interim numbers, and” 之后半句保留。</p>
   </div>
 
   <div class="slide">
@@ -91,15 +91,21 @@ button { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 14px; bo
   </div>
 
   <div class="slide">
-    <h3>第 4 页 · 计划 <span class="t">→ 3:00</span></h3>
-    <p class="say">I had not interviewed customers, so this week I ran the first count myself: <b class="n">5.3 million</b> real messages to ChatGPT, 2023 to mid-2025. Wrong keyboard: roughly <b class="n">1 message in 10,000</b>. Rare. <span class="zh">（停一下）</span> And in <b class="n">256</b> confirmed cases the assistant understood <b class="n">45</b>. Last night I sent 107 of them to this year’s models: the best one understood <b class="n">90</b>; a cheaper one, <b class="n">46</b>. So the best model is closing this, and the cheaper one is not. It is a small fix for assistants that run on cheaper models, and a measurement nobody else has. Next: one company whose users switch between two alphabets, like Russian and English. They run the count on their own data. Then a paid pilot, or I stop. <span class="c">翻</span> The prize pays for that count, a test of whether my prototype really helps the model, and a public ranking of models. One ask of this room: introduce me to someone who runs such an assistant. <span class="c">翻</span> AI should understand people as they type. Thank you.</p>
-    <p class="note">可选，加在收尾句前：<br>“Today that depends on which model you can afford.”</p>
+    <h3>第 4 页 · 周四 → 今天 → 六个月 <span class="t">→ 3:00</span></h3>
+    <p class="say">On Thursday this was a research poster: no product, no customer, no count. The bootcamp asked me two things I could not answer: who pays, and how often does this happen? So I changed the customer, from the person typing to the company that owns the assistant. And I counted: <b class="n">5.3 million</b> real messages to ChatGPT. Wrong keyboard: roughly <b class="n">1 in 10,000</b>. Rare. <span class="zh">（停一下）</span> Last night I sent 107 real cases to this year’s models: the best one understood <b class="n">90</b>; a cheaper one, <b class="n">46</b>. So my customer is a company running a support chatbot on a cheaper model, for people who switch alphabets: for example a bank in Kazakhstan or Israel. <span class="c">翻</span> In six months: one paid pilot, counted on their own data, and a public ranking of models. Or I stop, and say so. That is what the prize pays for. One ask: introduce me to someone who runs such a chatbot. <span class="c">翻</span> AI should understand people as they type. Thank you.</p>
+    <p class="note">“The bootcamp asked me…” 如果实际是某位导师或某场课提的，换成真实说法（如 “A mentor asked me…”）。评分表第 5 条看的就是这一句。</p>
   </div>
 </section>
 
 <section id="qa">
   <h2>问答 · 第一句直接回答</h2>
   <dl>
+    <div><dt>客户到底是谁？怎么找到？</dt>
+      <dd>The product owner of a customer-support chatbot, at a bank or telecom whose users type on Cyrillic or Hebrew keyboards. They pay per message, so they run a cheaper model. I reach them through chatbot platform vendors, one of which already ships a layout fix, and through introductions from this room.</dd></div>
+    <div><dt>这两天你改了什么？</dt>
+      <dd>Three things. The customer: from the person typing to the company that owns the assistant. The claim: I counted before claiming, and found it is rare. The plan: one paid pilot or stop, instead of a product for everyone.</dd></div>
+    <div><dt>六个月的目标现实吗？</dt>
+      <dd>It is small on purpose: one team, one count on their own data, one fixed-fee pilot. The tool that does the count already exists.</dd></div>
     <div><dt>大模型不是已经解决了吗？</dt>
       <dd>For the commonest case, mostly: 90 of 107, and it still asked or misread one time in six. The cheaper model got 46, and sometimes guessed wrong with confidence. And “beizi” no model can settle without asking.</dd></div>
     <div><dt>这是旧数据，现在呢？</dt>
