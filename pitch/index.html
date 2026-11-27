@@ -6,7 +6,7 @@
 <title>AsTyped: a layer between the keyboard and the model</title>
 <meta name="description" content="AsTyped is a layer between the keyboard and any language model. A browser prototype: it finds the likely keyboard layout, proposes the restored text, and asks when a spelling has several readings.">
 <meta name="theme-color" content="#0d0d0d">
-<link rel="stylesheet" href="pitch.css?v=6">
+<link rel="stylesheet" href="pitch.css?v=8">
 </head>
 <body>
 
@@ -48,7 +48,7 @@
         <div class="big-n told"><b class="num" data-to="51" data-sign="+" data-dp="0">+51</b><span>It is given the right text</span></div>
       </div>
       <p class="say">The model does not fix this on its own.</p>
-      <p class="fine">Accuracy points gained on wrong-keyboard text (6.7 and 51.4). Belebele reading questions, 5 model settings.</p>
+      <p class="fine">Accuracy points gained on wrong-keyboard text (6.7 and 51.4). Belebele reading questions, 5 model settings, reasoning off.</p>
     </div>
     <div class="scene at2">
       <p class="kicker">One spelling, several words</p>
@@ -98,19 +98,19 @@
 <section class="slide s-plan" id="s4" data-steps="4" data-auto="700,4200,4200,5200" aria-label="The plan">
   <div class="wrap scenes">
     <div class="scene at1">
-      <p class="kicker">Thursday: a research poster. Today: a prototype, a customer and a count.</p>
+      <p class="kicker">Thursday: a research poster. Today: a prototype, a target customer and a count.</p>
       <p class="hero-n">800,000</p>
       <p class="say">messages a day reach AI assistants typed on the wrong keyboard.</p>
-      <p class="fine">Estimate: 1 in 10,000 real messages &times; 8 billion messages a day across AI assistants (seoClarity, Similarweb, 2026). Upper bound: 2 million.</p>
+      <p class="fine">Estimate: about 1 in 10,000 real messages &times; 8 billion messages a day across AI assistants (seoClarity, Similarweb, 2026). Range: 300,000 to 2 million.</p>
     </div>
     <div class="scene at2">
       <p class="kicker">107 real cases, sent to this year&rsquo;s models</p>
       <div class="duo">
-        <div class="big-n"><b>90</b><span>The best model understood</span></div>
-        <div class="big-n typed"><b>46</b><span>A cheaper model</span></div>
+        <div class="big-n"><b>90<small class="of">/107</small></b><span>A flagship model understood</span></div>
+        <div class="big-n typed"><b>46<small class="of">/107</small></b><span>A cheaper model</span></div>
       </div>
-      <p class="say">High-volume bots run on the cheaper ones.</p>
-      <p class="fine">GPT-6.2 Astra and GPT-6 Luna.</p>
+      <p class="say">The cheaper one missed more than half.</p>
+      <p class="fine">GPT-6.2 Astra and GPT-6 Luna (lowest reasoning).</p>
     </div>
     <div class="scene at3">
       <p class="kicker">A small problem. A very large surface.</p>
@@ -118,13 +118,33 @@
       <dl class="rows">
         <div><dt>Cost</dt><dd>No model call. One integration covers every customer of a platform.</dd></div>
         <div><dt>Six months</dt><dd>One paid pilot. A public ranking of models.</dd></div>
-        <div><dt>My ask</dt><dd>An introduction to one chatbot platform.</dd></div>
+        <div><dt>My ask</dt><dd>Introduce me to one chatbot platform.</dd></div>
       </dl>
     </div>
     <div class="scene at4">
       <p class="close">AI should understand people<br><span class="astyped" id="closetype">as they type</span><span class="caret c2" aria-hidden="true"></span></p>
       <p class="trio">Every keyboard. Every script. Every model.</p>
-      <p class="sig">Xiaoxiao Zhouyi · University of Bristol · UKAIRS 2026 poster 89 · ime.zhouyixiaoxiao.com/pitch</p>
+      <div class="endcard">
+        <div class="who">
+          <img class="qr" src="qr.svg" width="132" height="132" alt="QR code for ime.zhouyixiaoxiao.com/pitch">
+          <p><b>Xiaoxiao Zhouyi</b> · University of Bristol<br>
+            <a href="https://ime.zhouyixiaoxiao.com/pitch/">ime.zhouyixiaoxiao.com/pitch</a><br>
+            <a href="https://zhouyixiaoxiao.com">zhouyixiaoxiao.com</a><br>
+            <a href="https://www.linkedin.com/in/zhouyixiaoxiao/">linkedin.com/in/zhouyixiaoxiao</a></p>
+        </div>
+        <div class="logos">
+          <div class="lrow">
+            <img class="lead" src="logos/ucl-cdi.png" alt="UCL Centre for Digital Innovation, powered by AWS">
+            <img src="logos/raiuk.png" alt="Responsible AI UK">
+            <img src="logos/ukairs2026.png" alt="UKAIRS 2026">
+          </div>
+          <div class="lrow">
+            <img src="logos/edinburgh.png" alt="The University of Edinburgh">
+            <img src="logos/bristol.svg" alt="University of Bristol">
+          </div>
+        </div>
+      </div>
+      <p class="thanks">Innovation &amp; Enterprise Bootcamp at UKAIRS 2026 · delivered by the UCL Centre for Digital Innovation · funded by Responsible AI UK · hosted by the University of Edinburgh</p>
     </div>
   </div>
 </section>
@@ -139,8 +159,8 @@
 
 <script src="../data/keymaps.js"></script>
 <script src="../assets/js/keyconv.js"></script>
-<script src="astyped-data.js?v=6"></script>
-<script src="astyped.js?v=6"></script>
-<script src="pitch.js?v=6"></script>
+<script src="astyped-data.js?v=8"></script>
+<script src="astyped.js?v=8"></script>
+<script src="pitch.js?v=8"></script>
 </body>
 </html>
